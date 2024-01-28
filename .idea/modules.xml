@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/JeuPythonGithub.iml" filepath="$PROJECT_DIR$/.idea/JeuPythonGithub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JeuPython.iml" filepath="$PROJECT_DIR$/.idea/JeuPython.iml" />
     </modules>
   </component>
 </project>

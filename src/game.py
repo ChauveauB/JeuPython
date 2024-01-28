@@ -1,7 +1,5 @@
-import pygame
-import pytmx
-import pyscroll
-
+import pygame, pytmx, pyscroll
+from UI import UI
 from player import Player
 
 
@@ -9,8 +7,13 @@ class Game:
 
     def __init__(self):
 
+        self.display_surface = pygame.display.get_surface()
+
         self.running = True
         self.map = "world"
+
+        # user interface
+        self.ui = UI()
 
         # créer la fenetre
         self.screen = pygame.display.set_mode((800, 600))
@@ -145,7 +148,6 @@ class Game:
 
         clock = pygame.time.Clock()
 
-
         # boucle du jeu
 
         running = True
@@ -156,6 +158,7 @@ class Game:
             self.update()
             self.group.center(self.player.rect.center)
             self.group.draw(self.screen)
+            self.ui.display(self.player)
             pygame.display.flip()
 
             for event in pygame.event.get():
