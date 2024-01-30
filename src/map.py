@@ -31,12 +31,21 @@ class MapManager:
         self.current_map= "world"
 
         self.register_map("world", portals=[
-            Portal(from_world="world", origin_point="enter_house", target_world="house", teleport_point="spawn_house")
+            Portal(from_world="world", origin_point="enter_house", target_world="house", teleport_point="spawn_house"),
+            Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house"),
+            Portal(from_world="world", origin_point="enter_dungeon", target_world="dungeon", teleport_point="spawn_dungeon")
         ])
         self.register_map("house", portals=[
             Portal(from_world="house", origin_point="exit_house", target_world="world", teleport_point="enter_house_exit")
         ])
 
+        self.register_map("dungeon", portals=[
+            Portal(from_world="dungeon", origin_point="exit_dungeon", target_world="world", teleport_point="dungeon_exit_spawn")
+        ])
+
+        self.register_map("house2", portals=[
+            Portal(from_world="house2", origin_point="exit_house", target_world="world", teleport_point="exit_house2")
+        ] )
         self.teleport_player("player")
 
     def check_collisions(self):
