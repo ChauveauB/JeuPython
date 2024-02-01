@@ -24,7 +24,7 @@ class Game:
 
         # générer un joueur
 
-        self.player = Player(0, 0)
+        self.player = Player()
         self.map_manager=MapManager(self.screen, self.player)
     def handle_input(self):
         pressed = pygame.key.get_pressed()
