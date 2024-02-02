@@ -19,11 +19,15 @@ class Game:
 
         self.player = Player()
         self.map_manager=MapManager(self.screen, self.player)
+
     def handle_input(self):
         pressed = pygame.key.get_pressed()
 
+        # quitter le jeu avec échap
         if pressed[pygame.K_ESCAPE]:
             self.running = False
+
+        # déplacer le perso avec les flèches
         elif pressed[pygame.K_UP]:
             self.player.move_up()
             self.player.change_animation('up')
@@ -46,9 +50,9 @@ class Game:
 
         # boucle du jeu
 
-        running = True
+        self.running = True
 
-        while running:
+        while self.running:
             self.player.save_location()
             self.handle_input()
             self.update()
@@ -58,7 +62,7 @@ class Game:
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
+                    self.running = False
 
             clock.tick(60)
 

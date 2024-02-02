@@ -12,9 +12,6 @@ class Portal:
     teleport_point: str
 
 
-
-
-
 @dataclass
 class Map:
     name: str
@@ -55,6 +52,7 @@ class MapManager:
         self.teleport_npcs()
 
     def check_collisions(self):
+
         #gestion des portails
         for portal in self.get_map().portals:
             if portal.from_world == self.current_map:
@@ -66,11 +64,11 @@ class MapManager:
                     self.current_map = portal.target_world
                     self.teleport_player(copy_portal.teleport_point)
 
-
         #verifier les collisions
         for sprite in self.get_group().sprites():
             if sprite.feet.collidelist(self.get_walls()) >-1 :
                 sprite.move_back()
+
     def teleport_player(self, name):
         point=self.get_object(name)
         self.player.position[0]=point.x
@@ -95,7 +93,6 @@ class MapManager:
                 walls.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
 
         # dessiner le groupe de calque
-
         group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=5)
         group.add(self.player)
 
@@ -109,7 +106,7 @@ class MapManager:
 
         self.maps[name]=Map(name, walls, group, tmx_data, portals, npcs)
 
-    def get_map(self):return self.maps[self.current_map]
+    def get_map(self): return self.maps[self.current_map]
 
     def get_group(self): return self.get_map().group
 
