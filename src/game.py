@@ -1,8 +1,6 @@
 import pygame, pytmx, pyscroll
-from UI import UI
 from player import Player
-from src.map import MapManager
-
+from map import MapManager
 
 class Game:
 
@@ -13,14 +11,9 @@ class Game:
         self.running = True
         self.map = "world"
 
-        # user interface
-        self.ui = UI()
-
         # créer la fenetre
         self.screen = pygame.display.set_mode((800, 600))
         pygame.display.set_caption("Jeupython")
-
-
 
         # générer un joueur
 
@@ -47,9 +40,6 @@ class Game:
     def update(self):
         self.map_manager.update()
 
-
-
-
     def run(self):
 
         clock = pygame.time.Clock()
@@ -63,7 +53,7 @@ class Game:
             self.handle_input()
             self.update()
             self.map_manager.draw()
-#            self.ui.display(self.player)
+            self.player.update_health_bar(self.screen)
             pygame.display.flip()
 
             for event in pygame.event.get():

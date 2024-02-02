@@ -22,16 +22,22 @@ class Entity(pygame.sprite.Sprite):
         self.old_position = self.position.copy()
 
         # stats
-        self.stats = {'health': 100, 'speed': 5}
+        self.stats = {'health': 70, 'speed': 3}
         self.health = self.stats['health']
+        self.max_health = 100
         self.speed = self.stats['speed']
+
+    def update_health_bar(self, surface):
+        # draw the bar
+        pygame.draw.rect(surface, (55, 55, 55), [10, 10, self.max_health, 6])
+        pygame.draw.rect(surface, (255, 0, 0), [10, 10, self.health, 6])
 
     def save_location(self):
         self.old_position = self.position.copy()
 
     def change_animation(self, name):
         self.image = self.images[name]
-        self.image.set_colorkey((0,0,0))
+        self.image.set_colorkey((0, 0, 0))
 
     def move_right(self): self.position[0] += self.speed
     def move_left(self): self.position[0] -= self.speed
