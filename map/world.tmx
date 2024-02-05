@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="40">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="44">
  <tileset firstgid="1" source="nature.tsx"/>
  <tileset firstgid="721" source="house.tsx"/>
  <tileset firstgid="1496" source="dungeon.tsx"/>
@@ -328,10 +328,12 @@
 </data>
  </layer>
  <objectgroup id="9" name="NPCPaths">
-  <object id="36" name="paul_path1" x="320.273" y="544.159" width="15.8182" height="9.0682"/>
-  <object id="37" name="paul_path2" x="255.818" y="544" width="16" height="9.75"/>
-  <object id="38" name="paul_path3" x="256.196" y="470.44" width="16" height="9.5682"/>
-  <object id="39" name="paul_path4" x="320.144" y="470.19" width="15.6364" height="9.8864"/>
+  <object id="36" name="paul_path1" x="400.94" y="550.159" width="15.8182" height="9.0682"/>
+  <object id="37" name="paul_path2" x="287.485" y="550" width="16" height="9.75"/>
+  <object id="38" name="paul_path3" x="287.529" y="469.773" width="16" height="9.5682"/>
+  <object id="39" name="paul_path4" x="399.811" y="469.857" width="15.6364" height="9.8864"/>
+  <object id="40" name="robin_path1" x="640" y="256" width="15.75" height="15.75"/>
+  <object id="41" name="robin_path2" x="639.75" y="320.25" width="15.75" height="15.5"/>
  </objectgroup>
  <layer id="8" name="dungeon" width="50" height="50">
   <data encoding="csv">

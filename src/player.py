@@ -39,10 +39,21 @@ class Entity(pygame.sprite.Sprite):
         self.image = self.images[name]
         self.image.set_colorkey((0, 0, 0))
 
-    def move_right(self): self.position[0] += self.speed
-    def move_left(self): self.position[0] -= self.speed
-    def move_up(self): self.position[1] -= self.speed
-    def move_down(self): self.position[1] += self.speed
+    def move_right(self):
+        self.change_animation("right")
+        self.position[0] += self.speed
+
+    def move_left(self):
+        self.change_animation("left")
+        self.position[0] -= self.speed
+
+    def move_up(self):
+        self.change_animation("up")
+        self.position[1] -= self.speed
+
+    def move_down(self):
+        self.change_animation("down")
+        self.position[1] += self.speed
 
     def update(self):
         self.rect.topleft = self.position
@@ -109,9 +120,9 @@ class NPC(Entity):
         self.save_location()
 
 
-    def load_points(self, map):
+    def load_points(self, tmx_data):
         for num in range(1, self.nb_points+1):
-            point = map.get_object(f"{self.name}_path{num}")
+            point = tmx_data.get_object_by_name(f"{self.name}_path{num}")
             rect = pygame.Rect(point.x, point.y, point.width, point.height)
             self.points.append(rect)
 

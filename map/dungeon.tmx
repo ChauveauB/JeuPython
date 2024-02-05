@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="44">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="46">
  <tileset firstgid="1" source="house.tsx"/>
  <tileset firstgid="776" source="dungeon.tsx"/>
  <layer id="1" name="floor" width="50" height="50">
@@ -218,6 +218,10 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="6" name="NPCPaths">
+  <object id="44" name="boss_path1" x="272" y="208.5" width="16" height="16.5"/>
+  <object id="45" name="boss_path2" x="240.5" y="208.5" width="16" height="15.5"/>
+ </objectgroup>
  <objectgroup id="5" name="objects">
   <object id="1" type="collision" x="74.4719" y="17.1858" width="423.917" height="31.5073"/>
   <object id="2" type="collision" x="525.6" y="95.9542" width="216.255" height="30.0752"/>
