@@ -332,8 +332,8 @@
   <object id="37" name="paul_path2" x="287.485" y="550" width="16" height="9.75"/>
   <object id="38" name="paul_path3" x="287.529" y="469.773" width="16" height="9.5682"/>
   <object id="39" name="paul_path4" x="399.811" y="469.857" width="15.6364" height="9.8864"/>
-  <object id="40" name="robin_path1" x="640" y="256" width="15.75" height="15.75"/>
-  <object id="41" name="robin_path2" x="639.75" y="320.25" width="15.75" height="15.5"/>
+  <object id="40" name="robin_path1" x="320.25" y="576" width="15.75" height="15.75"/>
+  <object id="41" name="robin_path2" x="447.75" y="576" width="15.75" height="15.5"/>
  </objectgroup>
  <layer id="8" name="dungeon" width="50" height="50">
   <data encoding="csv">
