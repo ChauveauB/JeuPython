@@ -103,6 +103,7 @@ class NPC(Entity):
 
 
 
+    # envoyer au point prévu de départ
     def teleport_spawn(self):
         location = self.points[self.current_point]
         self.position[0] = location.x

@@ -25,6 +25,7 @@ class Map:
 class MapManager:
 
     def __init__(self, screen, player):
+        #initailisation de MapManager, avec création d'un dictionnaire vide pour les maps
         self.maps=dict()   # "house" -> Map("house", walls, group)
         self.screen=screen
         self.player=player
@@ -40,6 +41,8 @@ class MapManager:
             NPC("paul", 4,1),
             NPC("robin",2,7)
         ])
+
+        #création des maps des maisons et dongeons
         self.register_map("house", portals=[
             Portal(from_world="house", origin_point="exit_house", target_world="world", teleport_point="enter_house_exit")
         ])
@@ -53,7 +56,11 @@ class MapManager:
         self.register_map("house2", portals=[
             Portal(from_world="house2", origin_point="exit_house", target_world="world", teleport_point="exit_house2")
         ] )
-        self.teleport_player("player")
+
+        #déplacement du joueur à son point de départ
+        self.teleport_player("player_spawn")
+
+        # placement PNJ
         self.teleport_npcs()
 
     def check_collisions(self):
@@ -90,7 +97,6 @@ class MapManager:
         map_layer.zoom = 2
 
         # liste pour les rectangles de collision
-
         walls = []
 
         for obj in tmx_data.objects:
@@ -111,15 +117,20 @@ class MapManager:
 
         self.maps[name]=Map(name, walls, group, tmx_data, portals, npcs)
 
-    def get_map(self): return self.maps[self.current_map]
+    def get_map(self):
+        return self.maps[self.current_map]
 
-    def get_group(self): return self.get_map().group
+    def get_group(self):
+        return self.get_map().group
 
-    def get_walls(self): return self.get_map().walls
+    def get_walls(self):
+        return self.get_map().walls
 
-    def get_object(self, name): return self.get_map().tmx_data.get_object_by_name(name)
+    def get_object(self, name):
+        return self.get_map().tmx_data.get_object_by_name(name)
 
 
+    # dans toutes les maps, aller chercher les NPC dans map_data et les mettre en position
     def teleport_npcs(self):
         for map in self.maps:
             map_data = self.maps[map]
