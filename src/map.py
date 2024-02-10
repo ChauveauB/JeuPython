@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 import pygame, pytmx, pyscroll
 
-from src.player import NPC
+
+from player import *
 
 
 @dataclass
@@ -75,6 +76,9 @@ class MapManager:
                     copy_portal = portal
                     self.current_map = portal.target_world
                     self.teleport_player(copy_portal.teleport_point)
+
+                    #perdre de la vie en passant par ce portail
+                    print(player.health)
 
         #verifier les collisions
         for sprite in self.get_group().sprites():
