@@ -17,7 +17,7 @@ class Entity(AnimateSprite):
         self.old_position = self.position.copy()
 
         # stats
-        self.stats = {'health': 70, 'speed': 3}
+        self.stats = {'health': 70, 'speed': 2}
         self.health = self.stats['health']
         self.max_health = 100
         self.speed = self.stats['speed']
@@ -104,7 +104,7 @@ class NPC(Entity):
 
 
     # envoyer au point prévu de départ
-    def teleport_spawn(self):
+    def teleport_spawn(self) :
         location = self.points[self.current_point]
         self.position[0] = location.x
         self.position[1] = location.y

@@ -138,6 +138,7 @@ class MapManager:
 
             for npc in npcs:
                 npc.load_points(map_data.tmx_data)
+
                 npc.teleport_spawn()
 
     def draw(self):
