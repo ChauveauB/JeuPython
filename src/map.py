@@ -1,7 +1,5 @@
 from dataclasses import dataclass
 import pygame, pytmx, pyscroll
-
-
 from player import *
 
 
@@ -78,7 +76,11 @@ class MapManager:
                     self.teleport_player(copy_portal.teleport_point)
 
                     #perdre de la vie en passant par ce portail
-                    print(player.health)
+                    self.player.health -= 10
+                    if self.current_map == "world":
+                        self.player.speed = self.player.stats['speed']
+                    else:
+                        self.player.speed -= 2
 
         #verifier les collisions
         for sprite in self.get_group().sprites():
@@ -90,7 +92,6 @@ class MapManager:
         self.player.position[0]=point.x
         self.player.position[1]=point.y
         self.player.save_location()
-
 
     def register_map(self, name, portals=[], npcs=[]):
         # charger la carte
@@ -112,7 +113,7 @@ class MapManager:
         group.add(self.player)
 
 
-        #récupérere tous les NPC pour les ajouter au groupe
+        # récupérer tous les NPC pour les ajouter au groupe
 
         for npc in npcs:
             group.add(npc)
@@ -132,7 +133,6 @@ class MapManager:
 
     def get_object(self, name):
         return self.get_map().tmx_data.get_object_by_name(name)
-
 
     # dans toutes les maps, aller chercher les NPC dans map_data et les mettre en position
     def teleport_npcs(self):

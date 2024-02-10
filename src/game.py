@@ -1,6 +1,7 @@
 import pygame, pytmx, pyscroll
 from player import Player
 from map import MapManager
+from inventory import Inventory
 
 class Game:
 
@@ -12,13 +13,17 @@ class Game:
         self.map = "world"
 
         # créer la fenetre
-        self.screen = pygame.display.set_mode((800, 600))
+        self.screen = pygame.display.set_mode((1000, 800))
         pygame.display.set_caption("Jeupython")
+        self.game_paused = False
 
         # générer un joueur
 
         self.player = Player()
         self.map_manager=MapManager(self.screen, self.player)
+
+        # inventaire
+        self.inventory = Inventory(self.player)
 
     def handle_input(self):
         pressed = pygame.key.get_pressed()
@@ -40,6 +45,10 @@ class Game:
     def update(self):
         self.map_manager.update()
 
+    def toggle_menu(self):
+
+       self.game_paused = not self.game_paused
+
     def run(self):
 
         clock = pygame.time.Clock()
@@ -49,16 +58,26 @@ class Game:
         self.running = True
 
         while self.running:
-            self.player.save_location()
-            self.handle_input()
-            self.update()
-            self.map_manager.draw()
-            self.player.update_health_bar(self.screen)
+
             pygame.display.flip()
+            if self.game_paused:
+                self.inventory.display()
+                # afficher le menu
+            else:
+                self.player.save_location()
+                self.handle_input()
+                self.update()
+                self.map_manager.draw()
+                self.player.update_health_bar(self.screen)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+
+            # création d'un menu/inventaire
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_m:
+                        self.toggle_menu()
 
             clock.tick(60)
 
