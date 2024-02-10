@@ -4,7 +4,7 @@ from src.animation import AnimateSprite
 
 class Entity(AnimateSprite):
 
-    def __init__(self, name, x, y):
+    def __init__(self, name, x, y, speed, health=3):
         super().__init__(name)
 
         self.image = self.get_image(0, 0)
@@ -17,11 +17,12 @@ class Entity(AnimateSprite):
         self.old_position = self.position.copy()
 
         # stats
-        self.stats = {'health': 70, 'speed': 2}
+        self.stats = {'health': health, 'speed': speed}
         self.health = self.stats['health']
         self.max_health = 100
         self.speed = self.stats['speed']
 
+    #affichage d'une barre de vie
     def update_health_bar(self, surface):
         # draw the bar
         pygame.draw.rect(surface, (55, 55, 55), [10, 10, self.max_health, 6])
@@ -63,17 +64,17 @@ class Entity(AnimateSprite):
 class Player(Entity):
 
     def __init__(self):
-        super().__init__("player", 0, 0)
+        super().__init__("player", 0, 0, 6, 35)
 
 
 class NPC(Entity):
 
     def __init__(self, name, nb_points, speed):
-        super().__init__(name, 0, 0)
+        super().__init__(name, 0, 0, speed)  # récupère la vitesse grace a la class entity
         self.nb_points = nb_points
         self.points=[]
         self.name = name
-        self.speed = speed
+
         self.current_point = 0
 
 

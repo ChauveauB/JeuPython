@@ -39,7 +39,7 @@ class MapManager:
             Portal(from_world="world", origin_point="enter_dungeon", target_world="dungeon", teleport_point="spawn_dungeon")
         ], npcs=[
             NPC("paul", 4,1),
-            NPC("robin",2,7)
+            NPC("robin",2,3)
         ])
 
         #création des maps des maisons et dongeons
