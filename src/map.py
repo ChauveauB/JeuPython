@@ -38,7 +38,7 @@ class MapManager:
             Portal(from_world="world", origin_point="enter_dungeon", target_world="dungeon", teleport_point="spawn_dungeon")
         ], npcs=[
             NPC("paul", 4,1),
-            NPC("robin",2,3)
+            NPC("robin",2,1)
         ])
 
         #création des maps des maisons et dongeons
@@ -80,7 +80,7 @@ class MapManager:
                     if self.current_map == "world":
                         self.player.speed = self.player.stats['speed']
                     else:
-                        self.player.speed -= 2
+                        self.player.speed -= 1
 
         #verifier les collisions
         for sprite in self.get_group().sprites():

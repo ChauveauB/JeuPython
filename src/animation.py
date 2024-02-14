@@ -3,11 +3,11 @@ import pygame
 
 class AnimateSprite(pygame.sprite.Sprite):
 
-
     def __init__(self, name):
         super().__init__()
         self.sprite_sheet = pygame.image.load(f"../sprites/{name}.png")
         self.animation_index = 0
+        self.clock = 0
         self.images = {
             'down': self.get_images(0),
             'left': self.get_images(32),
@@ -15,15 +15,21 @@ class AnimateSprite(pygame.sprite.Sprite):
             'up': self.get_images(96)
 
         }
+        self.speed = 2
 
     def change_animation(self, name):
         self.image = self.images[name][self.animation_index]
         self.image.set_colorkey((0, 0, 0))
+        self.clock += self.speed * 8
 
-        self.animation_index += 1    #passer à l'image suivante
+        if self.clock >= 100:
 
-        if self.animation_index >= len(self.images[name]):
-            self.animation_index = 0
+            self.animation_index += 1    #passer à l'image suivante
+
+            if self.animation_index >= len(self.images[name]):
+                self.animation_index = 0
+
+            self.clock = 0
 
     def get_images(self, y):
         images = []
