@@ -117,4 +117,3 @@ class NPC(Entity):
             point = tmx_data.get_object_by_name(f"{self.name}_path{num}")
             rect = pygame.Rect(point.x, point.y, point.width, point.height)
             self.points.append(rect)
-
