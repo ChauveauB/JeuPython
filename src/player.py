@@ -17,7 +17,7 @@ class Entity(AnimateSprite):
         self.old_position = self.position.copy()
 
         # stats
-        self.stats = {'health': health, 'speed': speed}
+        self.stats = {'health': health, 'magic': 1, 'energy': 1, 'speed': speed}
         self.health = self.stats['health']
         self.max_health = 100
         self.speed = self.stats['speed']
