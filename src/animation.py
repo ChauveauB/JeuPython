@@ -15,7 +15,7 @@ class AnimateSprite(pygame.sprite.Sprite):
             'up': self.get_images(96)
 
         }
-        self.speed = 2
+        self.speed = 10  # Cette ligne semble inutile car les vitesses sont spécifiées à chaque PNJ
 
     def change_animation(self, name):
         self.image = self.images[name][self.animation_index]

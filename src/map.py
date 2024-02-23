@@ -84,6 +84,12 @@ class MapManager:
 
         #verifier les collisions
         for sprite in self.get_group().sprites():
+            if type(sprite) is NPC:
+                if sprite.feet.colliderect(self.player.rect):
+                    sprite.speed = 0
+                else:
+                    sprite.speed = sprite.stats['speed']
+
             if sprite.feet.collidelist(self.get_walls()) > -1:
                 sprite.move_back()
 

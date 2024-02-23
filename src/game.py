@@ -13,7 +13,7 @@ class Game:
         self.map = "world"
 
         # créer la fenetre
-        self.screen = pygame.display.set_mode((1000, 800))
+        self.screen = pygame.display.set_mode((1000, 700))
         pygame.display.set_caption("Jeupython")
         self.game_paused = False
 
