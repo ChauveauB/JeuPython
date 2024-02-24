@@ -1,5 +1,5 @@
 import pygame
-from src.animation import AnimateSprite
+from animation import AnimateSprite
 
 
 class Entity(AnimateSprite):
@@ -8,21 +8,20 @@ class Entity(AnimateSprite):
         super().__init__(name)
 
         self.image = self.get_image(0, 0)
-        self.image.set_colorkey([0,0,0])
+        self.image.set_colorkey([0, 0, 0])
         self.rect = self.image.get_rect()
         self.position = [x, y]
-
 
         self.feet = pygame.Rect(0, 0, self.rect.width * 0.5, 12)
         self.old_position = self.position.copy()
 
         # stats
-        self.stats = {'health': health, 'magic': 1, 'energy': 1, 'speed': speed}
-        self.health = self.stats['health']
+        self.stats = {"health": health, "magic": 1, "energy": 1, "speed": speed}
+        self.health = self.stats["health"]
         self.max_health = 100
-        self.speed = self.stats['speed']
+        self.speed = self.stats["speed"]
 
-    #affichage d'une barre de vie
+    # affichage d'une barre de vie
     def update_health_bar(self, surface):
         # draw the bar
         pygame.draw.rect(surface, (55, 55, 55), [10, 10, self.max_health, 6])
@@ -30,8 +29,6 @@ class Entity(AnimateSprite):
 
     def save_location(self):
         self.old_position = self.position.copy()
-
-
 
     def move_right(self):
         self.change_animation("right")
@@ -59,8 +56,6 @@ class Entity(AnimateSprite):
         self.feet.midbottom = self.rect.midbottom
 
 
-
-
 class Player(Entity):
 
     def __init__(self):
@@ -70,13 +65,14 @@ class Player(Entity):
 class NPC(Entity):
 
     def __init__(self, name, nb_points, speed):
-        super().__init__(name, 0, 0, speed)  # récupère la vitesse grace a la class entity
+        super().__init__(
+            name, 0, 0, speed
+        )  # récupère la vitesse grace a la class entity
         self.nb_points = nb_points
-        self.points=[]
+        self.points = []
         self.name = name
 
         self.current_point = 0
-
 
     def move(self):
         current_point = self.current_point
@@ -102,18 +98,15 @@ class NPC(Entity):
         if self.rect.colliderect(target_rect):
             self.current_point = target_point
 
-
-
     # envoyer au point prévu de départ
-    def teleport_spawn(self) :
+    def teleport_spawn(self):
         location = self.points[self.current_point]
         self.position[0] = location.x
         self.position[1] = location.y
         self.save_location()
 
-
     def load_points(self, tmx_data):
-        for num in range(1, self.nb_points+1):
+        for num in range(1, self.nb_points + 1):
             point = tmx_data.get_object_by_name(f"{self.name}_path{num}")
             rect = pygame.Rect(point.x, point.y, point.width, point.height)
             self.points.append(rect)

@@ -1,7 +1,8 @@
-import pygame, pytmx, pyscroll
+import pygame
 from player import Player
 from map import MapManager
 from inventory import Inventory
+
 
 class Game:
 
@@ -20,7 +21,7 @@ class Game:
         # générer un joueur
 
         self.player = Player()
-        self.map_manager=MapManager(self.screen, self.player)
+        self.map_manager = MapManager(self.screen, self.player)
 
         # inventaire
         self.inventory = Inventory(self.player)
@@ -47,7 +48,7 @@ class Game:
 
     def toggle_menu(self):
 
-       self.game_paused = not self.game_paused
+        self.game_paused = not self.game_paused
 
     def run(self):
 
@@ -74,7 +75,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.running = False
 
-            # création d'un menu/inventaire
+                # création d'un menu/inventaire
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
                         self.toggle_menu()

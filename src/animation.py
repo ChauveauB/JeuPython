@@ -9,11 +9,10 @@ class AnimateSprite(pygame.sprite.Sprite):
         self.animation_index = 0
         self.clock = 0
         self.images = {
-            'down': self.get_images(0),
-            'left': self.get_images(32),
-            'right': self.get_images(64),
-            'up': self.get_images(96)
-
+            "down": self.get_images(0),
+            "left": self.get_images(32),
+            "right": self.get_images(64),
+            "up": self.get_images(96),
         }
         self.speed = 10  # Cette ligne semble inutile car les vitesses sont spécifiées à chaque PNJ
 
@@ -24,7 +23,7 @@ class AnimateSprite(pygame.sprite.Sprite):
 
         if self.clock >= 100:
 
-            self.animation_index += 1    #passer à l'image suivante
+            self.animation_index += 1  # passer à l'image suivante
 
             if self.animation_index >= len(self.images[name]):
                 self.animation_index = 0
@@ -35,7 +34,7 @@ class AnimateSprite(pygame.sprite.Sprite):
         images = []
 
         for i in range(0, 3):
-            x = i*32
+            x = i * 32
             image = self.get_image(x, y)
             images.append(image)
 
