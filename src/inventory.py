@@ -10,6 +10,7 @@ class Inventory:
         # initialisation des valeurs
         self.attribute_nr = len(player.stats)
         self.attribute_names = list(player.stats.keys())
+        self.attribute_values = list(player.stats.values())
 
         self.font = pygame.font.Font('../joystix.ttf', 18)
 
@@ -73,7 +74,8 @@ class Inventory:
 
             # get attributes
             name = self.attribute_names[index]
-            item.display(self.screen, self.selection_index, name)
+            value = self.player.get_value_by_index(index)
+            item.display(self.screen, self.selection_index, name, value)
 
 class Item:
     def __init__(self, l, t, w, h, index, font):
@@ -87,19 +89,24 @@ class Item:
         self.TEXT_COLOR_SELECTED = '#111111'
         self.BG_COLOR_SELECTED = '#EEEEEE'
 
-    def display_names(self, surface, name, selected):
+    def display_names(self, surface, name, value, selected):
         color = self.TEXT_COLOR_SELECTED if selected else self.TEXT_COLOR
 
         # title text
         title_surf = self.font.render(name, False, color)
         title_rect = title_surf.get_rect(midtop = self.rect.midtop + pygame.math.Vector2(0, 20))
 
+        # stats value
+        value_surf = self.font.render(f'{int(value)}', False, color)
+        value_rect = value_surf.get_rect(midbottom=self.rect.midbottom - pygame.math.Vector2(0, 20))
+
         # draw
         surface.blit(title_surf, title_rect)
+        surface.blit(value_surf, value_rect)
 
-    def display(self, surface, selection_num, name):
+    def display(self, surface, selection_num, name, value):
         if self.index == selection_num:
             pygame.draw.rect(surface, self.BG_COLOR_SELECTED, self.rect)
         else:
             pygame.draw.rect(surface, self.BG_COLOR, self.rect)
-        self.display_names(surface, name, self.index == selection_num)
+        self.display_names(surface, name, value, self.index == selection_num)
