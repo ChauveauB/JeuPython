@@ -76,7 +76,7 @@ class MapManager:
                     self.teleport_player(copy_portal.teleport_point)
 
                     #perdre de la vie en passant par ce portail
-                    self.player.health -= 10
+                    self.player.stats['health'] -= 10
                     if self.current_map == "world":
                         self.player.speed = self.player.stats['speed']
                     else:
