@@ -75,6 +75,9 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.running = False
 
+                if self.player.stats['health'] == 0:
+                    self.running = False
+
                 # création d'un menu/inventaire
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
