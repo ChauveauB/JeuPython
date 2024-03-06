@@ -1,0 +1,31 @@
+{
+    "activeFile": "map test.tmx",
+    "fileStates": {
+        "Tileset_1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tileset_1_meubles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "map test.tmx": {
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 972,
+                "y": 303
+            }
+        }
+    },
+    "openFiles": [
+        "map test.tmx",
+        "Tileset_1.tsx",
+        "Tileset_1_meubles.tsx"
+    ],
+    "recentFiles": [
+        "Tileset_1_meubles.tsx",
+        "Tileset_1.tsx",
+        "map test.tmx"
+    ]
+}
