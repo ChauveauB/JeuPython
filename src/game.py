@@ -1,7 +1,10 @@
+import time
+
 import pygame
 from player import Player
 from map import MapManager
 from inventory import Inventory
+from death_menu import Death_menu
 
 
 class Game:
@@ -17,6 +20,7 @@ class Game:
         self.screen = pygame.display.set_mode((1000, 700))
         pygame.display.set_caption("Jeupython")
         self.game_paused = False
+        self.game_end = False
 
         # générer un joueur
 
@@ -25,6 +29,8 @@ class Game:
 
         # inventaire
         self.inventory = Inventory(self.player)
+
+        self.death = Death_menu(self.player)
 
     def handle_input(self):
         pressed = pygame.key.get_pressed()
@@ -46,6 +52,9 @@ class Game:
     def update(self):
         self.map_manager.update()
 
+    def death_menu(self):
+
+        self.game_end = not self.game_end
     def toggle_menu(self):
 
         self.game_paused = not self.game_paused
@@ -63,25 +72,29 @@ class Game:
             pygame.display.flip()
             if self.game_paused:
                 self.inventory.display()
+                self.player.update_health_bar(self.screen)
                 # afficher le menu
             else:
                 self.player.save_location()
                 self.handle_input()
                 self.update()
                 self.map_manager.draw()
-                self.player.update_health_bar(self.screen)
+
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.running = False
-
-                if self.player.stats['health'] == 0:
                     self.running = False
 
                 # création d'un menu/inventaire
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
                         self.toggle_menu()
+
+                if self.player.stats['health'] == 0:
+                    self.game_end = True
+
+            if self.game_end:
+                self.death.display()
 
             clock.tick(60)
 

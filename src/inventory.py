@@ -1,4 +1,5 @@
 import pygame
+from player import Player
 
 class Inventory:
     def __init__(self, player):
@@ -23,6 +24,7 @@ class Inventory:
         self.selection_index = 0
         self.selection_time = None
         self.can_move = True
+
 
     def input(self):
         keys = pygame.key.get_pressed()
@@ -65,17 +67,30 @@ class Inventory:
             item = Item(left, top, self.width, self.height, index, self.font)
             self.item_list.append(item)
 
+    def display_stats(self):
+        health_value = self.font.render('Vie : 150', 1, 'white')
+        self.screen.blit(health_value, (10, 40))
+
+        attack_value = self.font.render('Attaque : 10', 1, 'white')
+        self.screen.blit(attack_value, (10, 70))
+
+        defense_value = self.font.render('Défense : 10', 1, 'white')
+        self.screen.blit(defense_value, (10, 100))
+
+        speed_value = self.font.render('Vitesse : 3', 1, 'white')
+        self.screen.blit(speed_value, (10, 130))
     def display(self):
         self.screen.fill('black')
         self.input()
         self.selection_cooldown()
+        self.display_stats()
 
-        for index, item in enumerate(self.item_list):
+        #for index, item in enumerate(self.item_list):
 
             # get attributes
-            name = self.attribute_names[index]
-            value = self.player.get_value_by_index(index)
-            item.display(self.screen, self.selection_index, name, value)
+         #   name = self.attribute_names[index]
+         #   value = self.player.get_value_by_index(index)
+         #   item.display(self.screen, self.selection_index, name, value)
 
 class Item:
     def __init__(self, l, t, w, h, index, font):

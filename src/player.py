@@ -16,16 +16,16 @@ class Entity(AnimateSprite):
         self.old_position = self.position.copy()
 
         # stats
-        self.stats = {"health": health, "magic": 1, "energy": 1, "speed": speed}
+        self.stats = {"health": health, "attack": 10, "defense": 10, "speed": speed}
         self.health = self.stats["health"]
-        self.max_health = 100
+        self.max_health = 200
         self.speed = self.stats["speed"]
 
     # affichage d'une barre de vie
     def update_health_bar(self, surface):
         # draw the bar
-        pygame.draw.rect(surface, (55, 55, 55), [10, 10, self.max_health, 6])
-        pygame.draw.rect(surface, (255, 0, 0), [10, 10, self.stats['health'], 6])
+        pygame.draw.rect(surface, (55, 55, 55), [10, 10, self.max_health, 10])
+        pygame.draw.rect(surface, (255, 0, 0), [10, 10, self.stats['health'], 10])
 
     def get_value_by_index(self, index):
         return list(self.stats.values())[index]
@@ -62,7 +62,7 @@ class Entity(AnimateSprite):
 class Player(Entity):
 
     def __init__(self):
-        super().__init__("player", 0, 0, 3, 80)
+        super().__init__("player", 0, 0, 3, 40)
 
 
 class NPC(Entity):
