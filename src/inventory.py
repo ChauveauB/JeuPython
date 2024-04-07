@@ -68,16 +68,16 @@ class Inventory:
             self.item_list.append(item)
 
     def display_stats(self):
-        health_value = self.font.render('Vie : 150', 1, 'white')
+        health_value = self.font.render(f'Vie : {self.player.stats["health"]} ', 1, 'white')
         self.screen.blit(health_value, (10, 40))
 
-        attack_value = self.font.render('Attaque : 10', 1, 'white')
+        attack_value = self.font.render(f'Attaque : {self.player.stats["attack"]}', 1, 'white')
         self.screen.blit(attack_value, (10, 70))
 
-        defense_value = self.font.render('Défense : 10', 1, 'white')
+        defense_value = self.font.render(f'Défense : {self.player.stats["defense"]}', 1, 'white')
         self.screen.blit(defense_value, (10, 100))
 
-        speed_value = self.font.render('Vitesse : 3', 1, 'white')
+        speed_value = self.font.render(f'Vitesse : {self.player.speed}', 1, 'white')
         self.screen.blit(speed_value, (10, 130))
     def display(self):
         self.screen.fill('black')

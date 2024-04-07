@@ -6,7 +6,6 @@ from map import MapManager
 from inventory import Inventory
 from death_menu import Death_menu
 
-
 class Game:
 
     def __init__(self):
@@ -31,6 +30,7 @@ class Game:
         self.inventory = Inventory(self.player)
 
         self.death = Death_menu(self.player)
+
 
     def handle_input(self):
         pressed = pygame.key.get_pressed()
@@ -80,17 +80,16 @@ class Game:
                 self.update()
                 self.map_manager.draw()
 
-
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
 
                 # création d'un menu/inventaire
-                if event.type == pygame.KEYDOWN:
+                elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
                         self.toggle_menu()
 
-                if self.player.stats['health'] == 0:
+                if self.player.stats['health'] <= 0:
                     self.game_end = True
 
             if self.game_end:
