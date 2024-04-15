@@ -13,7 +13,7 @@ class Inventory:
         self.attribute_names = list(player.stats.keys())
         self.attribute_values = list(player.stats.values())
 
-        self.font = pygame.font.Font('../joystix.ttf', 18)
+        self.font = pygame.font.Font('../dialogue/font.ttf', 18)
 
         # item creation
         self.height = self.screen.get_size()[1] * 0.25

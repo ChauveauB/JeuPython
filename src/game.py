@@ -5,6 +5,7 @@ from player import Player
 from map import MapManager
 from inventory import Inventory
 from death_menu import Death_menu
+from dialogue import DialogBox
 
 class Game:
 
@@ -25,6 +26,7 @@ class Game:
 
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
+        self.dialog_box = DialogBox()
 
         # inventaire
         self.inventory = Inventory(self.player)
@@ -79,6 +81,8 @@ class Game:
                 self.handle_input()
                 self.update()
                 self.map_manager.draw()
+                self.dialog_box.render(self.screen)
+
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -88,6 +92,10 @@ class Game:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
                         self.toggle_menu()
+
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        self.dialog_box.next_text()
 
                 if self.player.stats['health'] <= 0:
                     self.game_end = True

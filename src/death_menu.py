@@ -5,7 +5,7 @@ class Death_menu:
         self.screen = pygame.display.set_mode((1000, 700))
         self.player = player
 
-        self.font = pygame.font.Font('../joystix.ttf', 100)
+        self.font = pygame.font.Font('../dialogue/font.ttf', 100)
 
     def display(self):
         self.screen.fill('black')
