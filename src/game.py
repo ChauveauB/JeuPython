@@ -93,9 +93,8 @@ class Game:
                     if event.key == pygame.K_m:
                         self.toggle_menu()
 
-                elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
-                        self.dialog_box.next_text()
+                        self.map_manager.check_npc_collisions(self.dialog_box)
 
                 if self.player.stats['health'] <= 0:
                     self.game_end = True

@@ -67,10 +67,10 @@ class Player(Entity):
 
 class NPC(Entity):
 
-    def __init__(self, name, nb_points, speed):
-        super().__init__(
-            name, 0, 0, speed
-        )  # récupère la vitesse grace a la class entity
+    def __init__(self, name, nb_points, speed, dialog):
+        super().__init__(name, 0, 0, speed)
+        # récupère la vitesse grace a la class entity
+        self.dialog = dialog
         self.nb_points = nb_points
         self.points = []
         self.name = name

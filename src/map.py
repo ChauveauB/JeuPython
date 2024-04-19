@@ -37,30 +37,35 @@ class MapManager:
             Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house"),
             Portal(from_world="world", origin_point="enter_dungeon", target_world="dungeon", teleport_point="spawn_dungeon")
         ], npcs=[
-            NPC("paul", 4,1),
-            NPC("robin",2,1)
-        ])
+            NPC("paul", 4,1, dialog=["bonne aventure"]),
+            NPC("robin",2,1, dialog=["Salut, ça va"]),
+        ]),
 
         #création des maps des maisons et dongeons
         self.register_map("house", portals=[
             Portal(from_world="house", origin_point="exit_house", target_world="world", teleport_point="enter_house_exit")
-        ])
+        ]),
 
         self.register_map("dungeon", portals=[
             Portal(from_world="dungeon", origin_point="exit_dungeon", target_world="world", teleport_point="dungeon_exit_spawn")
         ], npcs=[
-            NPC("boss", 2, 1)
-        ])
+            NPC("boss", 2, 1, dialog=["Tremble devant moi"])
+        ]),
 
         self.register_map("house2", portals=[
             Portal(from_world="house2", origin_point="exit_house", target_world="world", teleport_point="exit_house2")
-        ] )
+        ] ),
 
         #déplacement du joueur à son point de départ
         self.teleport_player("player_spawn")
 
         # placement PNJ
         self.teleport_npcs()
+
+    def check_npc_collisions(self, dialog_box):
+        for sprite in self.get_group().sprites():
+            if sprite.feet.colliderect(self.player.rect) and type(sprite) is NPC:
+                dialog_box.execute(sprite.dialog)
 
     def check_collisions(self):
 
