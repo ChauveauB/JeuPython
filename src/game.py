@@ -6,6 +6,7 @@ from map import MapManager
 from inventory import Inventory
 from death_menu import Death_menu
 from dialogue import DialogBox
+from dialog_menu import DialogMenu
 
 class Game:
 
@@ -27,11 +28,14 @@ class Game:
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
         self.dialog_box = DialogBox()
+        self.dialog_menu = DialogMenu(self.player)
 
         # inventaire
         self.inventory = Inventory(self.player)
 
         self.death = Death_menu(self.player)
+
+
 
 
     def handle_input(self):
@@ -74,7 +78,7 @@ class Game:
             pygame.display.flip()
             if self.game_paused:
                 self.inventory.display()
-                self.player.update_health_bar(self.screen)
+                #self.player.update_health_bar(self.screen)
                 # afficher le menu
             else:
                 self.player.save_location()
@@ -96,6 +100,7 @@ class Game:
 
                     if event.key == pygame.K_SPACE:
                         self.map_manager.check_npc_collisions(self.dialog_box)
+
 
                 if self.player.stats['health'] <= 0:
                     self.game_end = True

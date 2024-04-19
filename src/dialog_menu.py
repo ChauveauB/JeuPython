@@ -38,6 +38,13 @@ class DialogMenu:
                 self.selection_index -= 1
                 self.can_move = False
                 self.selection_time = pygame.time.get_ticks()
+            elif keys[pygame.K_SPACE]:
+                self.can_move = False
+                self.selection_time = pygame.time.get_ticks()
+                if self.selection_index == 0:
+                    print('0')
+                elif self.selection_index == 1:
+                    print('1')
 
 
     def selection_cooldown(self):
@@ -62,7 +69,6 @@ class DialogMenu:
             item = Item(left, top, self.width, self.height, index, self.font)
             self.item_list.append(item)
     def display(self):
-        self.screen.fill('black')
         self.input()
         self.selection_cooldown()
         #self.display_stats()
@@ -76,6 +82,7 @@ class DialogMenu:
             value = self.player.get_value_by_index(index)
 
             item.display(self.screen, self.selection_index, name, value)
+            print('2')
 
 class Item:
     def __init__(self, l, t, w, h, index, font):
@@ -96,17 +103,16 @@ class Item:
         title_surf = self.font.render(name, False, color)
         title_rect = title_surf.get_rect(midtop = self.rect.midtop + pygame.math.Vector2(0, 20))
 
-        # stats value
-        value_surf = self.font.render(f'{int(value)}', False, color)
-        value_rect = value_surf.get_rect(midbottom=self.rect.midbottom - pygame.math.Vector2(0, 20))
-
         # draw
         surface.blit(title_surf, title_rect)
-        surface.blit(value_surf, value_rect)
 
     def display(self, surface, selection_num, name, value):
-        if self.index == selection_num:
-            pygame.draw.rect(surface, self.BG_COLOR_SELECTED, self.rect)
-        else:
-            pygame.draw.rect(surface, self.BG_COLOR, self.rect)
-        self.display_names(surface, name, value, self.index == selection_num)
+
+            if self.index == selection_num:
+                pygame.draw.rect(surface, self.BG_COLOR_SELECTED, self.rect)
+            else:
+                pygame.draw.rect(surface, self.BG_COLOR, self.rect)
+            self.display_names(surface, name, value, self.index == selection_num)
+            print('1')
+            # appel de cette fonction display avant celle au dessus
+            # essayer de trouver le code pour inverser l'appel de ces fonctions

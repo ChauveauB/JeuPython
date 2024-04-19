@@ -1,4 +1,6 @@
 import pygame
+from player import Player
+from dialog_menu import DialogMenu
 
 class DialogBox:
 
@@ -8,19 +10,26 @@ class DialogBox:
 
         self.screen = pygame.display.set_mode((1000, 700))
 
+        self.player = Player()
+        self.dialog_menu = DialogMenu(self.player)
         self.texts = []
-        self.text_index = 0
         self.letter_index = 0
         self.font = pygame.font.Font('../dialog/dialog_font.ttf', 18)
         self.reading = False
+        self.game_paused = False
 
     def execute(self, dialog=[]):
-        if self.reading:
+        if self.reading:        # le dialogue est ouvert
             self.next_text()
         else:
             self.reading = True
-            self.text_index = 0
+            if self.player.health <= 50:
+                self.text_index = 1
+            else:
+                self.text_index = 0
             self.texts = dialog
+
+
 
     def render(self, screen):
         if self.reading:
@@ -39,7 +48,13 @@ class DialogBox:
             self.text_index += 1
             self.letter_index = 0
 
+            # le programme vérifie si le dialogue n'est pas autre chose que du texte
+            if self.texts[self.text_index] is not str :
+                print('a')
+                self.reading = False
+                # appel du menu dialogue qui disparaît tout de suite
+                self.dialog_menu.display()
+
             if self.text_index >= len(self.texts):
                # fermer dialogue
-                a = input()
                 self.reading = False
