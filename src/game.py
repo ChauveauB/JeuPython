@@ -42,7 +42,7 @@ class Game:
             self.running = False
 
         # déplacer le perso avec les flèches
-        elif pressed[pygame.K_UP]:
+        if pressed[pygame.K_UP]:
             self.player.move_up()
         elif pressed[pygame.K_DOWN]:
             self.player.move_down()
@@ -89,8 +89,9 @@ class Game:
                     self.running = False
 
                 # création d'un menu/inventaire
+
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_TAB:
+                    if event.key == pygame.K_m:
                         self.toggle_menu()
 
                     if event.key == pygame.K_SPACE:

@@ -41,4 +41,5 @@ class DialogBox:
 
             if self.text_index >= len(self.texts):
                # fermer dialogue
+                a = input()
                 self.reading = False

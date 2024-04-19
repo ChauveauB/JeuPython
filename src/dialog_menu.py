@@ -1,7 +1,7 @@
 import pygame
 from player import Player
 
-class Inventory:
+class DialogMenu:
     def __init__(self, player):
 
         # general setup
@@ -38,12 +38,7 @@ class Inventory:
                 self.selection_index -= 1
                 self.can_move = False
                 self.selection_time = pygame.time.get_ticks()
-            elif keys[pygame.K_UP]:
-                self.can_move = False
-                self.selection_time = pygame.time.get_ticks()
-                print(self.selection_index)
-            elif keys[pygame.K_DOWN]:
-                pass
+
 
     def selection_cooldown(self):
         if not self.can_move:
