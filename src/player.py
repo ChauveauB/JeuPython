@@ -21,6 +21,8 @@ class Entity(AnimateSprite):
         self.max_health = 200
         self.speed = self.stats["speed"]
 
+        self.player_answers = {"oui" : 0, "non" : 1}
+
     # affichage d'une barre de vie
     def update_health_bar(self, surface):
         # draw the bar
@@ -76,6 +78,7 @@ class NPC(Entity):
         self.name = name
 
         self.current_point = 0
+
 
     def move(self):
         current_point = self.current_point

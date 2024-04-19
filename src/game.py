@@ -90,7 +90,7 @@ class Game:
 
                 # création d'un menu/inventaire
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_m:
+                    if event.key == pygame.K_TAB:
                         self.toggle_menu()
 
                     if event.key == pygame.K_SPACE:
