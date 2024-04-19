@@ -3,14 +3,14 @@ import pygame
 class DialogBox:
 
     def __init__(self):
-        self.box = pygame.image.load('../dialogue/dialog_box.png')
+        self.box = pygame.image.load('../dialog/dialog_box.png')
         self.box = pygame.transform.scale(self.box, (700, 100))
 
         self.screen = pygame.display.set_mode((1000, 700))
 
         self.texts = ['Salut', 'Bonne aventure !' 'a bientôt']
         self.text_index = 0
-        self.font = pygame.font.Font('../dialogue/font.ttf', 15)
+        self.font = pygame.font.Font('../dialog/dialog_font.ttf', 15)
         self.reading = True
 
     def render(self, screen):
