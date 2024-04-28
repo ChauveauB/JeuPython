@@ -100,7 +100,7 @@ class MapManager:
 
     def teleport_player(self, name):
         point=self.get_object(name)
-        self.player.position[0]=point.x
+        self.player.position[0]=point.x + 50
         self.player.position[1]=point.y
         self.player.save_location()
 

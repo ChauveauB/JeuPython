@@ -50,7 +50,6 @@ class DialogBox:
 
             # le programme vérifie si le dialogue n'est pas autre chose que du texte
             if self.texts[self.text_index] is not str :
-                print('a')
                 self.reading = False
                 # appel du menu dialogue qui disparaît tout de suite
                 self.dialog_menu.display()

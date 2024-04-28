@@ -1,6 +1,7 @@
 import pygame
 from player import Player
 
+
 class DialogMenu:
     def __init__(self, player):
 
@@ -81,8 +82,10 @@ class DialogMenu:
 
             value = self.player.get_value_by_index(index)
 
+            print('display DialogMenu')
+
             item.display(self.screen, self.selection_index, name, value)
-            print('2')
+
 
 class Item:
     def __init__(self, l, t, w, h, index, font):
@@ -113,6 +116,7 @@ class Item:
             else:
                 pygame.draw.rect(surface, self.BG_COLOR, self.rect)
             self.display_names(surface, name, value, self.index == selection_num)
-            print('1')
+            print('display Item')
+
             # appel de cette fonction display avant celle au dessus
             # essayer de trouver le code pour inverser l'appel de ces fonctions
