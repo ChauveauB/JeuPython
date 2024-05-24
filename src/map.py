@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import pygame, pytmx, pyscroll
 from player import *
+from save import Save
 
 
 @dataclass
@@ -24,11 +25,17 @@ class Map:
 class MapManager:
 
     def __init__(self, screen, player):
+        self.save = Save()
+
         #initailisation de MapManager, avec création d'un dictionnaire vide pour les maps
         self.maps=dict()   # "house" -> Map("house", walls, group)
         self.screen=screen
         self.player=player
-        self.current_map= "world"
+
+        if self.save.Saved:
+            self.current_map = self.save.world_perso
+        else:
+            self.current_map = "world"
 
 
         #création de la map principale, avec les PNJ
@@ -56,8 +63,12 @@ class MapManager:
             Portal(from_world="house2", origin_point="exit_house", target_world="world", teleport_point="exit_house2")
         ] ),
 
-        #déplacement du joueur à son point de départ
-        self.teleport_player("player_spawn")
+        #déplacement du joueur à son point de départ (ou aux coordonnées enregistrées par la save)
+        if self.save.Saved:
+            self.player.position[0]=self.save.x_perso
+            self.player.position[1]=self.save.y_perso
+        else:
+            self.teleport_player("player_spawn")
 
         # placement PNJ
         self.teleport_npcs()
@@ -81,9 +92,9 @@ class MapManager:
                     self.teleport_player(copy_portal.teleport_point)
 
                     #perdre de la vie en passant par ce portail
-                    self.player.stats['health'] -= 10
+                    self.player.health -= 10
                     if self.current_map == "world":
-                        self.player.speed = self.player.stats['speed']
+                        self.player.speed = self.player.speed_base
                     else:
                         self.player.speed -= 1
 

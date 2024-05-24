@@ -1,5 +1,6 @@
 import pygame
 from animation import AnimateSprite
+from save import Save
 
 
 class Entity(AnimateSprite):
@@ -62,9 +63,21 @@ class Entity(AnimateSprite):
 
 
 class Player(Entity):
-
     def __init__(self):
-        super().__init__("player", 0, 0, 3, 95)
+        save = Save()
+        self.speed_base = 3
+        self.health_base = 95
+        if save.Saved:
+            x = save.x_perso
+            y = save.y_perso
+            speed = save.speed_perso
+            health = save.health_perso
+        else:
+            x = 0
+            y = 0
+            speed = self.speed_base
+            health = self.health_base
+        super().__init__("player", x, y, speed, health)
 
 
 class NPC(Entity):

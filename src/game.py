@@ -7,15 +7,16 @@ from inventory import Inventory
 from death_menu import Death_menu
 from dialogue import DialogBox
 from dialog_menu import DialogMenu
+from save import Save
 
 class Game:
 
     def __init__(self):
+        self.save = Save()
 
+        #Début de la défénition des caractéristiques
         self.display_surface = pygame.display.get_surface()
-
         self.running = True
-        self.map = "world"
 
         # créer la fenetre
         self.screen = pygame.display.set_mode((1000, 700))
@@ -24,7 +25,6 @@ class Game:
         self.game_end = False
 
         # générer un joueur
-
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
         self.dialog_box = DialogBox()
@@ -59,11 +59,16 @@ class Game:
         self.map_manager.update()
 
     def death_menu(self):
-
         self.game_end = not self.game_end
-    def toggle_menu(self):
 
+    def toggle_menu(self):
         self.game_paused = not self.game_paused
+
+    def saver(self):
+        self.save_fic = open('../saves/save_Pythonjeu.txt', "w")
+        self.save_fic.write("___SAUVEGARDE DU PROJET PYTHON___\n")
+        self.save_fic.write(f"{self.player.position[0]}\n{self.player.position[1]}\n{self.player.speed}\n{self.player.health}\n{self.map_manager.current_map}")
+        self.save_fic.close
 
     def run(self):
 
@@ -101,7 +106,26 @@ class Game:
                     if event.key == pygame.K_SPACE:
                         self.map_manager.check_npc_collisions(self.dialog_box)
 
+                    #Ajuster la taille en jeu (ptêtre trouver de meilleures touches)
+                    if event.key == pygame.K_z:
+                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w, pygame.display.Info().current_h + 35))
 
+                    if event.key == pygame.K_s:
+                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w, pygame.display.Info().current_h - 35))
+
+                    if event.key == pygame.K_q:
+                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w + 50, pygame.display.Info().current_h))
+
+                    if event.key == pygame.K_d:                   
+                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w - 50, pygame.display.Info().current_h))
+
+                    if event.key == pygame.K_x:
+                        #Logs et sauvegarde
+                        logs = open("../saves/logs.txt", "a")
+                        logs.write(f"Tentative de sauvegarde des infos en remplacant par x:{self.player.position[0]}, y:{self.player.position[1]}, speed:{self.player.speed}, health:{self.player.health} et monde:{self.map_manager.current_map}\n")
+                        logs.close
+                        self.saver()
+                        
                 if self.player.stats['health'] <= 0:
                     self.game_end = True
 

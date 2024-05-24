@@ -45,7 +45,6 @@ class DialogBox:
             screen.blit(text, (width + 55, height + 10))
 
     def next_text(self):
-            self.text_index += 1
             self.letter_index = 0
 
             # le programme vérifie si le dialogue n'est pas autre chose que du texte
@@ -53,6 +52,9 @@ class DialogBox:
                 self.reading = False
                 # appel du menu dialogue qui disparaît tout de suite
                 self.dialog_menu.display()
+
+            #  >>Juste pour plus que ça crash mais c'est pas une modif qui révolutionne tout
+            self.text_index += 1
 
             if self.text_index >= len(self.texts):
                # fermer dialogue

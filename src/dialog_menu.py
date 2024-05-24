@@ -69,6 +69,7 @@ class DialogMenu:
             # create object
             item = Item(left, top, self.width, self.height, index, self.font)
             self.item_list.append(item)
+    
     def display(self):
         self.input()
         self.selection_cooldown()

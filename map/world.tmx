@@ -472,7 +472,7 @@
   </object>
   <object id="33" name="enter_house2" x="58.75" y="428.75" width="15.25" height="11.625"/>
   <object id="34" name="enter_dungeon" x="78.6667" y="10" width="32.6667" height="26.6667"/>
-  <object id="35" name="dungeon_exit_spawn" x="158.667" y="138.083">
+  <object id="35" name="dungeon_exit_spawn" x="101.667" y="140.583">
    <point/>
   </object>
  </objectgroup>
