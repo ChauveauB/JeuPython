@@ -21,5 +21,5 @@ class Save():
         else:
             self.Saved = True
             logs = open("../saves/logs.txt", "a")
-            logs.write(f"Sauvegarde récuperee avec succes ! Pour x : {self.x_perso}; y : {self.y_perso}; speed : {self.speed_perso}; health : {self.health_perso} et enfin dans le monde : {self.world_perso}\n")
+            logs.write(f"Sauvegarde recuperee avec succes ! Pour x : {self.x_perso}; y : {self.y_perso}; speed : {self.speed_perso}; health : {self.health_perso} et enfin dans le monde : {self.world_perso}\n")
             logs.close

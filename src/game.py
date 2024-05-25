@@ -88,6 +88,9 @@ class Game:
                 self.inventory.display()
                 #self.player.update_health_bar(self.screen)
                 # afficher le menu
+            elif self.dialog_box.choising:
+                self.dialog_box.dialog_menu.display()
+                self.handle_input()
             else:
                 self.player.save_location()
                 self.handle_input()

@@ -20,6 +20,7 @@ class DialogBox:
         self.font = pygame.font.Font('../dialog/dialog_font.ttf', 18)
         self.reading = False
         self.game_paused = False
+        #Si le joueur est en train de choisir une réponse dans les dialogues
         self.choising = False
 
     def execute(self, dialog=[]):
@@ -58,4 +59,3 @@ class DialogBox:
             elif self.texts[self.text_index] == "/menu_dialogue/" :
                 # appel du menu dialogue qui disparaît tout de suite
                 self.choising = True
-                self.dialog_menu.display()
