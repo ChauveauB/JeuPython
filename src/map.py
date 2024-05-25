@@ -38,13 +38,13 @@ class MapManager:
             self.current_map = "world"
 
 
-        #création de la map principale, avec les PNJ
+        #création de la map principale, avec les portails et les PNJ
         self.register_map("world", portals=[
             Portal(from_world="world", origin_point="enter_house", target_world="house", teleport_point="spawn_house"),
             Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house"),
             Portal(from_world="world", origin_point="enter_dungeon", target_world="dungeon", teleport_point="spawn_dungeon")
         ], npcs=[
-            NPC("paul", 4,1, dialog=["Bonne aventure", "Tu devrais te soigner", 4, "a bientot"]),
+            NPC("paul", 4,1, dialog=["Bonne aventure", "Tu voudrais te soigner ?", "/menu_dialogue/", "a bientot"]),
             NPC("robin",2,1, dialog=["Salut, ça va"]),
         ]),
 
@@ -73,6 +73,7 @@ class MapManager:
         # placement PNJ
         self.teleport_npcs()
 
+    #Utilisé pour les dialogues : checker si on peut obtim en définissant une méthodes pour avoir les PNJ et pas passer par les sprites
     def check_npc_collisions(self, dialog_box):
         for sprite in self.get_group().sprites():
             if sprite.feet.colliderect(self.player.rect) and type(sprite) is NPC:

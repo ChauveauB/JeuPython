@@ -1,7 +1,6 @@
 import pygame
 from player import Player
 
-
 class DialogMenu:
     def __init__(self, player):
 
@@ -9,7 +8,7 @@ class DialogMenu:
         self.screen = pygame.display.set_mode((1000, 800))
         self.player = player
 
-        # initialisation des valeurs
+        # initialisation des valeurs (nr -> nombres de réponses du joueur)
         self.attribute_nr = len(player.player_answers)
         self.attribute_names = list(player.player_answers.keys())
         self.attribute_values = list(player.player_answers.values())
@@ -28,6 +27,7 @@ class DialogMenu:
 
 
     def input(self):
+        #Pour la sélection des réponses du joueur 
         keys = pygame.key.get_pressed()
 
         if self.can_move:
@@ -42,10 +42,8 @@ class DialogMenu:
             elif keys[pygame.K_SPACE]:
                 self.can_move = False
                 self.selection_time = pygame.time.get_ticks()
-                if self.selection_index == 0:
-                    print('0')
-                elif self.selection_index == 1:
-                    print('1')
+                with open("../saves/logs.txt", "a") as logs:
+                    logs.write(f"{self.selection_index}\n")
 
 
     def selection_cooldown(self):
@@ -83,7 +81,8 @@ class DialogMenu:
 
             value = self.player.get_value_by_index(index)
 
-            print('display DialogMenu')
+            with open("../saves/logs.txt", "a") as logs:
+                logs.write("Display DialogMenu\n")
 
             item.display(self.screen, self.selection_index, name, value)
 
@@ -117,7 +116,9 @@ class Item:
             else:
                 pygame.draw.rect(surface, self.BG_COLOR, self.rect)
             self.display_names(surface, name, value, self.index == selection_num)
-            print('display Item')
+
+            with open("../saves/logs.txt", "a") as logs:
+                logs.write("Display Item\n")
 
             # appel de cette fonction display avant celle au dessus
             # essayer de trouver le code pour inverser l'appel de ces fonctions

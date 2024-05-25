@@ -79,6 +79,7 @@ class Inventory:
 
         speed_value = self.font.render(f'Vitesse : {self.player.speed}', 1, 'white')
         self.screen.blit(speed_value, (10, 130))
+
     def display(self):
         self.screen.fill('black')
         self.input()

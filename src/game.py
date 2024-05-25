@@ -45,15 +45,18 @@ class Game:
         if pressed[pygame.K_ESCAPE]:
             self.running = False
 
-        # déplacer le perso avec les flèches
-        if pressed[pygame.K_UP]:
-            self.player.move_up()
-        elif pressed[pygame.K_DOWN]:
-            self.player.move_down()
-        elif pressed[pygame.K_LEFT]:
-            self.player.move_left()
-        elif pressed[pygame.K_RIGHT]:
-            self.player.move_right()
+        if self.dialog_box.reading == True:
+            pass
+        else:
+            # déplacer le perso avec les flèches
+            if pressed[pygame.K_UP]:
+                self.player.move_up()
+            elif pressed[pygame.K_DOWN]:
+                self.player.move_down()
+            elif pressed[pygame.K_LEFT]:
+                self.player.move_left()
+            elif pressed[pygame.K_RIGHT]:
+                self.player.move_right()
 
     def update(self):
         self.map_manager.update()
@@ -121,9 +124,8 @@ class Game:
 
                     if event.key == pygame.K_x:
                         #Logs et sauvegarde
-                        logs = open("../saves/logs.txt", "a")
-                        logs.write(f"Tentative de sauvegarde des infos en remplacant par x:{self.player.position[0]}, y:{self.player.position[1]}, speed:{self.player.speed}, health:{self.player.health} et monde:{self.map_manager.current_map}\n")
-                        logs.close
+                        with open("../saves/logs.txt", "a") as logs:
+                            logs.write(f"Tentative de sauvegarde des infos en remplacant par x:{self.player.position[0]}, y:{self.player.position[1]}, speed:{self.player.speed}, health:{self.player.health} et monde:{self.map_manager.current_map}\n")
                         self.saver()
                         
                 if self.player.stats['health'] <= 0:
