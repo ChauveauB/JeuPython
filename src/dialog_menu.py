@@ -21,14 +21,19 @@ class DialogMenu:
         self.create_items()
 
         # selection system
+        self.answer = None
         self.selection_index = 0
         self.selection_time = None
         self.can_move = True
+        self.choising = False
 
 
     def input(self):
         #Pour la sélection des réponses du joueur 
         keys = pygame.key.get_pressed()
+        if not keys[pygame.K_SPACE]:
+            self.wait = False
+        
 
         if self.can_move:
             if keys[pygame.K_RIGHT] and self.selection_index < self.attribute_nr - 1:
@@ -39,11 +44,11 @@ class DialogMenu:
                 self.selection_index -= 1
                 self.can_move = False
                 self.selection_time = pygame.time.get_ticks()
-            elif keys[pygame.K_SPACE]:
+            elif keys[pygame.K_SPACE] and not self.wait:
                 self.can_move = False
                 self.selection_time = pygame.time.get_ticks()
-                with open("../saves/logs.txt", "a") as logs:
-                    logs.write(f"{self.selection_index}\n")
+                self.answer = self.selection_index
+                self.choising = False
 
 
     def selection_cooldown(self):
@@ -81,9 +86,6 @@ class DialogMenu:
 
             value = self.player.get_value_by_index(index)
 
-            with open("../saves/logs.txt", "a") as logs:
-                logs.write("Display DialogMenu\n")
-
             item.display(self.screen, self.selection_index, name, value)
 
 
@@ -116,9 +118,6 @@ class Item:
             else:
                 pygame.draw.rect(surface, self.BG_COLOR, self.rect)
             self.display_names(surface, name, value, self.index == selection_num)
-
-            with open("../saves/logs.txt", "a") as logs:
-                logs.write("Display Item\n")
 
             # appel de cette fonction display avant celle au dessus
             # essayer de trouver le code pour inverser l'appel de ces fonctions

@@ -27,8 +27,8 @@ class Game:
         # générer un joueur
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
-        self.dialog_box = DialogBox()
         self.dialog_menu = DialogMenu(self.player)
+        self.dialog_box = DialogBox(self.player, self.dialog_menu)
 
         # inventaire
         self.inventory = Inventory(self.player)
@@ -68,10 +68,9 @@ class Game:
         self.game_paused = not self.game_paused
 
     def saver(self):
-        self.save_fic = open('../saves/save_Pythonjeu.txt', "w")
-        self.save_fic.write("___SAUVEGARDE DU PROJET PYTHON___\n")
-        self.save_fic.write(f"{self.player.position[0]}\n{self.player.position[1]}\n{self.player.speed}\n{self.player.health}\n{self.map_manager.current_map}")
-        self.save_fic.close
+        with open("../saves/save_Python.txt", "w") as self.save_fic:
+            self.save_fic.write("___SAUVEGARDE DU PROJET PYTHON___\n")
+            self.save_fic.write(f"{self.player.position[0]}\n{self.player.position[1]}\n{self.player.speed}\n{self.player.health}\n{self.map_manager.current_map}")
 
     def run(self):
 
@@ -88,9 +87,13 @@ class Game:
                 self.inventory.display()
                 #self.player.update_health_bar(self.screen)
                 # afficher le menu
-            elif self.dialog_box.choising:
-                self.dialog_box.dialog_menu.display()
+            
+            elif self.dialog_menu.choising:
+                self.dialog_menu.display()
+                if self.dialog_menu.choising == False:
+                    self.map_manager.check_npc_collisions(self.dialog_box)
                 self.handle_input()
+            
             else:
                 self.player.save_location()
                 self.handle_input()

@@ -4,14 +4,14 @@ from dialog_menu import DialogMenu
 
 class DialogBox:
 
-    def __init__(self):
+    def __init__(self, player: Player, dialog_menu: DialogMenu):
         self.box = pygame.image.load('../dialog/dialog_box.png')
         self.box = pygame.transform.scale(self.box, (700, 100))
 
         self.screen = pygame.display.set_mode((1000, 700))
 
-        self.player = Player()
-        self.dialog_menu = DialogMenu(self.player)
+        self.player = player
+        self.dialog_menu = dialog_menu
 
         self.texts : list[str]
         self.texts = []
@@ -21,14 +21,13 @@ class DialogBox:
         self.reading = False
         self.game_paused = False
         #Si le joueur est en train de choisir une réponse dans les dialogues
-        self.choising = False
 
-    def execute(self, dialog=[]):
+    def execute(self, sprite):
         if self.reading:        # le dialogue est ouvert
-            self.next_text()
+            self.next_text(sprite)
         else:
             self.reading = True
-            self.texts = dialog
+            self.texts = sprite.dialog[:]
             self.text_index = 0
 
 
@@ -47,15 +46,28 @@ class DialogBox:
             text = self.font.render(self.texts[self.text_index][0:self.letter_index], False, (0, 0, 0))
             screen.blit(text, (width + 55, height + 10))
 
-    def next_text(self):
+    def next_text(self, sprite):
             self.letter_index = 0
-            if not self.choising: self.text_index += 1
+            if not self.dialog_menu.choising: 
+                self.text_index += 1
 
-            if self.text_index >= len(self.texts):
-               # fermer dialogue
-                self.reading = False
+                if self.text_index >= len(self.texts):
+                    self.reading = False
 
-            # le programme vérifie si le menu de dialogue doit être affiché
-            elif self.texts[self.text_index] == "/menu_dialogue/" :
-                # appel du menu dialogue qui disparaît tout de suite
-                self.choising = True
+                #Le programme cherche la réponse du joueur et à actionner ses concéquences
+                elif sprite.dialog[self.text_index] == "*choix":
+                    self.choice = ""
+                    self.player.react_player(self.dialog_menu.answer, sprite, self)
+                    self.texts[self.texts.index("/menu_dialogue/") + 1] = self.choice
+                    
+                    with open("../saves/logs.txt", "a") as logs:
+                        logs.write(f"Numero de reponse : {self.dialog_menu.answer}\n")
+                        logs.write(f"Choix : {self.choice}\n")
+                        logs.write(f"Les dialogues : {self.texts}\n")
+                        logs.write(f"Les dialogues du perso : {sprite.dialog}\n")
+
+                # le programme vérifie si le menu de dialogue doit être affiché
+                elif self.texts[self.text_index] == "/menu_dialogue/" :
+                    #Gérer quand le menu est ouvert et doit être fermé ou considéré que la joueur ait bien chosi une option
+                    self.dialog_menu.choising = True
+                    self.dialog_menu.wait = True

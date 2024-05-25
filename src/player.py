@@ -23,7 +23,6 @@ class Entity(AnimateSprite):
         self.speed = self.stats["speed"]
         self.can_move = True
 
-        self.player_answers = {"oui" : 0, "non" : 1}
 
     # affichage d'une barre de vie
     def update_health_bar(self, surface):
@@ -72,6 +71,8 @@ class Player(Entity):
         save = Save()
         self.speed_base = 3
         self.health_base = 95
+        self.player_answers = {"oui" : 0, "non" : 1}
+
         if save.Saved:
             x = save.x_perso
             y = save.y_perso
@@ -84,6 +85,14 @@ class Player(Entity):
             health = self.health_base
         super().__init__("player", x, y, speed, health)
 
+    def react_player(self, answer, npc, dialoguer):
+        if npc.name == "paul":
+            if answer == 0:
+                dialoguer.choice = "Ok, je vais te soigner !"
+                self.health = self.health_base
+            elif answer == 1:
+                dialoguer.choice = f"Ok mais ta vie est de {self.health} !"
+            
 
 class NPC(Entity):
 

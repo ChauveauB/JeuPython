@@ -44,7 +44,7 @@ class MapManager:
             Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house"),
             Portal(from_world="world", origin_point="enter_dungeon", target_world="dungeon", teleport_point="spawn_dungeon")
         ], npcs=[
-            NPC("paul", 4,1, dialog=["Bonne aventure", "Tu voudrais te soigner ?", "/menu_dialogue/", "a bientot"]),
+            NPC("paul", 4,1, dialog=["Bonne aventure", "Tu voudrais te soigner ?", "/menu_dialogue/", "*choix", "a bientot"]),
             NPC("robin",2,1, dialog=["Salut, ça va"]),
         ]),
 
@@ -77,7 +77,7 @@ class MapManager:
     def check_npc_collisions(self, dialog_box):
         for sprite in self.get_group().sprites():
             if sprite.feet.colliderect(self.player.rect) and type(sprite) is NPC:
-                dialog_box.execute(sprite.dialog)
+                dialog_box.execute(sprite)
 
     def check_collisions(self):
 
