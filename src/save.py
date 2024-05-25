@@ -3,7 +3,7 @@ class Save():
     
     def __init__(self):
         try:
-            self.fic = open('../saves/save_Pythonjeu.txt', "r")
+            self.fic = open('../saves/save_Python.txt', "r")
             self.fic.readline() #La ligne indiquant "___SAUVEGARDE DU PROJET PYTHON___"
             self.x_perso, self.y_perso, self.speed_perso, self.health_perso, self.world_perso = tuple(self.fic.readlines())
             self.x_perso = float(self.x_perso.replace("\n", ""))

@@ -37,3 +37,17 @@ Numero de reponse : 1
 Choix : Ok mais ta vie est de 95 !
 Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok mais ta vie est de 95 !', 'a bientot']
 Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
+Lancement du programme du jour: 2024-05-25 a 19:12:11
+Fichier de sauvegarde inexistant ou invalide
+Fichier de sauvegarde inexistant ou invalide
+Fichier de sauvegarde inexistant ou invalide
+Numero de reponse : 0
+Choix : Ok, je vais te soigner !
+Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
+Tentative de sauvegarde des infos en remplacant par x:680.75, y:708.75, speed:3, health:55 et monde:world
+Lancement du programme du jour: 2024-05-25 a 19:15:45
+Sauvegarde recuperee avec succes ! Pour x : 680.75; y : 708.75; speed : 3; health : 55 et enfin dans le monde : world
+Sauvegarde recuperee avec succes ! Pour x : 680.75; y : 708.75; speed : 3; health : 55 et enfin dans le monde : world
+Sauvegarde recuperee avec succes ! Pour x : 680.75; y : 708.75; speed : 3; health : 55 et enfin dans le monde : world
+Tentative de sauvegarde des infos en remplacant par x:361.6669999999999, y:182.0, speed:2, health:45 et monde:dungeon
