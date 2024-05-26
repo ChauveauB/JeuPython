@@ -88,10 +88,18 @@ class Player(Entity):
     def react_player(self, answer, npc, dialoguer):
         if npc.name == "paul":
             if answer == 0:
-                dialoguer.choice = "Ok, je vais te soigner !"
-                self.health = self.health_base
+                if self.stats['health'] < 200:
+                    if self.stats['health'] + 50 >= 200:
+                        dialoguer.choice = "Ok, je vais te soigner !"
+                        self.stats['health'] = 200
+                    else:
+                        dialoguer.choice = "Ok, je vais te soigner !"
+                        self.stats['health'] += 50
+                else:
+                    dialoguer.choice = "Je ne peux pas te soigner, ta vie est pleine"
             elif answer == 1:
-                dialoguer.choice = f"Ok mais ta vie est de {self.health} !"
+                dialoguer.choice = f"Ok mais ta vie est de {self.stats['health']} !"
+
             
 
 class NPC(Entity):

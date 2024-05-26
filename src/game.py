@@ -83,9 +83,9 @@ class Game:
         while self.running:
 
             pygame.display.flip()
-            if self.game_paused:
+            if self.game_paused and not self.dialog_menu.choising:
                 self.inventory.display()
-                #self.player.update_health_bar(self.screen)
+                self.player.update_health_bar(self.screen)
                 # afficher le menu
             
             elif self.dialog_menu.choising:
