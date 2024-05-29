@@ -12,8 +12,6 @@ from save import Save
 class Game:
 
     def __init__(self):
-        self.save = Save()
-
         #Début de la défénition des caractéristiques
         self.display_surface = pygame.display.get_surface()
         self.running = True
@@ -68,9 +66,12 @@ class Game:
         self.game_paused = not self.game_paused
 
     def saver(self):
-        with open("../saves/save_Python.txt", "w") as self.save_fic:
-            self.save_fic.write("___SAUVEGARDE DU PROJET PYTHON___\n")
-            self.save_fic.write(f"{self.player.position[0]}\n{self.player.position[1]}\n{self.player.speed}\n{self.player.health}\n{self.map_manager.current_map}")
+        with open("../saves/save_Python.txt", "w") as save_fic:
+            save_fic.write("___SAUVEGARDE DU PROJET PYTHON___\n")
+            Save.dict_values["x_perso"], Save.dict_values["y_perso"], Save.dict_values["speed_perso"], Save.dict_values["health_perso"], Save.dict_values["world_perso"] = self.player.position[0], self.player.position[1], self.player.speed, self.player.health, self.map_manager.current_map
+            for key in Save.dict_values.keys():
+                save_fic.write(f"{key}:{Save.dict_values[key]}\n")
+
 
     def run(self):
 
@@ -130,8 +131,7 @@ class Game:
 
                     if event.key == pygame.K_x:
                         #Logs et sauvegarde
-                        with open("../saves/logs.txt", "a") as logs:
-                            logs.write(f"Tentative de sauvegarde des infos en remplacant par x:{self.player.position[0]}, y:{self.player.position[1]}, speed:{self.player.speed}, health:{self.player.health} et monde:{self.map_manager.current_map}\n")
+                        Save.write_logs("Tentative de sauvegarde des infos")
                         self.saver()
                         
                 if self.player.stats['health'] <= 0:

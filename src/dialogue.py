@@ -1,6 +1,7 @@
 import pygame
 from player import Player
 from dialog_menu import DialogMenu
+from save import Save
 
 class DialogBox:
 
@@ -60,11 +61,10 @@ class DialogBox:
                     self.player.react_player(self.dialog_menu.answer, sprite, self)
                     self.texts[self.texts.index("/menu_dialogue/") + 1] = self.choice
                     
-                    with open("../saves/logs.txt", "a") as logs:
-                        logs.write(f"Numero de reponse : {self.dialog_menu.answer}\n")
-                        logs.write(f"Choix : {self.choice}\n")
-                        logs.write(f"Les dialogues : {self.texts}\n")
-                        logs.write(f"Les dialogues du perso : {sprite.dialog}\n")
+                    Save.write_logs(f"Numero de reponse : {self.dialog_menu.answer}")
+                    Save.write_logs(f"Choix : {self.choice}")
+                    Save.write_logs(f"Les dialogues : {self.texts}")
+                    Save.write_logs(f"Les dialogues du perso : {sprite.dialog}")
 
                 # le programme vérifie si le menu de dialogue doit être affiché
                 elif self.texts[self.text_index] == "/menu_dialogue/" :

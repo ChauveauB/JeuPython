@@ -1,6 +1,6 @@
 ___SAUVEGARDE DU PROJET PYTHON___
-244.667
-497.58299999999997
-3
-35
-world
+x_perso:223.29
+y_perso:277.222
+speed_perso:2
+health_perso:95
+world_perso:house2

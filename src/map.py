@@ -25,15 +25,14 @@ class Map:
 class MapManager:
 
     def __init__(self, screen, player):
-        self.save = Save()
 
         #initailisation de MapManager, avec création d'un dictionnaire vide pour les maps
         self.maps=dict()   # "house" -> Map("house", walls, group)
         self.screen=screen
         self.player=player
 
-        if self.save.Saved:
-            self.current_map = self.save.world_perso
+        if Save.Saved:
+            self.current_map = Save.dict_values["world_perso"]
         else:
             self.current_map = "world"
 
@@ -64,9 +63,9 @@ class MapManager:
         ] ),
 
         #déplacement du joueur à son point de départ (ou aux coordonnées enregistrées par la save)
-        if self.save.Saved:
-            self.player.position[0]=self.save.x_perso
-            self.player.position[1]=self.save.y_perso
+        if Save.Saved:
+            self.player.position[0]=Save.dict_values["x_perso"]
+            self.player.position[1]=Save.dict_values["y_perso"]
         else:
             self.teleport_player("player_spawn")
 

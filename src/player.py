@@ -68,16 +68,15 @@ class Entity(AnimateSprite):
 
 class Player(Entity):
     def __init__(self):
-        save = Save()
         self.speed_base = 3
         self.health_base = 95
         self.player_answers = {"oui" : 0, "non" : 1}
 
-        if save.Saved:
-            x = save.x_perso
-            y = save.y_perso
-            speed = save.speed_perso
-            health = save.health_perso
+        if Save.Saved:
+            x = Save.dict_values["x_perso"]
+            y = Save.dict_values["y_perso"]
+            speed = Save.dict_values["speed_perso"]
+            health = Save.dict_values["health_perso"]
         else:
             x = 0
             y = 0
