@@ -8,6 +8,7 @@ from death_menu import Death_menu
 from dialogue import DialogBox
 from dialog_menu import DialogMenu
 from save import Save
+from syst_combat import Combat
 
 class Game:
 
@@ -43,7 +44,7 @@ class Game:
         if pressed[pygame.K_ESCAPE]:
             self.running = False
 
-        if self.dialog_box.reading == True:
+        if self.dialog_box.reading or Combat.fighting:
             pass
         else:
             # déplacer le perso avec les flèches
@@ -84,23 +85,28 @@ class Game:
         while self.running:
 
             pygame.display.flip()
-            if self.game_paused and not self.dialog_menu.choising:
-                self.inventory.display()
-                self.player.update_health_bar(self.screen)
-                # afficher le menu
-            
-            elif self.dialog_menu.choising:
-                self.dialog_menu.display()
-                if self.dialog_menu.choising == False:
-                    self.map_manager.check_npc_collisions(self.dialog_box)
+            if Combat.fighting:
+                Combat.display(self.screen)
                 self.handle_input()
-            
+
             else:
-                self.player.save_location()
-                self.handle_input()
-                self.update()
-                self.map_manager.draw()
-                self.dialog_box.render(self.screen)
+                if self.game_paused and not self.dialog_menu.choising:
+                    self.inventory.display()
+                    self.player.update_health_bar(self.screen)
+                    # afficher le menu
+                
+                elif self.dialog_menu.choising:
+                    self.dialog_menu.display()
+                    if self.dialog_menu.choising == False:
+                        self.map_manager.check_npc_collisions(self.dialog_box)
+                    self.handle_input()
+                
+                else:
+                    self.player.save_location()
+                    self.handle_input()
+                    self.update()
+                    self.map_manager.draw()
+                    self.dialog_box.render(self.screen)
 
 
             for event in pygame.event.get():
@@ -110,29 +116,30 @@ class Game:
                 # création d'un menu/inventaire
 
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_m:
-                        self.toggle_menu()
+                    if not Combat.fighting:
+                        if event.key == pygame.K_m:
+                            self.toggle_menu()
 
-                    if event.key == pygame.K_SPACE:
-                        self.map_manager.check_npc_collisions(self.dialog_box)
+                        if event.key == pygame.K_SPACE:
+                            self.map_manager.check_npc_collisions(self.dialog_box)
 
+                        #sauvegarde
+                        if event.key == pygame.K_x and not self.game_end:
+                            Save.write_logs("Tentative de sauvegarde des infos")
+                            self.saver()
+                    
                     #Ajuster la taille en jeu (ptêtre trouver de meilleures touches)
                     if event.key == pygame.K_z:
                         self.screen = pygame.display.set_mode((pygame.display.Info().current_w, pygame.display.Info().current_h + 35))
 
-                    if event.key == pygame.K_s:
+                    if event.key == pygame.K_s and pygame.display.Info().current_h >= 535:
                         self.screen = pygame.display.set_mode((pygame.display.Info().current_w, pygame.display.Info().current_h - 35))
 
                     if event.key == pygame.K_q:
                         self.screen = pygame.display.set_mode((pygame.display.Info().current_w + 50, pygame.display.Info().current_h))
 
-                    if event.key == pygame.K_d:                   
+                    if event.key == pygame.K_d and pygame.display.Info().current_w >= 850:                   
                         self.screen = pygame.display.set_mode((pygame.display.Info().current_w - 50, pygame.display.Info().current_h))
-
-                    if event.key == pygame.K_x:
-                        #Logs et sauvegarde
-                        Save.write_logs("Tentative de sauvegarde des infos")
-                        self.saver()
                         
                 if self.player.stats['health'] <= 0:
                     self.game_end = True

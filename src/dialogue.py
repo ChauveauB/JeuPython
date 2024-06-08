@@ -2,6 +2,7 @@ import pygame
 from player import Player
 from dialog_menu import DialogMenu
 from save import Save
+from syst_combat import Combat
 
 class DialogBox:
 
@@ -61,7 +62,7 @@ class DialogBox:
                     self.player.react_player(self.dialog_menu.answer, sprite, self)
                     self.texts[self.texts.index("/menu_dialogue/") + 1] = self.choice
                     
-                    Save.write_logs(f"Numero de reponse : {self.dialog_menu.answer}")
+                    Save.write_logs(f"Numero de réponse : {self.dialog_menu.answer}")
                     Save.write_logs(f"Choix : {self.choice}")
                     Save.write_logs(f"Les dialogues : {self.texts}")
                     Save.write_logs(f"Les dialogues du perso : {sprite.dialog}")
@@ -71,3 +72,8 @@ class DialogBox:
                     #Gérer quand le menu est ouvert et doit être fermé ou considéré que la joueur ait bien chosi une option
                     self.dialog_menu.choising = True
                     self.dialog_menu.wait = True
+
+                elif self.texts[self.text_index] == "/combat/" :
+                    Save.write_logs(f"Les dialogues du perso qui entre en combat sont : {sprite.dialog}")
+                    #Rajouter une variable aux entités pour que si on rentre en combat avec elles, elles nous renvoie une liste d'adversaire 
+                    Combat.start(self.player, [sprite])

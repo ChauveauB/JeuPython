@@ -1,1 +1,45 @@
 >>>>> LOGS DU JEU PYTHON <<<<<
+Lancement du programme du jour 2024-06-08 a 12:26:37
+Sauvegarde recuperee avec succes ! Stockage de : {'x_perso': 223.29, 'y_perso': 277.222, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'house2'}
+Tentative de sauvegarde des infos
+Numero de reponse : 1
+Choix : Ok mais ta vie est de 85.0 !
+Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok mais ta vie est de 85.0 !', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de reponse : 0
+Choix : Ok, je vais te soigner !
+Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de reponse : 0
+Choix : Ok, je vais te soigner !
+Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de reponse : 0
+Choix : Ok, je vais te soigner !
+Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
+Lancement du programme du jour 2024-06-08 a 12:32:11
+Sauvegarde recuperee avec succes ! Stockage de : {'x_perso': 185.28999999999996, 'y_perso': 311.222, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'house2'}
+Tentative de sauvegarde des infos
+Les dialogues du perso qui entre en combat : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu p� me battre ?!']
+Lancement du programme du jour 2024-06-08 a 12:33:12
+Sauvegarde recuperee avec succes ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Les dialogues du perso qui entre en combat : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu p� me battre ?!']
+Lancement du programme du jour 2024-06-08 a 12:53:55
+Sauvegarde recuperee avec succes ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Les dialogues du perso qui entre en combat : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
+Lancement du programme du jour 2024-06-08 à 13:22:26
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
+Lancement du programme du jour 2024-06-08 à 13:26:43
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
+Lancement du programme du jour 2024-06-08 à 13:29:16
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
+Lancement du programme du jour 2024-06-08 à 13:31:46
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
+Lancement du programme du jour 2024-06-08 à 13:35:21
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']

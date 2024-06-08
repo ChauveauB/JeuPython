@@ -1,12 +1,12 @@
 #Récupération de la potentielle sauvegarde
-class Save():
+class Save:
     dict_values = {"x_perso":float, "y_perso":float, "speed_perso":float, "health_perso":float, "world_perso":str}
     long_dict = len(dict_values.keys())
     Saved = None
 
     @staticmethod
     def write_logs(text : str):
-        with open('../saves/logs.txt', "a") as logs:
+        with open('../saves/logs.txt', "a", -1, "utf-8") as logs:
             logs.write(text + "\n")
     
     @classmethod
@@ -30,14 +30,14 @@ class Save():
             Save.write_logs("Fichier de sauvegarde falacieux")
         except ValueError or IndexError:
             Save.Saved = False
-            Save.write_logs("Donnees du fichier de sauvegarde males ou non sauvegardees")
+            Save.write_logs("Données du fichier de sauvegarde males ou non sauvegardées")
         except SyntaxError:
             #éviter que le try except attrape une erreur causé par une erreut dirrectement au niveau du code et qu'elle puisse être réglé au plus vite
             Save.write_logs("Erreur au niveau du programme -> arrêt du code")
             raise SyntaxError
         except:
             Save.Saved = False
-            Save.write_logs("Sauvegarde non effectuee dû à une erreur non identifiee")
+            Save.write_logs("Sauvegarde non effectuée dû à une erreur non identifiée")
         else:
             Save.Saved = True
-            Save.write_logs(f"Sauvegarde recuperee avec succes ! Stockage de : {Save.dict_values}")
+            Save.write_logs(f"Sauvegarde récuperée avec succès ! Stockage de : {Save.dict_values}")

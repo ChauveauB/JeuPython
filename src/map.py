@@ -55,7 +55,7 @@ class MapManager:
         self.register_map("dungeon", portals=[
             Portal(from_world="dungeon", origin_point="exit_dungeon", target_world="world", teleport_point="dungeon_exit_spawn")
         ], npcs=[
-            NPC("boss", 2, 1, dialog=["Tremble devant moi"])
+            NPC("boss", 2, 1, dialog=["Tremble devant ma puissance !", "/combat/", "Comment as-tu pû me battre ?!"])
         ]),
 
         self.register_map("house2", portals=[

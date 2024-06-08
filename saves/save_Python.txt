@@ -1,6 +1,6 @@
 ___SAUVEGARDE DU PROJET PYTHON___
-x_perso:223.29
-y_perso:277.222
+x_perso:643.6669999999999
+y_perso:458.0
 speed_perso:2
-health_perso:95
-world_perso:house2
+health_perso:95.0
+world_perso:dungeon
