@@ -1,6 +1,9 @@
 import time
 
 import pygame
+import pyscroll.data
+import pytmx.util_pygame
+
 from player import Player
 from map import MapManager
 from inventory import Inventory
@@ -59,7 +62,6 @@ class Game:
 
     def update(self):
         self.map_manager.update()
-
     def death_menu(self):
         self.game_end = not self.game_end
 
