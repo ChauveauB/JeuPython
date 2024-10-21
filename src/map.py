@@ -27,55 +27,55 @@ class MapManager:
         self.screen = screen
         self.player = player
 
-        if Save.Saved:
+        if Save.Saved:      # Si fichier de sauvergarde --> charger la carte enregistrée
             self.current_map = Save.dict_values["world_perso"]
-        else:
+        else:               # Sinon charger la carte de base
             self.current_map = "Couloir"
 
         self.register_map('Couloir', portals=[
             Portal(from_world='Couloir', origin_point='enter_salle10', target_world='Salle10', teleport_point='spawn_salle10'),
             Portal(from_world='Couloir', origin_point='enter_salle11', target_world='Salle11', teleport_point='spawn_salle11'),
             Portal(from_world='Couloir', origin_point='enter_salle12', target_world='Salle12', teleport_point='spawn_salle12')
-        ])
+        ])              # Définitions des différentes transitions entre les cartes
         self.register_map('Salle10', portals=[
-            Portal(from_world='Salle10', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle10')
+            Portal(from_world='Salle10', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle10')      # Pour sortir de la carte Salle10
         ], npcs=[
-            NPC("paul", 4,1, dialog=["Bonne aventure", "Tu voudrais te soigner ?", "/menu_dialogue/", "*choix", "a bientot"]),
+            NPC("paul", 4,1, dialog=["Bonne aventure", "Tu voudrais te soigner ?", "/menu_dialogue/", "*choix", "a bientot"]),      # PNJ de cette carte
         ]),
         self.register_map('Salle11', portals=[
-            Portal(from_world='Salle11', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle11')
+            Portal(from_world='Salle11', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle11')      # Pour sortir de la carte Salle11
         ], npcs=[
-            NPC("robin", 2, 1, dialog=["Salut, ça va"]),
+            NPC("robin", 2, 1, dialog=["Salut, ça va"]),      # PNJ de cette carte
         ]),
         self.register_map('Salle12', portals=[
-            Portal(from_world='Salle12', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle12')
+            Portal(from_world='Salle12', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle12')      # Pour sortir de la carte Salle12
         ])
 
-        # déplacement du joueur à son point de départ (ou aux coordonnées enregistrées par la save)
+        # déplacement du joueur à son point de départ (ou aux coordonnées enregistrées par la save), si il y a un fichier de sauvegarde
         if Save.Saved:
             self.player.position[0] = Save.dict_values["x_perso"]
             self.player.position[1] = Save.dict_values["y_perso"]
-        else:
+        else:       # Sinon envoyer le joueur à son point de spawn de base
             self.teleport_player("player_spawn")
 
         # placement PNJ
         self.teleport_npcs()
 
-        # Utilisé pour les dialogues : checker si on peut obtim en définissant une méthodes pour avoir les PNJ et pas passer par les sprites
+        # Utiliser pour les dialogues : checker si on peut obtimiser en définissant une méthodes pour avoir les PNJ et pas passer par les sprites
 
-    def check_npc_collisions(self, dialog_box):
+    def check_npc_collisions(self, dialog_box):         # Vérifier si on est en contact avec un sprite
         for sprite in self.get_group().sprites():
-            if sprite.feet.colliderect(self.player.rect) and type(sprite) is NPC:
+            if sprite.feet.colliderect(self.player.rect) and type(sprite) is NPC:       # Si oui et que c'est un PNJ --> lancer la boîte de dialogue
                 dialog_box.execute(sprite)
 
     def check_collisions(self):
         # portails
         for portal in self.get_map().portals:
-            if portal.from_world == self.current_map:
+            if portal.from_world == self.current_map:       # Définition du rectangle de collision du portail
                 point = self.get_object(portal.origin_point)
                 rect = pygame.Rect(point.x, point.y, point.width, point.height)
 
-                if self.player.feet.colliderect(rect):
+                if self.player.feet.colliderect(rect):      # Si on est en collision avec ce dernier, téléporter le joueur au point de spawn de la carte ciblée
                     copy_portal = portal
                     self.current_map = portal.target_world
                     self.teleport_player(copy_portal.teleport_point)
@@ -90,17 +90,17 @@ class MapManager:
         # verifier les collisions
         for sprite in self.get_group().sprites():
             if type(sprite) is NPC:
-                if sprite.feet.colliderect(self.player.rect):
+                if sprite.feet.colliderect(self.player.rect):       # Si on rentre en collision avec un objet, le joueur ne peut plus avancer
                     sprite.speed = 0
                 else:
                     sprite.speed = sprite.stats['speed']
 
             if sprite.feet.collidelist(self.get_walls()) > -1:
                 sprite.move_back()
-    def teleport_player(self, name):
+    def teleport_player(self, name):        # Cherche les coordonnées x et y du point de spawn du joueur
         point = self.get_object(name)
-        self.player.position[0] = point.x -15
-        self.player.position[1] = point.y -20
+        self.player.position[0] = point.x - 15
+        self.player.position[1] = point.y - 20
         self.player.save_location()
     def register_map(self, name, portals=[], npcs=[]):
 
@@ -108,14 +108,14 @@ class MapManager:
         map_data = pyscroll.data.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
         map_layer.zoom = 2
-
+        # Charger la carte et l'afficher sur l'écran avec un zoom spécifique
         walls = []
 
         for obj in tmx_data.objects:
-            if obj.type == 'collision':
+            if obj.type == 'collision':         # Si le type de l'objet est collision, alors ajouter ce dernier à la liste de "murs"
                 walls.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
 
-        group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=1)
+        group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=1)        # Définition du calque d'origine sur lequel est placer le joueur
         group.add(self.player)
 
         # récupérer tous les NPC pour les ajouter au groupe
@@ -126,16 +126,16 @@ class MapManager:
         # créer un objet map
         self.maps[name] = Map(name, walls, group, tmx_data, portals, npcs)
 
-    def get_map(self):
+    def get_map(self):          # On "prend"  la carte actuelle
         return self.maps[self.current_map]
 
-    def get_group(self):
+    def get_group(self):        # On "prend" le groupe de quelque chose de spécifique
         return self.get_map().group
 
-    def get_walls(self):
+    def get_walls(self):        # On "prend" les murs (objets avec des collisions)
         return self.get_map().walls
 
-    def get_object(self, name):
+    def get_object(self, name):        # On "prend" les objets dont on a besoin
         return self.get_map().tmx_data.get_object_by_name(name)
 
     # dans toutes les maps, aller chercher les NPC dans map_data et les mettre en position

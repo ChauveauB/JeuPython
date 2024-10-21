@@ -144,3 +144,5 @@ Lancement du programme du jour 2024-06-28 à 12:40:06
 Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
 Lancement du programme du jour 2024-06-28 à 12:41:14
 Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Lancement du programme du jour 2024-07-23 à 18:01:18
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}

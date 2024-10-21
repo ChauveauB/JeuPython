@@ -34,7 +34,6 @@
     "map.tileHeight": 10,
     "map.tileWidth": 10,
     "openFiles": [
-        "map/map_test.tsx"
     ],
     "project": "",
     "recentFiles": [

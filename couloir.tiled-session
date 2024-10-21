@@ -3,67 +3,155 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "C:/Users/msauz/PycharmProjects/pygamon/map/world.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
     "fileStates": {
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/../tilesets/Mur_sol.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/../tilesets/Tileset_1_meubles.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/msauz/PycharmProjects/pygamon/map/dungeon.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/msauz/PycharmProjects/pygamon/map/house 1.tmx": {
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 108.625,
+                "y": 272.125
+            }
+        },
+        "C:/Users/msauz/PycharmProjects/pygamon/map/house 2.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -74.24242424242425,
+                "y": -96.96969696969677
+            }
+        },
+        "C:/Users/msauz/PycharmProjects/pygamon/map/house 3.tmx": {
+            "scale": 2.1374999999999997,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 200.00000000000003,
+                "y": 200.23391812865503
+            }
+        },
+        "C:/Users/msauz/PycharmProjects/pygamon/map/houseinterior1.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/msauz/PycharmProjects/pygamon/map/houset1.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/msauz/PycharmProjects/pygamon/map/natureset.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/msauz/PycharmProjects/pygamon/map/world.tmx": {
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 4,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 162.125,
+                "y": 142.75
+            }
+        },
         "map/Couloir.tmx": {
             "expandedObjectLayers": [
-                4
+                3,
+                2
             ],
-            "scale": 3,
+            "scale": 5.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 335,
-                "y": -10
+                "x": 300.4545454545455,
+                "y": 75.45454545454545
+            }
+        },
+        "map/Map1.tmx": {
+            "scale": 0.7314999999999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -198.90635680109358,
+                "y": 0
             }
         },
         "map/Salle10.tmx": {
             "expandedObjectLayers": [
+                3,
                 2
             ],
-            "scale": 3,
-            "selectedLayer": 1,
+            "scale": 5.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 137.99999999999997,
-                "y": 139.99999999999997
+                "x": 98.63636363636364,
+                "y": 127.81818181818183
             }
         },
         "map/Salle11.tmx": {
             "expandedObjectLayers": [
-                2
+                3
             ],
-            "scale": 8,
-            "selectedLayer": 1,
+            "scale": 3,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 272.375,
-                "y": 217.875
+                "x": 99.83333333333334,
+                "y": 119.66666666666669
             }
         },
         "map/Salle12.tmx": {
-            "scale": 5.5,
-            "selectedLayer": 1,
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 2,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 220.8181818181818,
-                "y": 269.9090909090909
+                "x": 88.25,
+                "y": 137.5
             }
         },
         "map/couloir.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "map/world.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 401.75,
+                "y": 477
+            }
         }
     },
     "last.imagePath": "C:/Users/msauz/PycharmProjects/JeuPython/map",
-    "map.fixedSize": false,
+    "map.fixedSize": true,
+    "map.height": 500,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 1,
     "map.tileWidth": 1,
+    "map.width": 500,
     "openFiles": [
+        "C:/Users/msauz/PycharmProjects/pygamon/map/world.tmx",
+        "C:/Users/msauz/PycharmProjects/pygamon/map/house 1.tmx"
     ],
     "project": "couloir.tiled-project",
     "recentFiles": [
-        "map/couloir.tsx"
+        "map/Map1.tmx",
+        "map/Salle10.tmx",
+        "C:/Users/msauz/PycharmProjects/pygamon/map/house 2.tmx",
+        "C:/Users/msauz/PycharmProjects/pygamon/map/house 3.tmx",
+        "map/Couloir.tmx",
+        "C:/Users/msauz/PycharmProjects/pygamon/map/world.tmx",
+        "map/couloir.tsx",
+        "C:/Users/msauz/PycharmProjects/pygamon/map/house 1.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

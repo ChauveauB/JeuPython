@@ -40,7 +40,7 @@ class Game:
 
 
 
-    def handle_input(self):
+    def handle_input(self):                         # déplacement du joueur avec les flèches du clavier
         pressed = pygame.key.get_pressed()
 
         # quitter le jeu avec échap
@@ -92,10 +92,10 @@ class Game:
                 self.handle_input()
 
             else:
-                if self.game_paused and not self.dialog_menu.choising:
+                if self.game_paused and not self.dialog_menu.choising:      # afficher l'inventaire
                     self.inventory.display()
                     self.player.update_health_bar(self.screen)
-                    # afficher le menu
+
                 
                 elif self.dialog_menu.choising:
                     self.dialog_menu.display()
@@ -112,7 +112,7 @@ class Game:
 
 
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
+                if event.type == pygame.QUIT:           # quitter avec la croix du haut de la fenêtre
                     self.running = False
 
                 # création d'un menu/inventaire
@@ -122,7 +122,7 @@ class Game:
                         if event.key == pygame.K_m:
                             self.toggle_menu()
 
-                        if event.key == pygame.K_SPACE:
+                        if event.key == pygame.K_SPACE:     # dialogue avec un PNJ
                             self.map_manager.check_npc_collisions(self.dialog_box)
 
                         #sauvegarde
@@ -143,7 +143,7 @@ class Game:
                     if event.key == pygame.K_d and pygame.display.Info().current_w >= 850:                   
                         self.screen = pygame.display.set_mode((pygame.display.Info().current_w - 50, pygame.display.Info().current_h))
                         
-                if self.player.stats['health'] <= 0:
+                if self.player.stats['health'] <= 0:        # fermeture du jeu quand le joueur n'a plus de vie
                     self.game_end = True
 
             if self.game_end:
