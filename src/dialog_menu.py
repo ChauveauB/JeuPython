@@ -102,7 +102,7 @@ class Item:
         self.BG_COLOR_SELECTED = '#EEEEEE'
 
     def display_names(self, surface, name, value, selected):
-        color = self.TEXT_COLOR_SELECTED if selected else self.TEXT_COLOR
+        color = self.TEXT_COLOR_SELECTED if selected else self.TEXT_COLOR       # Change la couleur quand une case est sélectionnée
 
         # title text
         title_surf = self.font.render(name, False, color)

@@ -39,7 +39,7 @@ class DialogBox:
             self.letter_index += 1
 
             if self.letter_index >= len(self.texts):
-                self.letter_index = self.letter_index
+                self.letter_index = self.letter_index       # Les lettres apparaissent les unes après les autres
 
             height = self.screen.get_size()[1] * 0.65
             width = self.screen.get_size()[0] // 6
@@ -48,7 +48,7 @@ class DialogBox:
             text = self.font.render(self.texts[self.text_index][0:self.letter_index], False, (0, 0, 0))
             screen.blit(text, (width + 55, height + 10))
 
-    def next_text(self, sprite):
+    def next_text(self, sprite):        # On passe au prochain texte du PNJ
             self.letter_index = 0
             if not self.dialog_menu.choising: 
                 self.text_index += 1

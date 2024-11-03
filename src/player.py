@@ -33,7 +33,7 @@ class Entity(AnimateSprite):
     def get_value_by_index(self, index):
         return list(self.stats.values())[index]
 
-    def save_location(self):
+    def save_location(self):        # Pour y revenir quand on entre en collision avec un objet/mur
         self.old_position = self.position.copy()
 
     def move_right(self):
@@ -60,7 +60,7 @@ class Entity(AnimateSprite):
         self.rect.topleft = self.position
         self.feet.midbottom = self.rect.midbottom
 
-    def move_back(self):
+    def move_back(self):        # Recule le joueur quand il est en collision
         self.position = self.old_position
         self.rect.topleft = self.position
         self.feet.midbottom = self.rect.midbottom
@@ -72,7 +72,7 @@ class Player(Entity):
         self.health_base = 95
         self.player_answers = {"oui" : 0, "non" : 1}
 
-        if Save.Saved:
+        if Save.Saved:      # Location du joueur en début de partie si on a une sauvegarde
             x = Save.dict_values["x_perso"]
             y = Save.dict_values["y_perso"]
             speed = Save.dict_values["speed_perso"]
@@ -116,7 +116,7 @@ class NPC(Entity):
 
     def move(self):
         current_point = self.current_point
-        target_point = self.current_point + 1
+        target_point = self.current_point + 1       # Passe au point suivant
 
         if target_point >= self.nb_points:
             target_point = 0
@@ -139,13 +139,13 @@ class NPC(Entity):
             self.current_point = target_point
 
     # envoyer au point prévu de départ
-    def teleport_spawn(self):
+    def teleport_spawn(self):       # Téléporte le PNJ à son point de spawn
         location = self.points[self.current_point]
         self.position[0] = location.x
         self.position[1] = location.y
         self.save_location()
 
-    def load_points(self, tmx_data):
+    def load_points(self, tmx_data):        # Charge les points où passe les PNJ
         for num in range(1, self.nb_points + 1):
             point = tmx_data.get_object_by_name(f"{self.name}_path{num}")
             rect = pygame.Rect(point.x, point.y, point.width, point.height)

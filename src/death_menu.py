@@ -13,3 +13,5 @@ class Death_menu:
         self.screen.fill('black')
         death = self.font.render('Game Over', 1, 'red')
         self.screen.blit(death, (110, 300))
+
+        # Ecran Game Over

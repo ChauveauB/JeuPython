@@ -26,7 +26,7 @@ class Inventory:
         self.can_move = True
 
 
-    def input(self):
+    def input(self):        # Se "déplacer" dans l'inventaire
         keys = pygame.key.get_pressed()
 
         if self.can_move:
@@ -45,13 +45,13 @@ class Inventory:
             elif keys[pygame.K_DOWN]:
                 pass
 
-    def selection_cooldown(self):
+    def selection_cooldown(self):       # On ne peut pas bouger tout le temps
         if not self.can_move:
             current_time = pygame.time.get_ticks()
             if current_time - self.selection_time >= 300:
                 self.can_move = True
 
-    def create_items(self):
+    def create_items(self):         # Création de boite où il faudra afficher un des items obtenu
         self.item_list = []
 
         for item, index in enumerate(range(self.attribute_nr)):
@@ -67,7 +67,7 @@ class Inventory:
             item = Item(left, top, self.width, self.height, index, self.font)
             self.item_list.append(item)
 
-    def display_stats(self):
+    def display_stats(self):        # Les statistiques apparaissent dans l'inventaire
         health_value = self.font.render(f'Vie : {self.player.stats["health"]} ', 1, 'white')
         self.screen.blit(health_value, (10, 40))
 

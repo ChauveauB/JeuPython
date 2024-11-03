@@ -30,7 +30,7 @@ class Save:
             Save.write_logs("Fichier de sauvegarde falacieux")
         except ValueError or IndexError:
             Save.Saved = False
-            Save.write_logs("Données du fichier de sauvegarde males ou non sauvegardées")
+            Save.write_logs("Données du fichier de sauvegarde mal ou non sauvegardées")
         except SyntaxError:
             #éviter que le try except attrape une erreur causé par une erreut dirrectement au niveau du code et qu'elle puisse être réglé au plus vite
             Save.write_logs("Erreur au niveau du programme -> arrêt du code")
