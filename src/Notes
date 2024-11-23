@@ -1,0 +1,8 @@
+Essayer de créer un pnj dès qu'on lance le jeu --> lance un dialogue dont les deux choix sont:
+-oui pour reprendre à la dernière sauvegarde
+-non pour réinitialiser les logs (où sont stockées les données de la dernière sauvegarde)
+--> s'inspirer du code du pnj Paul pour l'affichage des choix oui et non
+
+Trouver pourquoi la map prend du temps à charger quand on a un zoom >= 3
+
+Réaliser de meilleur collisions, surtout celles quand on sort de la salle 10 pour pas re-rentrer directement dans la salle

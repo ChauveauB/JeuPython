@@ -1,74 +1,12 @@
 >>>>> LOGS DU JEU PYTHON <<<<<
-Lancement du programme du jour 2024-06-08 a 12:26:37
-Sauvegarde recuperee avec succes ! Stockage de : {'x_perso': 223.29, 'y_perso': 277.222, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'house2'}
-Tentative de sauvegarde des infos
-Numero de reponse : 1
-Choix : Ok mais ta vie est de 85.0 !
-Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok mais ta vie est de 85.0 !', 'a bientot']
-Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
-Numero de reponse : 0
-Choix : Ok, je vais te soigner !
-Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
-Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
-Numero de reponse : 0
-Choix : Ok, je vais te soigner !
-Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
-Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
-Numero de reponse : 0
-Choix : Ok, je vais te soigner !
-Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
-Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
-Lancement du programme du jour 2024-06-08 a 12:32:11
-Sauvegarde recuperee avec succes ! Stockage de : {'x_perso': 185.28999999999996, 'y_perso': 311.222, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'house2'}
-Tentative de sauvegarde des infos
-Les dialogues du perso qui entre en combat : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu p� me battre ?!']
-Lancement du programme du jour 2024-06-08 a 12:33:12
-Sauvegarde recuperee avec succes ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Les dialogues du perso qui entre en combat : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu p� me battre ?!']
-Lancement du programme du jour 2024-06-08 a 12:53:55
-Sauvegarde recuperee avec succes ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Les dialogues du perso qui entre en combat : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
-Lancement du programme du jour 2024-06-08 à 13:22:26
+Lancement du programme du jour 2024-11-23 à 12:01:58
 Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
-Lancement du programme du jour 2024-06-08 à 13:26:43
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
-Lancement du programme du jour 2024-06-08 à 13:29:16
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
-Lancement du programme du jour 2024-06-08 à 13:31:46
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
-Lancement du programme du jour 2024-06-08 à 13:35:21
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
-Lancement du programme du jour 2024-06-09 à 16:50:44
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Numero de réponse : 0
-Choix : Ok, je vais te soigner !
-Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
-Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
-Lancement du programme du jour 2024-06-09 à 17:53:07
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-09 à 17:55:17
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-09 à 17:56:28
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-09 à 17:58:05
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-09 à 17:59:00
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-09 à 17:59:03
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-09 à 18:01:59
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-09 à 18:05:12
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Numero de réponse : 1
-Choix : Ok mais ta vie est de 85.0 !
-Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok mais ta vie est de 85.0 !', 'a bientot']
-Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
+Lancement du programme du jour 2024-11-23 à 12:03:34
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2024-11-23 à 12:04:43
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 0.0, 'y_perso': 0.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2024-11-23 à 12:05:29
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 100.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
 Numero de réponse : 1
 Choix : Ok mais ta vie est de 85.0 !
 Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok mais ta vie est de 85.0 !', 'a bientot']
@@ -81,68 +19,509 @@ Numero de réponse : 0
 Choix : Ok, je vais te soigner !
 Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
 Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
-Numero de réponse : 0
-Choix : Ok, je vais te soigner !
-Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok, je vais te soigner !', 'a bientot']
+Numero de réponse : 1
+Choix : Ok mais ta vie est de 185.0 !
+Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok mais ta vie est de 185.0 !', 'a bientot']
 Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
-Numero de réponse : 0
-Choix : Je ne peux pas te soigner, ta vie est pleine
-Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Je ne peux pas te soigner, ta vie est pleine', 'a bientot']
-Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
-Lancement du programme du jour 2024-06-25 à 15:09:12
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-25 à 15:10:15
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Les dialogues du perso qui entre en combat sont : ['Tremble devant ma puissance !', '/combat/', 'Comment as-tu pû me battre ?!']
-Lancement du programme du jour 2024-06-25 à 15:20:18
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-25 à 15:21:27
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-25 à 15:59:22
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 10:57:27
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:27:35
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:28:32
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:30:16
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:30:45
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:31:51
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:32:29
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:46:16
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:47:06
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:47:57
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:49:43
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:50:15
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:50:32
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:51:47
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:52:43
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:53:21
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 11:57:56
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 12:13:38
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 12:15:44
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 12:37:52
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 12:40:06
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-06-28 à 12:41:14
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
-Lancement du programme du jour 2024-07-23 à 18:01:18
-Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 643.6669999999999, 'y_perso': 458.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'dungeon'}
+Lancement du programme du jour 2024-11-23 à 12:08:26
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 100.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2024-11-23 à 12:11:00
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 100.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2024-11-23 à 12:13:14
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 100.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2024-11-23 à 12:15:40
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 100.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2024-11-23 à 12:17:51
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 100.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Le joueur est mort : partie terminée
+Lancement du programme du jour 2024-11-23 à 12:19:12
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 100.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Tentative de sauvegarde des infos
+Lancement du programme du jour 2024-11-23 à 12:20:12
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 252.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 95.0, 'world_perso': 'Couloir'}
+Tentative de sauvegarde des infos
+Lancement du programme du jour 2024-11-23 à 12:20:42
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 93.75, 'y_perso': 193.875, 'speed_perso': 1.0, 'health_perso': 95.0, 'world_perso': 'Salle11'}
