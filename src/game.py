@@ -18,7 +18,7 @@ class Game:
     def __init__(self):
         #Début de la défénition des caractéristiques
         self.display_surface = pygame.display.get_surface()
-        self.running = True
+        self.running = False
 
         # créer la fenetre
         self.screen = pygame.display.set_mode((1000, 700))
@@ -77,12 +77,12 @@ class Game:
 
 
     def run(self):
-
-        clock = pygame.time.Clock()
-
         # boucle du jeu
+        if self.running:
+            self.running_game()
 
-        self.running = True
+    def running_game(self):
+        clock = pygame.time.Clock()
 
         while self.running:
 
