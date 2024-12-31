@@ -81,7 +81,10 @@ class MapManager:
                     self.teleport_player(copy_portal.teleport_point)
 
                     # perdre de la vie en passant par ce portail
-                    self.player.stats['health'] -= 10
+                    if self.player.health - 10 > 10:
+                        self.player.health -= 10
+                    #else:
+                        # si le joueur n'a plus de vie
                     if self.current_map == "Couloir":
                         self.player.speed = self.player.speed_base
                     else:

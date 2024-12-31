@@ -1,4 +1,4 @@
-import time
+import math
 
 import pygame
 import pyscroll.data
@@ -18,13 +18,32 @@ class Game:
     def __init__(self):
         #Début de la défénition des caractéristiques
         self.display_surface = pygame.display.get_surface()
-        self.running = False
 
         # créer la fenetre
-        self.screen = pygame.display.set_mode((1000, 700))
-        pygame.display.set_caption("Jeupython")
+        self.screen = pygame.display.set_mode((1000, 700))  # surface (hauteur, largeur)
+        pygame.display.set_caption("Jeu Python")    # titre de la fenêtre
+
+        self.running = False
         self.game_paused = False
         self.game_end = False
+
+        # importer et charger les images de l'écran titre
+        self.background = pygame.image.load("../others/red_background.jpg")
+
+        self.banner = pygame.image.load("../others/banner.png")
+        self.banner = pygame.transform.scale(self.banner, (500, 500))
+        self.banner_rect = self.banner.get_rect()
+        self.banner_rect.x = math.ceil(self.screen.get_width() / 4)     # l'utilisation du module math permet d'éviter un chiffre a virgule et d'arrondir à l'entier suivant
+
+        self.play_button = pygame.image.load("../others/button.png")
+        self.play_button = pygame.transform.scale(self.play_button, (400, 150))
+        self.play_button_rect = self.play_button.get_rect()
+        self.play_button_rect.x = math.ceil(self.screen.get_width() / 3.33)
+        self.play_button_rect.y = math.ceil(self.screen.get_height() / 2)
+
+        self.reset_button = pygame.image.load("../others/comet.png")
+        self.reset_button_rect = self.reset_button.get_rect()
+
 
         # générer un joueur
         self.player = Player()
@@ -37,8 +56,8 @@ class Game:
 
         self.death = Death_menu(self.player)
 
-
-
+        if self.player.health <= 0:
+            self.game_over()
 
     def handle_input(self):                         # déplacement du joueur avec les flèches du clavier
         pressed = pygame.key.get_pressed()
@@ -60,6 +79,10 @@ class Game:
             elif pressed[pygame.K_RIGHT]:
                 self.player.move_right()
 
+    def game_over(self):
+        self.player.health = 100
+        self.running = False
+
     def update(self):
         self.map_manager.update()
     def death_menu(self):
@@ -78,8 +101,31 @@ class Game:
 
     def run(self):
         # boucle du jeu
+
         if self.running:
             self.running_game()
+        else:
+            while not self.running:
+                self.screen.blit(self.background, (0, 0))
+                self.screen.blit(self.play_button, self.play_button_rect)
+                self.screen.blit(self.banner, self.banner_rect)
+                self.screen.blit(self.reset_button, self.reset_button_rect)
+
+                pygame.display.flip()
+
+                for event in pygame.event.get():
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        # vérification si la souris est en colision avec le bouton jouer
+                        if self.play_button_rect.collidepoint(event.pos):   # event.pos = position de l'évènement citer dans la condition au-dessus
+                            # lancer le jeu
+                            self.running = True
+                            self.running_game()
+                        elif self.reset_button_rect.collidepoint(event.pos):
+                            with open("../saves/logs.txt", "w") as logs:
+                                logs.write(">>>>> LOGS DU JEU PYTHON <<<<<\n")
+
+                            self.running = True
+                            self.running_game()
 
     def running_game(self):
         clock = pygame.time.Clock()

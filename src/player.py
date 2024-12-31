@@ -69,8 +69,9 @@ class Entity(AnimateSprite):
 class Player(Entity):
     def __init__(self):
         self.speed_base = 3
-        self.health_base = 95
+        self.health_base = 100
         self.player_answers = {"oui" : 0, "non" : 1}
+
 
         if Save.Saved:      # Location du joueur en début de partie si on a une sauvegarde
             x = Save.dict_values["x_perso"]
