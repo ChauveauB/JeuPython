@@ -175,6 +175,9 @@ class Game:
                         if event.key == pygame.K_x and not self.game_end:
                             Save.write_logs("Tentative de sauvegarde des infos")
                             self.saver()
+                    else:
+                        if event.key == pygame.K_q:
+                            Combat.fighting = False
                     
                     #Ajuster la taille en jeu (ptêtre trouver de meilleures touches)
                     if event.key == pygame.K_z:

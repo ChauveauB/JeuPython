@@ -1,7 +1,7 @@
 import pygame
 from animation import AnimateSprite
 from save import Save
-
+from random import randint
 
 class Entity(AnimateSprite):
 
@@ -22,6 +22,8 @@ class Entity(AnimateSprite):
         self.max_health = 200
         self.speed = self.stats["speed"]
         self.can_move = True
+
+        self.ennemies = randint(1, 3)
 
 
     # affichage d'une barre de vie
@@ -71,6 +73,7 @@ class Player(Entity):
         self.speed_base = 3
         self.health_base = 100
         self.player_answers = {"oui" : 0, "non" : 1}
+        self.fighting = False
 
 
         if Save.Saved:      # Location du joueur en début de partie si on a une sauvegarde
@@ -99,8 +102,6 @@ class Player(Entity):
                     dialoguer.choice = "Je ne peux pas te soigner, ta vie est pleine"
             elif answer == 1:
                 dialoguer.choice = f"Ok mais ta vie est de {self.stats['health']} !"
-
-            
 
 class NPC(Entity):
 

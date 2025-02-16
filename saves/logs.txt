@@ -1,1 +1,74 @@
 >>>>> LOGS DU JEU PYTHON <<<<<
+Lancement du programme du jour 2025-02-16 à 15:15:45
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-02-16 à 15:17:24
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-02-16 à 15:34:16
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-02-16 à 15:46:33
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Numero de réponse : 1
+Choix : Ok mais ta vie est de 100.0 !
+Les dialogues : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', 'Ok mais ta vie est de 100.0 !', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', 'Tu voudrais te soigner ?', '/menu_dialogue/', '*choix', 'a bientot']
+Les dialogues du perso qui entre en combat sont : ['Veux tu faire un combat ?', '/combat/', '*choix', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 15:47:46
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Veux tu faire un combat ?', '/combat/', '*choix', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 15:49:09
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Numero de réponse : 1
+Choix : Tant pis tu reviendra t'entraîner une prochaine fois
+Les dialogues : ['Veux tu faire un combat ?', '/menu_dialogue/', "Tant pis tu reviendra t'entraîner une prochaine fois", 'a bientot']
+Les dialogues du perso : ['Veux tu faire un combat ?', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de réponse : 0
+Choix : On peut commencer le combat !
+Les dialogues : ['Veux tu faire un combat ?', '/menu_dialogue/', 'On peut commencer le combat !', 'a bientot']
+Les dialogues du perso : ['Veux tu faire un combat ?', '/menu_dialogue/', '*choix', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:01:40
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Numero de réponse : 0
+Choix : On peut commencer le combat !
+Les dialogues : ['Veux tu faire un combat ?', '/menu_dialogue/', 'On peut commencer le combat !', '/combat/a bientot']
+Les dialogues du perso : ['Veux tu faire un combat ?', '/menu_dialogue/', '*choix', '/combat/a bientot']
+Numero de réponse : 1
+Choix : Tant pis tu reviendra t'entraîner une prochaine fois
+Les dialogues : ['Veux tu faire un combat ?', '/menu_dialogue/', "Tant pis tu reviendra t'entraîner une prochaine fois", '/combat/a bientot']
+Les dialogues du perso : ['Veux tu faire un combat ?', '/menu_dialogue/', '*choix', '/combat/a bientot']
+Lancement du programme du jour 2025-02-16 à 16:03:24
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:06:24
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:09:26
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:13:06
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:14:12
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:15:48
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:18:21
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-02-16 à 16:18:40
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:24:40
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:28:02
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-02-16 à 16:28:15
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:33:40
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-02-16 à 16:34:41
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
