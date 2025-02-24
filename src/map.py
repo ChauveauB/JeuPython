@@ -86,7 +86,7 @@ class MapManager:
                     #else:
                         # si le joueur n'a plus de vie
                     if self.current_map == "Couloir":
-                        self.player.speed = self.player.speed_base
+                        self.player.speed = self.player.speed_base - 1
                     else:
                         self.player.speed -= 1
 
@@ -118,7 +118,7 @@ class MapManager:
             if obj.type == 'collision':         # Si le type de l'objet est collision, alors ajouter ce dernier à la liste de "murs"
                 walls.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
 
-        group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=1)        # Définition du calque d'origine sur lequel est placer le joueur
+        group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=0)        # Définition du calque d'origine sur lequel est placer le joueur
         group.add(self.player)
 
         # récupérer tous les NPC pour les ajouter au groupe

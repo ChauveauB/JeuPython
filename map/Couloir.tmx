@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="408" height="84" tilewidth="1" tileheight="1" infinite="0" nextlayerid="4" nextobjectid="14">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="408" height="84" tilewidth="1" tileheight="1" infinite="0" nextlayerid="4" nextobjectid="14">
  <tileset firstgid="1" source="couloir.tsx"/>
  <layer id="1" name="Calque de Tuiles 1" width="408" height="84">
   <data encoding="csv">
@@ -90,9 +90,9 @@
 </data>
  </layer>
  <objectgroup id="3" name="Collisions">
-  <object id="2" name="collision" type="collision" x="0.0833333" y="82.9508" width="407.667" height="2"/>
-  <object id="3" name="collision" type="collision" x="406.265" y="54.5871" width="1.63636" height="30.7273"/>
-  <object id="4" name="collision" type="collision" x="0.0833333" y="0.0416667" width="407.5" height="54.375"/>
+  <object id="2" name="collision" type="collision" x="0.583333" y="83.8258" width="407.667" height="2"/>
+  <object id="3" name="collision" type="collision" x="407.14" y="54.5871" width="1.63636" height="30.7273"/>
+  <object id="4" name="collision" type="collision" x="1.58333" y="0.291667" width="407.5" height="54.375"/>
   <object id="5" name="collision" type="collision" x="-0.0416667" y="54.5417" width="1" height="29.75"/>
  </objectgroup>
  <objectgroup id="2" name="Calque d'Objets 1">
@@ -102,7 +102,7 @@
   <object id="8" name="enter_salle12" x="0.0833333" y="54.2917" width="4.5" height="30.25"/>
   <object id="9" name="enter_salle11" x="160.083" y="4.91667" width="23.5" height="53.625"/>
   <object id="10" name="enter_salle10" x="329.083" y="5.04167" width="25.5" height="53.75"/>
-  <object id="11" name="exit_salle10" x="340.958" y="72.4167">
+  <object id="11" name="exit_salle10" x="340.708" y="69.7917">
    <point/>
   </object>
   <object id="12" name="exit_salle11" x="170.583" y="69.7917">
