@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="249" height="336" tilewidth="1" tileheight="1" infinite="0" nextlayerid="4" nextobjectid="11">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="249" height="336" tilewidth="1" tileheight="1" infinite="0" nextlayerid="4" nextobjectid="32">
  <tileset firstgid="1" source="salle12.tsx"/>
  <layer id="1" name="Calque de Tuiles 1" width="249" height="336">
   <data encoding="csv">
@@ -346,6 +346,29 @@
   <object id="6" name="collision" type="collision" x="248.396" y="85.9167" width="1" height="249.5"/>
   <object id="7" name="collision" type="collision" x="0.146" y="334.417" width="249.5" height="1.25"/>
   <object id="8" name="collision" type="collision" x="-0.521" y="84.5837" width="1.66667" height="251"/>
+  <object id="11" name="collision" type="collision" x="2.81818" y="118.909" width="44.2727" height="9.27273"/>
+  <object id="13" name="collision" type="collision" x="70.0702" y="118.972" width="44.2727" height="9.27273"/>
+  <object id="14" name="collision" type="collision" x="135.777" y="117.842" width="44.2727" height="9.27273"/>
+  <object id="15" name="collision" type="collision" x="203.081" y="118.016" width="44.2727" height="9.27273"/>
+  <object id="16" name="collision" type="collision" x="3.60724" y="158.116" width="44.2727" height="9.27273"/>
+  <object id="17" name="collision" type="collision" x="70.8593" y="158.179" width="44.2727" height="9.27273"/>
+  <object id="18" name="collision" type="collision" x="136.566" y="157.049" width="44.2727" height="9.27273"/>
+  <object id="19" name="collision" type="collision" x="203.87" y="157.223" width="44.2727" height="9.27273"/>
+  <object id="20" name="collision" type="collision" x="1.70951" y="213.104" width="44.2727" height="9.27273"/>
+  <object id="21" name="collision" type="collision" x="68.9615" y="213.167" width="44.2727" height="9.27273"/>
+  <object id="22" name="collision" type="collision" x="134.668" y="212.037" width="44.2727" height="9.27273"/>
+  <object id="23" name="collision" type="collision" x="201.972" y="212.211" width="44.2727" height="9.27273"/>
+  <object id="24" name="collision" type="collision" x="2.73224" y="251.866" width="44.2727" height="9.27273"/>
+  <object id="25" name="collision" type="collision" x="69.9843" y="251.929" width="44.2727" height="9.27273"/>
+  <object id="26" name="collision" type="collision" x="135.691" y="250.799" width="44.2727" height="9.27273"/>
+  <object id="27" name="collision" type="collision" x="202.995" y="250.973" width="44.2727" height="9.27273"/>
+  <object id="28" name="collision" type="collision" x="1" y="301.625" width="22.875" height="14"/>
+  <object id="30" name="collision" type="collision" x="241.929" y="284.78">
+   <polygon points="0,0 7.04348,-0.031327 7.17391,6.23408 4.13043,6.29674 0.0869565,4.85569"/>
+  </object>
+  <object id="31" name="collision" type="collision" x="225" y="97">
+   <polygon points="0,0 10.7826,-0.0869565 10.8696,11.8696 9.13043,12.8696 2.95652,12.8261 0.913043,11.8696 0.913043,4.56522 0,3.95652"/>
+  </object>
  </objectgroup>
  <objectgroup id="3" name="Calque d'Objets 2">
   <object id="9" name="exit_salle" x="240.188" y="305.25" width="9.75" height="23.5"/>

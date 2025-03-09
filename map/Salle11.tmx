@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="239" height="259" tilewidth="1" tileheight="1" infinite="0" nextlayerid="4" nextobjectid="13">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="239" height="259" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="37">
  <tileset firstgid="1" source="salle11.tsx"/>
  <layer id="1" name="Calque de Tuiles 1" width="239" height="259">
   <data encoding="csv">
@@ -269,6 +269,76 @@
   <object id="6" name="collision" type="collision" x="239.102" y="84.8659" width="1" height="175.25"/>
   <object id="7" name="collision" type="collision" x="0.352273" y="258.866" width="240" height="1.5"/>
   <object id="8" name="collision" type="collision" x="-0.147727" y="84.6159" width="1" height="174"/>
+  <object id="13" name="collision" type="collision" x="166.853" y="240.383">
+   <polygon points="0,0 22,0 24.5625,7.68041 24.6875,19.1193 -0.125,19.1193"/>
+  </object>
+  <object id="14" name="collision" type="collision" x="128.853" y="239.474">
+   <polygon points="0,0 22.3125,0 24.3125,9.43367 24.3125,19.9034 -0.0625,19.8489"/>
+  </object>
+  <object id="15" name="collision" type="collision" x="85.666" y="238.411">
+   <polygon points="0,0 22.375,0 24.5,9.87922 24.625,20.9659 -0.125,20.9659"/>
+  </object>
+  <object id="16" name="collision" type="collision" x="45.7285" y="238.375">
+   <polygon points="0,0 22.5,-0.0551226 24.5,11.245 24.5,21.0017 -0.1875,21.0017"/>
+  </object>
+  <object id="17" name="collision" type="collision" x="13.791" y="238.315">
+   <polygon points="0,0 21.1875,0.164063 23.4375,11.4844 23.375,21 -0.1875,21"/>
+  </object>
+  <object id="18" name="collision" type="collision" x="12.8535" y="186.565">
+   <polygon points="0,0 21.3125,0.0517086 23.375,7.91142 23.5,14.3233 -0.0625,14.375"/>
+  </object>
+  <object id="19" name="collision" type="collision" x="44.791" y="188.454">
+   <polygon points="0,0 20.375,-0.0997304 23.5,10.4218 23.5,14.6105 -0.1875,14.6105"/>
+  </object>
+  <object id="20" name="collision" type="collision" x="84.7285" y="187.536">
+   <polygon points="0,0 21.5,0 24.4375,9.3002 24.5625,13.4175 0,13.4659"/>
+  </object>
+  <object id="21" name="collision" type="collision" x="127.853" y="188.659">
+   <polygon points="0,0 21.375,-0.0944656 24.375,8.45468 24.375,12.2333 -0.3125,12.2805"/>
+  </object>
+  <object id="22" name="collision" type="collision" x="165.666" y="189.707">
+   <polygon points="0,0 22.5625,-0.051461 25.5625,10.1378 25.6875,14.2032 0,14.3576"/>
+  </object>
+  <object id="23" name="collision" type="collision" x="162.791" y="134.644">
+   <polygon points="0,0 21.5,-0.051461 24.4375,10.0864 24.5625,14.3576 -0.1875,14.3576"/>
+  </object>
+  <object id="24" name="collision" type="collision" x="124.603" y="133.388">
+   <polygon points="0,0 20.75,-0.0964385 23.5625,8.63125 23.6875,12.4888 0,12.4888"/>
+  </object>
+  <object id="25" name="collision" type="collision" x="81.6035" y="132.474">
+   <polygon points="0,0 20.625,0 23.75,9.31043 23.6875,13.5284 0.0625,13.4255"/>
+  </object>
+  <object id="26" name="collision" type="collision" x="41.666" y="132.661">
+   <polygon points="0,0 19.5625,-0.164533 22.5625,10.9141 22.625,15.4661 -0.1875,15.4661"/>
+  </object>
+  <object id="27" name="collision" type="collision" x="9.60348" y="131.848">
+   <polygon points="0,0 21.5625,-0.107295 22.625,9.81748 22.6875,14.1093 0.0625,14.2166"/>
+  </object>
+  <object id="28" name="collision" type="collision" x="8.41598" y="84.6267">
+   <polygon points="0,0 0,11.3125 24.875,11.3125 24.875,6.375 23,0"/>
+  </object>
+  <object id="29" name="collision" type="collision" x="40.416" y="84.5017">
+   <polygon points="0,0 0,13.375 24.8125,13.4375 24.875,8.4375 22.0625,0"/>
+  </object>
+  <object id="30" name="collision" type="collision" x="80.416" y="84.4392">
+   <polygon points="0,0 -0.0625,11.5 25.75,11.5625 25.8125,6.6875 23.0625,-0.125"/>
+  </object>
+  <object id="31" name="collision" type="collision" x="123.353" y="84.4392">
+   <polygon points="0,0 0.0625,11.375 25.9375,11.375 26,6.5625 23.0625,-0.0625"/>
+  </object>
+  <object id="32" name="collision" type="collision" x="161.291" y="84.3767">
+   <polygon points="0,0 0.125,14.4375 27,14.4375 27.0625,9.625 24.125,0"/>
+  </object>
+  <object id="33" name="collision" type="collision" x="219.799" y="83.5679">
+   <polygon points="0,0 -3.9375,7.5 -3.875,15.5625 15.125,15.5625 15,-0.1875"/>
+  </object>
+  <object id="34" name="collision" type="collision" x="227.991" y="219.198">
+   <polygon points="0,0 10.7826,-0.0869565 10.8696,11.8696 9.13043,12.8696 2.95652,12.8261 0.913043,11.8696 0.913043,4.56522 0,3.95652"/>
+  </object>
+  <object id="35" name="collision" type="collision" x="206.904" y="136.068" width="25.8696" height="24.0435"/>
+  <object id="36" name="collision" type="collision" x="231.953" y="207.732">
+   <polygon points="0,0 7.04348,-0.031327 7.17391,6.23408 4.13043,6.29674 0.0869565,4.85569"/>
+  </object>
  </objectgroup>
  <objectgroup id="3" name="Calque d'Objets 2">
   <object id="9" name="exit_salle" x="203.125" y="250.125" width="27.125" height="9.25"/>
