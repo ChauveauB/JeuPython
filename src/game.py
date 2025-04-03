@@ -20,7 +20,7 @@ class Game:
         self.display_surface = pygame.display.get_surface()
 
         # créer la fenetre
-        self.screen = pygame.display.set_mode((1000, 700))  # surface (hauteur, largeur)
+        self.screen = pygame.display.set_mode((1000, 700),flags=pygame.RESIZABLE)  # surface (hauteur, largeur)
         pygame.display.set_caption("Jeu Python")    # titre de la fenêtre
 
         self.running = False
@@ -179,19 +179,7 @@ class Game:
                         if event.key == pygame.K_q:
                             Combat.fighting = False
                     
-                    #Ajuster la taille en jeu (ptêtre trouver de meilleures touches)
-                    if event.key == pygame.K_z:
-                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w, pygame.display.Info().current_h + 35))
-
-                    if event.key == pygame.K_s and pygame.display.Info().current_h >= 535:
-                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w, pygame.display.Info().current_h - 35))
-
-                    if event.key == pygame.K_q:
-                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w + 50, pygame.display.Info().current_h))
-
-                    if event.key == pygame.K_d and pygame.display.Info().current_w >= 850:                   
-                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w - 50, pygame.display.Info().current_h))
-                        
+                   
                 if self.player.stats['health'] <= 0:        # fermeture du jeu quand le joueur n'a plus de vie
                     self.game_end = True
 
