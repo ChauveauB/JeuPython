@@ -1,8 +1,4 @@
-import math
-
-import pygame
-import pyscroll.data
-import pytmx.util_pygame
+import math, pygame, pyscroll, pytmx
 
 from player import Player
 from map import MapManager

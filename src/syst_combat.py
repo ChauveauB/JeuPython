@@ -25,10 +25,10 @@ class Combat:
         #Mettre le fond de combat: >>>>juste faire en sorte que les tailles des blit soient adptables<<<<<
         fond = pygame.image.load("../others/fond_blanc.jpg")
         fond = pygame.transform.scale(fond, (h +300, w))
-        screen.blit(fond, (0,0))
+        screen.blit(fond,(0,0))
 
         Combat.load_ent(screen, w, h, w_ent, h_ent)
-        
+
     @staticmethod
     def load_ent(screen, w, h, w_ent, h_ent):
         #Charger les différents personnages en combat

@@ -16,8 +16,8 @@ class DialogMenu:
         self.font = pygame.font.Font('../dialog/dialog_font.ttf', 18)
 
         # item creation, taille des carrés
-        self.height = self.screen.get_size()[1] * 0.2
-        self.width = self.screen.get_size()[0] // 3
+        self.height = self.screen.get_size()[1] * 0.065
+        self.width = self.screen.get_size()[0] // 6.5
         self.create_items()
 
         # selection system
@@ -63,11 +63,11 @@ class DialogMenu:
         for item, index in enumerate(range(self.attribute_nr)):
             # horizontal position, position X du carré
             full_width = self.screen.get_size()[0]
-            increment = full_width // self.attribute_nr
-            left = (item * increment) + (increment - self.width) // 2
+            increment = full_width // 6
+            left = (item * increment) + (increment - self.width) // 2 + 205
 
             # vertical position, position Y du carré
-            top = self.screen.get_size()[1] * 0.5
+            top = self.screen.get_size()[1] * 0.615
 
             # create object
             item = Item(left, top, self.width, self.height, index, self.font)
@@ -99,10 +99,10 @@ class Item:
         self.BG_COLOR = '#222222'
         self.TEXT_COLOR = '#EEEEEE'
         self.TEXT_COLOR_SELECTED = '#111111'
-        self.BG_COLOR_SELECTED = '#EEEEEE'
+        self.BG_COLOR_SELECTED = '#F8F8F8'
 
     def display_names(self, surface, name, value, selected):
-        color = self.TEXT_COLOR_SELECTED if selected else self.TEXT_COLOR       # Change la couleur quand une case est sélectionnée
+        color = self.TEXT_COLOR if selected else self.TEXT_COLOR_SELECTED       # Change la couleur quand une case est sélectionnée
 
         # title text
         title_surf = self.font.render(name, False, color)
@@ -114,9 +114,9 @@ class Item:
     def display(self, surface, selection_num, name, value):
 
             if self.index == selection_num:
-                pygame.draw.rect(surface, self.BG_COLOR_SELECTED, self.rect)
-            else:
                 pygame.draw.rect(surface, self.BG_COLOR, self.rect)
+            else:
+                pygame.draw.rect(surface, self.BG_COLOR_SELECTED, self.rect)
             self.display_names(surface, name, value, self.index == selection_num)
 
             # appel de cette fonction display avant celle au dessus

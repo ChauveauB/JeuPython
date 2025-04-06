@@ -76,4 +76,5 @@ class DialogBox:
                 elif self.texts[self.text_index] == "/combat/" :
                     Save.write_logs(f"Les dialogues du perso qui entre en combat sont : {sprite.dialog}")
                     #Rajouter une variable aux entités pour que si on rentre en combat avec elles, elles nous renvoie une liste d'adversaire 
-                    Combat.start(self.player, [sprite])
+                    self.dialog_menu.choising = True
+                    self.dialog_menu.wait = True

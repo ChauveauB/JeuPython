@@ -3,6 +3,7 @@ from animation import AnimateSprite
 from save import Save
 from random import randint
 
+
 class Entity(AnimateSprite):
 
     def __init__(self, name, x, y, speed, health=3):
@@ -76,6 +77,7 @@ class Player(Entity):
         self.fighting = False
 
 
+
         if Save.Saved:      # Location du joueur en début de partie si on a une sauvegarde
             x = Save.dict_values["x_perso"]
             y = Save.dict_values["y_perso"]
@@ -102,6 +104,11 @@ class Player(Entity):
                     dialoguer.choice = "Je ne peux pas te soigner, ta vie est pleine"
             elif answer == 1:
                 dialoguer.choice = f"Ok mais ta vie est de {self.stats['health']} !"
+        elif npc.name == "robin":
+            if answer == 0:
+                dialoguer.choice = "Prépares toi au combat !"
+            elif answer == 1:
+                dialoguer.choice = "Reviens plus tars alors"
 
 class NPC(Entity):
 
