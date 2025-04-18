@@ -3,6 +3,7 @@ from player import Player
 from dialog_menu import DialogMenu
 from save import Save
 from syst_combat import Combat
+from random import *
 
 class DialogBox:
 
@@ -23,6 +24,11 @@ class DialogBox:
         self.reading = False
         self.game_paused = False
         #Si le joueur est en train de choisir une réponse dans les dialogues
+
+        #nombre ennemis
+        self.ennemy_stat = {}
+
+        self.names = {}
 
     def execute(self, sprite):
         if self.reading:        # le dialogue est ouvert
@@ -68,13 +74,19 @@ class DialogBox:
                     Save.write_logs(f"Les dialogues du perso : {sprite.dialog}")
 
                 # le programme vérifie si le menu de dialogue doit être affiché
-                elif self.texts[self.text_index] == "/menu_dialogue/" :
+                elif self.texts[self.text_index] == "/menu_dialogue/":
                     #Gérer quand le menu est ouvert et doit être fermé ou considéré que la joueur ait bien chosi une option
                     self.dialog_menu.choising = True
                     self.dialog_menu.wait = True
 
-                elif self.texts[self.text_index] == "/combat/" :
+                elif self.texts[self.text_index] == "/combat/":
                     Save.write_logs(f"Les dialogues du perso qui entre en combat sont : {sprite.dialog}")
                     #Rajouter une variable aux entités pour que si on rentre en combat avec elles, elles nous renvoie une liste d'adversaire 
                     self.dialog_menu.choising = True
                     self.dialog_menu.wait = True
+
+                    #génère un nombre aléatoire d'ennemis et leur attribue à chacun 100 PV
+                    ennemies = randint(1, 4)
+                    for i in range(ennemies):
+                        self.ennemy_stat[f"ennemy_{i + 1}"] = 100
+                    self.names = self.ennemy_stat.keys()

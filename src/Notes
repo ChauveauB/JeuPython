@@ -2,4 +2,5 @@ Essayer de mettre en place un fichier de sauvegarde de base qui ne change pas po
 
 Trouver pourquoi la map prend du temps à charger quand on a un zoom >= 3
 
-Réaliser de meilleur collisions, surtout celles quand on sort de la salle 10 pour pas re-rentrer directement dans la salle
+ Trouver un moyen pour que les noms soient générés dans le code dialogue et que ça ne pose pas de problèmes dans game.py
+ faire les noms du pnj qui soignent (oui / non)

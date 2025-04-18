@@ -73,7 +73,7 @@ class Player(Entity):
     def __init__(self):
         self.speed_base = 3
         self.health_base = 100
-        self.player_answers = {"oui" : 0, "non" : 1}
+        self.player_answers = {"oui" : 0, "non" : 1, "peut-être" : 3}
         self.fighting = False
 
 

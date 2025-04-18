@@ -2,15 +2,15 @@ import pygame
 from player import Player
 
 class DialogMenu:
-    def __init__(self, player):
+    def __init__(self, player, attribute_nr, attribute_names, x, y):
 
         # general setup
         self.screen = pygame.display.set_mode((1000, 800))
         self.player = player
 
         # initialisation des valeurs (nr -> nombres de réponses du joueur)
-        self.attribute_nr = len(player.player_answers)
-        self.attribute_names = list(player.player_answers.keys())
+        self.attribute_nr = attribute_nr
+        self.attribute_names = attribute_names
         self.attribute_values = list(player.player_answers.values())
 
         self.font = pygame.font.Font('../dialog/dialog_font.ttf', 18)
@@ -18,7 +18,7 @@ class DialogMenu:
         # item creation, taille des carrés
         self.height = self.screen.get_size()[1] * 0.065
         self.width = self.screen.get_size()[0] // 6.5
-        self.create_items()
+        self.create_items(x, y)
 
         # selection system
         self.answer = None
@@ -36,11 +36,11 @@ class DialogMenu:
         
 
         if self.can_move:
-            if keys[pygame.K_RIGHT] and self.selection_index < self.attribute_nr - 1:
+            if keys[pygame.K_DOWN] and self.selection_index < self.attribute_nr - 1:
                 self.selection_index += 1
                 self.can_move = False
                 self.selection_time = pygame.time.get_ticks()
-            elif keys[pygame.K_LEFT] and self.selection_index >= 1:
+            elif keys[pygame.K_UP] and self.selection_index >= 1:
                 self.selection_index -= 1
                 self.can_move = False
                 self.selection_time = pygame.time.get_ticks()
@@ -57,20 +57,24 @@ class DialogMenu:
             if current_time - self.selection_time >= 300:
                 self.can_move = True
 
-    def create_items(self):
+    def create_items(self, x, y):
         self.item_list = []
 
         for item, index in enumerate(range(self.attribute_nr)):
             # horizontal position, position X du carré
-            full_width = self.screen.get_size()[0]
-            increment = full_width // 6
-            left = (item * increment) + (increment - self.width) // 2 + 205
+            full_width = self.screen.get_size()[0] - x
+            increment = full_width // 5
+            left = (increment - self.width) // 2 + 205
+            position_x = self.screen.get_size()[0] - x
+            position_y = self.screen.get_size()[1] - y
 
             # vertical position, position Y du carré
-            top = self.screen.get_size()[1] * 0.615
+            full_height = self.screen.get_size()[1] - y
+            increment_2 = full_height // 10
+            down = (item * increment_2) + (increment_2 - self.height) // 2 + 205
 
             # create object
-            item = Item(left, top, self.width, self.height, index, self.font)
+            item = Item(left, down, self.width, self.height, index, self.font)
             self.item_list.append(item)
     
     def display(self):

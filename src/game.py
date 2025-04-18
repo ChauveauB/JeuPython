@@ -8,6 +8,7 @@ from dialogue import DialogBox
 from dialog_menu import DialogMenu
 from save import Save
 from syst_combat import Combat
+from random import *
 
 class Game:
 
@@ -41,10 +42,12 @@ class Game:
         self.reset_button_rect = self.reset_button.get_rect()
 
 
+
+
         # générer un joueur
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
-        self.dialog_menu = DialogMenu(self.player)
+        self.dialog_menu = DialogMenu(self.player, len(self.dialog_box.names), list(self.dialog_box.names), -7000, 350)
         self.dialog_box = DialogBox(self.player, self.dialog_menu)
 
         # inventaire
@@ -161,7 +164,7 @@ class Game:
 
                 elif event.type == pygame.KEYDOWN:
                     if not Combat.fighting:
-                        if event.key == pygame.K_m:
+                        if event.key == pygame.K_m:     # inventaire
                             self.toggle_menu()
 
                         if event.key == pygame.K_SPACE:     # dialogue avec un PNJ
