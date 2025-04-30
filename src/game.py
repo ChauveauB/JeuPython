@@ -42,12 +42,12 @@ class Game:
         self.reset_button_rect = self.reset_button.get_rect()
 
 
-
+        self.combat = Combat()
 
         # générer un joueur
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
-        self.dialog_menu = DialogMenu(self.player, len(self.dialog_box.names), list(self.dialog_box.names), -7000, 350)
+        self.dialog_menu = DialogMenu(self.player, len(self.player.names), list(self.player.names), -5500, 350)
         self.dialog_box = DialogBox(self.player, self.dialog_menu)
 
         # inventaire
@@ -65,7 +65,7 @@ class Game:
         if pressed[pygame.K_ESCAPE]:
             self.running = False
 
-        if self.dialog_box.reading or Combat.fighting:
+        if self.dialog_box.reading:
             pass
         else:
             # déplacer le perso avec les flèches
@@ -132,28 +132,25 @@ class Game:
         while self.running:
 
             pygame.display.flip()
-            if Combat.fighting:
-                Combat.display(self.screen)
+
+
+            if self.game_paused and not self.dialog_menu.choising:      # afficher l'inventaire
+                self.inventory.display()
+                self.player.update_health_bar(self.screen)
+
+                
+            elif self.dialog_menu.choising:
+                self.dialog_menu.display()
+                if not self.dialog_menu.choising:
+                    self.map_manager.check_npc_collisions(self.dialog_box)
                 self.handle_input()
 
             else:
-                if self.game_paused and not self.dialog_menu.choising:      # afficher l'inventaire
-                    self.inventory.display()
-                    self.player.update_health_bar(self.screen)
-
-                
-                elif self.dialog_menu.choising:
-                    self.dialog_menu.display()
-                    if self.dialog_menu.choising == False:
-                        self.map_manager.check_npc_collisions(self.dialog_box)
-                    self.handle_input()
-                
-                else:
-                    self.player.save_location()
-                    self.handle_input()
-                    self.update()
-                    self.map_manager.draw()
-                    self.dialog_box.render(self.screen)
+                self.player.save_location()
+                self.handle_input()
+                self.update()
+                self.map_manager.draw()
+                self.dialog_box.render(self.screen)
 
 
             for event in pygame.event.get():
@@ -163,20 +160,16 @@ class Game:
                 # création d'un menu/inventaire
 
                 elif event.type == pygame.KEYDOWN:
-                    if not Combat.fighting:
-                        if event.key == pygame.K_m:     # inventaire
-                            self.toggle_menu()
+                    if event.key == pygame.K_m:     # inventaire
+                        self.toggle_menu()
 
-                        if event.key == pygame.K_SPACE:     # dialogue avec un PNJ
-                            self.map_manager.check_npc_collisions(self.dialog_box)
+                    if event.key == pygame.K_SPACE:     # dialogue avec un PNJ
+                        self.map_manager.check_npc_collisions(self.dialog_box)
 
-                        #sauvegarde
-                        if event.key == pygame.K_x and not self.game_end:
-                            Save.write_logs("Tentative de sauvegarde des infos")
-                            self.saver()
-                    else:
-                        if event.key == pygame.K_q:
-                            Combat.fighting = False
+                    #sauvegarde
+                    if event.key == pygame.K_x and not self.game_end:
+                        Save.write_logs("Tentative de sauvegarde des infos")
+                        self.saver()
                     
                     #Ajuster la taille en jeu (ptêtre trouver de meilleures touches)
                     if event.key == pygame.K_z:

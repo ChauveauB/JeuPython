@@ -26,7 +26,6 @@ class DialogBox:
         #Si le joueur est en train de choisir une réponse dans les dialogues
 
         #nombre ennemis
-        self.ennemy_stat = {}
 
         self.names = {}
 
@@ -67,7 +66,7 @@ class DialogBox:
                     self.choice = ""
                     self.player.react_player(self.dialog_menu.answer, sprite, self)
                     self.texts[self.texts.index("/menu_dialogue/") + 1] = self.choice
-                    
+
                     Save.write_logs(f"Numero de réponse : {self.dialog_menu.answer}")
                     Save.write_logs(f"Choix : {self.choice}")
                     Save.write_logs(f"Les dialogues : {self.texts}")
@@ -85,8 +84,3 @@ class DialogBox:
                     self.dialog_menu.choising = True
                     self.dialog_menu.wait = True
 
-                    #génère un nombre aléatoire d'ennemis et leur attribue à chacun 100 PV
-                    ennemies = randint(1, 4)
-                    for i in range(ennemies):
-                        self.ennemy_stat[f"ennemy_{i + 1}"] = 100
-                    self.names = self.ennemy_stat.keys()

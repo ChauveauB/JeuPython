@@ -1,5 +1,6 @@
 import pygame
-from player import Player
+from player import Player, NPC
+
 
 class DialogMenu:
     def __init__(self, player, attribute_nr, attribute_names, x, y):
@@ -8,10 +9,13 @@ class DialogMenu:
         self.screen = pygame.display.set_mode((1000, 800))
         self.player = player
 
+
+
         # initialisation des valeurs (nr -> nombres de réponses du joueur)
         self.attribute_nr = attribute_nr
         self.attribute_names = attribute_names
-        self.attribute_values = list(player.player_answers.values())
+        self.attribute_values = list(player.player_choice.values())
+
 
         self.font = pygame.font.Font('../dialog/dialog_font.ttf', 18)
 

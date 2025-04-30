@@ -2,6 +2,7 @@ import pygame
 from animation import AnimateSprite
 from save import Save
 from random import randint
+from syst_combat import Combat
 
 
 class Entity(AnimateSprite):
@@ -25,6 +26,7 @@ class Entity(AnimateSprite):
         self.can_move = True
 
         self.ennemies = randint(1, 3)
+        self.combat = Combat()
 
 
     # affichage d'une barre de vie
@@ -73,8 +75,10 @@ class Player(Entity):
     def __init__(self):
         self.speed_base = 3
         self.health_base = 100
-        self.player_answers = {"oui" : 0, "non" : 1, "peut-être" : 3}
+        self.player_answers = {"oui" : 0, "non" : 1}
+        self.player_choice = {"attack": 0, "items": 1, "leak": 2}
         self.fighting = False
+        self.names = self.player_choice
 
 
 
@@ -104,11 +108,18 @@ class Player(Entity):
                     dialoguer.choice = "Je ne peux pas te soigner, ta vie est pleine"
             elif answer == 1:
                 dialoguer.choice = f"Ok mais ta vie est de {self.stats['health']} !"
+
         elif npc.name == "robin":
             if answer == 0:
-                dialoguer.choice = "Prépares toi au combat !"
+                self.names = self.combat.ennemy_stat
+                dialoguer.choice = "attaque"
+                print(self.names)
             elif answer == 1:
-                dialoguer.choice = "Reviens plus tars alors"
+                print(1)
+                dialoguer.choice = "inventaire"
+            elif answer == 2:
+                print(2)
+                dialoguer.choice = "fuite"
 
 class NPC(Entity):
 

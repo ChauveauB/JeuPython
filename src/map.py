@@ -45,7 +45,7 @@ class MapManager:
         self.register_map('Salle11', portals=[
             Portal(from_world='Salle11', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle11')      # Pour sortir de la carte Salle11
         ], npcs=[
-            NPC("robin", 2, 1, dialog=["Nous allons nous combattre !", "/menu_dialogue/", "*choix", "a bientot"]),      # PNJ de cette carte
+            NPC("robin", 2, 1, dialog=["Nous allons nous combattre !", "/menu_dialogue/", "*choix", "/menu_dialogue/", "a bientot"]),      # PNJ de cette carte
         ]),
         self.register_map('Salle12', portals=[
             Portal(from_world='Salle12', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle12')      # Pour sortir de la carte Salle12
