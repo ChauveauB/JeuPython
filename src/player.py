@@ -111,9 +111,9 @@ class Player(Entity):
 
         elif npc.name == "robin":
             if answer == 0:
-                self.names = self.combat.ennemy_stat
+                self.player_choice = {"ennemy_1": 0, "ennemy_2": 1, "ennemy_3": 2}
                 dialoguer.choice = "attaque"
-                print(self.names)
+                print(self.player_choice)
             elif answer == 1:
                 print(1)
                 dialoguer.choice = "inventaire"

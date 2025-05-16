@@ -3,7 +3,7 @@ from player import Player, NPC
 
 
 class DialogMenu:
-    def __init__(self, player, attribute_nr, attribute_names, x, y):
+    def __init__(self, player, attribute_nr, x, y):
 
         # general setup
         self.screen = pygame.display.set_mode((1000, 800))
@@ -13,7 +13,7 @@ class DialogMenu:
 
         # initialisation des valeurs (nr -> nombres de réponses du joueur)
         self.attribute_nr = attribute_nr
-        self.attribute_names = attribute_names
+        self.attribute_names = list(player.player_choice.keys())
         self.attribute_values = list(player.player_choice.values())
 
 
@@ -81,7 +81,7 @@ class DialogMenu:
             item = Item(left, down, self.width, self.height, index, self.font)
             self.item_list.append(item)
     
-    def display(self):
+    def display(self, name):
         self.input()
         self.selection_cooldown()
         #self.display_stats()

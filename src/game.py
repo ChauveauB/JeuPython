@@ -47,7 +47,7 @@ class Game:
         # générer un joueur
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
-        self.dialog_menu = DialogMenu(self.player, len(self.player.names), list(self.player.names), -5500, 350)
+        self.dialog_menu = DialogMenu(self.player, len(self.player.names), -5500, 350)
         self.dialog_box = DialogBox(self.player, self.dialog_menu)
 
         # inventaire
@@ -140,7 +140,7 @@ class Game:
 
                 
             elif self.dialog_menu.choising:
-                self.dialog_menu.display()
+                self.dialog_menu.display(list(self.player.names))
                 if not self.dialog_menu.choising:
                     self.map_manager.check_npc_collisions(self.dialog_box)
                 self.handle_input()
