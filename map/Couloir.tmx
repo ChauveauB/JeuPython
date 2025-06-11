@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="408" height="84" tilewidth="1" tileheight="1" infinite="0" nextlayerid="4" nextobjectid="14">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="408" height="84" tilewidth="1" tileheight="1" infinite="0" nextlayerid="4" nextobjectid="19">
  <tileset firstgid="1" source="couloir.tsx"/>
  <layer id="1" name="Calque de Tuiles 1" width="408" height="84">
   <data encoding="csv">
@@ -96,7 +96,7 @@
   <object id="5" name="collision" type="collision" x="-0.0416667" y="54.5417" width="1" height="29.75"/>
  </objectgroup>
  <objectgroup id="2" name="Calque d'Objets 1">
-  <object id="1" name="player" x="394.833" y="69.5417">
+  <object id="1" name="player" x="386.458" y="69.6667">
    <point/>
   </object>
   <object id="8" name="enter_salle12" x="0.0833333" y="54.2917" width="4.5" height="30.25"/>
@@ -109,6 +109,10 @@
    <point/>
   </object>
   <object id="13" name="exit_salle12" x="15.0833" y="69.6667">
+   <point/>
+  </object>
+  <object id="17" name="enter_foret_D_or_R" x="403.125" y="54.375" width="12" height="31.625"/>
+  <object id="18" name="exit_foret_D_or_R" x="380" y="69.5">
    <point/>
   </object>
  </objectgroup>
