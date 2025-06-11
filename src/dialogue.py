@@ -23,9 +23,8 @@ class DialogBox:
         self.font = pygame.font.Font('../dialog/dialog_font.ttf', 18)
         self.reading = False
         self.game_paused = False
-        #Si le joueur est en train de choisir une réponse dans les dialogues
 
-        #nombre ennemis
+        self.syst_combat = Combat()
 
         self.names = {}
 
@@ -81,6 +80,6 @@ class DialogBox:
                 elif self.texts[self.text_index] == "/combat/":
                     Save.write_logs(f"Les dialogues du perso qui entre en combat sont : {sprite.dialog}")
                     #Rajouter une variable aux entités pour que si on rentre en combat avec elles, elles nous renvoie une liste d'adversaire 
-                    self.dialog_menu.choising = True
+                    self.syst_combat.running = True
                     self.dialog_menu.wait = True
 

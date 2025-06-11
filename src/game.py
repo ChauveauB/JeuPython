@@ -52,7 +52,7 @@ class Game:
 
         # inventaire
         self.inventory = Inventory(self.player)
-
+        self.syst_combat = Combat()
         self.death = Death_menu(self.player)
 
         if self.player.health <= 0:
@@ -144,6 +144,8 @@ class Game:
                 if not self.dialog_menu.choising:
                     self.map_manager.check_npc_collisions(self.dialog_box)
                 self.handle_input()
+            elif self.syst_combat.running:
+                self.syst_combat.display()
 
             else:
                 self.player.save_location()
@@ -193,4 +195,3 @@ class Game:
             clock.tick(60)
 
         pygame.quit()
-#

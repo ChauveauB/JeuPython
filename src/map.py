@@ -35,7 +35,9 @@ class MapManager:
         self.register_map('Couloir', portals=[
             Portal(from_world='Couloir', origin_point='enter_salle10', target_world='Salle10', teleport_point='spawn_salle10'),
             Portal(from_world='Couloir', origin_point='enter_salle11', target_world='Salle11', teleport_point='spawn_salle11'),
-            Portal(from_world='Couloir', origin_point='enter_salle12', target_world='Salle12', teleport_point='spawn_salle12')
+            Portal(from_world='Couloir', origin_point='enter_salle12', target_world='Salle12', teleport_point='spawn_salle12'),
+            Portal(from_world='Couloir', origin_point='enter_foret_D_or_R', target_world='foret_D_or_R',
+                   teleport_point='spawn_foret_D_or_R')
         ])              # Définitions des différentes transitions entre les cartes
         self.register_map('Salle10', portals=[
             Portal(from_world='Salle10', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle10')      # Pour sortir de la carte Salle10
@@ -45,10 +47,14 @@ class MapManager:
         self.register_map('Salle11', portals=[
             Portal(from_world='Salle11', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle11')      # Pour sortir de la carte Salle11
         ], npcs=[
-            NPC("robin", 2, 1, dialog=["Nous allons nous combattre !", "/menu_dialogue/", "*choix", "/menu_dialogue/", "a bientot"]),      # PNJ de cette carte
+            NPC("robin", 2, 1, dialog=["Nous allons nous combattre !", "/combat/", "a bientot"]),      # PNJ de cette carte
         ]),
         self.register_map('Salle12', portals=[
             Portal(from_world='Salle12', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle12')      # Pour sortir de la carte Salle12
+        ])
+        self.register_map('foret_D_or_R', portals=[
+            Portal(from_world='foret_D_or_R', origin_point='exit_foret', target_world='Couloir',
+                   teleport_point='exit_foret_D_or_R')  # Pour sortir de la carte Salle12
         ])
 
         # déplacement du joueur à son point de départ (ou aux coordonnées enregistrées par la save), si il y a un fichier de sauvegarde
@@ -160,4 +166,3 @@ class MapManager:
         self.get_group().update()
         self.check_collisions()
 
-#
