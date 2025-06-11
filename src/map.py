@@ -36,8 +36,7 @@ class MapManager:
             Portal(from_world='Couloir', origin_point='enter_salle10', target_world='Salle10', teleport_point='spawn_salle10'),
             Portal(from_world='Couloir', origin_point='enter_salle11', target_world='Salle11', teleport_point='spawn_salle11'),
             Portal(from_world='Couloir', origin_point='enter_salle12', target_world='Salle12', teleport_point='spawn_salle12'),
-            Portal(from_world='Couloir', origin_point='enter_foret_D_or_R', target_world='foret_D_or_R',
-                   teleport_point='spawn_foret_D_or_R')
+            Portal(from_world='Couloir', origin_point='enter_foret_A1', target_world='foret_A1', teleport_point='spawn_foret')
         ])              # Définitions des différentes transitions entre les cartes
         self.register_map('Salle10', portals=[
             Portal(from_world='Salle10', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle10')      # Pour sortir de la carte Salle10
@@ -52,9 +51,96 @@ class MapManager:
         self.register_map('Salle12', portals=[
             Portal(from_world='Salle12', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle12')      # Pour sortir de la carte Salle12
         ])
-        self.register_map('foret_D_or_R', portals=[
-            Portal(from_world='foret_D_or_R', origin_point='exit_foret', target_world='Couloir',
-                   teleport_point='exit_foret_D_or_R')  # Pour sortir de la carte Salle12
+        self.register_map('foret_A1', portals=[
+            Portal(from_world='foret_A1', origin_point='exit_foret', target_world='Couloir',teleport_point='exit_foret'),
+            Portal(from_world='foret_A1', origin_point='enter_foret_E10', target_world='foret_E10',teleport_point='spawn_foret_A1'),
+            Portal(from_world='foret_A1', origin_point='enter_foret_D2', target_world='foret_D2',teleport_point='spawn_foret_A1'),
+            Portal(from_world='foret_A1', origin_point='enter_foret_B9', target_world='foret_B9',teleport_point='spawn_foret_A1')
+        ])
+        self.register_map('foret_A3', portals=[
+            Portal(from_world='foret_A3', origin_point='exit_foret_A3', target_world='foret_D2',teleport_point='spawn_foret_A3'),
+            Portal(from_world='foret_A3', origin_point='enter_foret_A5', target_world='foret_A5',teleport_point='spawn_foret_A3'),
+            Portal(from_world='foret_A3', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_A5', portals=[
+            Portal(from_world='foret_A5', origin_point='exit_foret_A5', target_world='foret_A3',teleport_point='spawn_foret_A5'),
+            Portal(from_world='foret_A5', origin_point='enter_foret_B6', target_world='foret_B6',teleport_point='spawn_foret_A5'),
+            Portal(from_world='foret_A5', origin_point='enter_foret_B7', target_world='foret_B7',teleport_point='spawn_foret_A5'),
+            Portal(from_world='foret_A5', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_A8', portals=[
+            Portal(from_world='foret_A8', origin_point='exit_foret_A8', target_world='foret_B7',teleport_point='spawn_foret_A8'),
+            Portal(from_world='foret_A8', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_A13', portals=[
+            Portal(from_world='foret_A13', origin_point='exit_foret_A13', target_world='foret_B11',teleport_point='spawn_foret_A13'),
+            Portal(from_world='foret_A13', origin_point='enter_foret_B14', target_world='foret_B14',teleport_point='spawn_foret_A13'),
+            Portal(from_world='foret_A13', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_A17', portals=[
+            Portal(from_world='foret_A17', origin_point='exit_foret_A17', target_world='foret_E16',teleport_point='spawn_foret_A17'),
+            Portal(from_world='foret_A17', origin_point='enter_foret_C20', target_world='foret_C20',teleport_point='spawn_foret_A17'),
+            Portal(from_world='foret_A17', origin_point='enter_foret_E18', target_world='foret_E18',teleport_point='spawn_foret_A17'),
+            Portal(from_world='foret_A17', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_A21', portals=[
+            Portal(from_world='foret_A21', origin_point='exit_foret_A21', target_world='foret_C20', teleport_point='spawn_foretA21'),
+            Portal(from_world='foret_A21', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_B6', portals=[
+            Portal(from_world='foret_B6', origin_point='exit_foret_B6', target_world='foret_A5',teleport_point='spawn_foret_B6'),
+            Portal(from_world='foret_B6', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_B7', portals=[
+            Portal(from_world='foret_B7', origin_point='exit_foret_B7', target_world='foret_A5',teleport_point='spawn_foret_B7'),
+            Portal(from_world='foret_B7', origin_point='enter_foret_A8', target_world='foret_A8',teleport_point='spawn_foret_B7'),
+            Portal(from_world='foret_B7', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_B9', portals=[
+            Portal(from_world='foret_B9', origin_point='exit_foret_B9', target_world='foret_A1',teleport_point='spawn_foret_B9'),
+            Portal(from_world='foret_B9', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_B11', portals=[
+            Portal(from_world='foret_B11', origin_point='exit_foret_B11', target_world='foret_E10',teleport_point='spawn_foret_B11'),
+            Portal(from_world='foret_B11', origin_point='enter_foret_A13', target_world='foret_A13',teleport_point='spawn_foret_B11'),
+            Portal(from_world='foret_B11', origin_point='enter_foret_B12', target_world='foret_B12',teleport_point='spawn_foret_B11')
+        ])
+        self.register_map('foret_B12', portals=[
+            Portal(from_world='foret_B12', origin_point='exit_foret_B12', target_world='foret_B11',teleport_point='spawn_foret_B12'),
+            Portal(from_world='foret_B12', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_B14', portals=[
+            Portal(from_world='foret_B14', origin_point='exit_foret_B14', target_world='foret_A13',teleport_point='spawn_foret_B14'),
+            Portal(from_world='foret_B14', origin_point='enter_foret_A15', target_world='foret_A15',teleport_point='spawn_foret_B14'),
+            Portal(from_world='foret_B14', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_B19', portals=[
+            Portal(from_world='foret_B19', origin_point='exit_foret_B19', target_world='foret_E18',teleport_point='spawn_foret_B19'),
+            Portal(from_world='foret_B19', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_C20', portals=[
+            Portal(from_world='foret_C20', origin_point='exit_foret_C20', target_world='foret_A17',teleport_point='spawn_foret_C20'),
+            Portal(from_world='foret_C20', origin_point='enter_foret_A21', target_world='foret_A21',teleport_point='spawn_foret_C20')
+        ])
+        self.register_map('foret_D2', portals=[
+            Portal(from_world='foret_D2', origin_point='exit_foret_D2', target_world='foret_A1',teleport_point='spawn_foret_D2'),
+            Portal(from_world='foret_D2', origin_point='enter_foret_A3', target_world='foret_A3',teleport_point='spawn_foret_D2'),
+            Portal(from_world='foret_D2', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_E10', portals=[
+            Portal(from_world='foret_E10', origin_point='exit_foret_E10', target_world='foret_A1',teleport_point='spawn_foret_E10'),
+            Portal(from_world='foret_E10', origin_point='enter_foret_B11', target_world='foret_B11',teleport_point='spawn_foret_E10'),
+            Portal(from_world='foret_E10', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_E16', portals=[
+            Portal(from_world='foret_E16', origin_point='exit_foret_E16', target_world='foret_A15',teleport_point='spawn_foret_E16'),
+            Portal(from_world='foret_E16', origin_point='enter_foret_A17', target_world='foret_A17',teleport_point='spawn_foret_E16'),
+            Portal(from_world='foret_E16', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
+        self.register_map('foret_E18', portals=[
+            Portal(from_world='foret_E18', origin_point='exit_foret_E18', target_world='foret_A17',teleport_point='spawn_foret_E18'),
+            Portal(from_world='foret_E18', origin_point='enter_foret_B19', target_world='foret_B19',teleport_point='spawn_foret_E18'),
+            Portal(from_world='foret_E18', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
         ])
 
         # déplacement du joueur à son point de départ (ou aux coordonnées enregistrées par la save), si il y a un fichier de sauvegarde

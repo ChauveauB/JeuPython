@@ -111,8 +111,8 @@
   <object id="13" name="exit_salle12" x="15.0833" y="69.6667">
    <point/>
   </object>
-  <object id="17" name="enter_foret_D_or_R" x="403.125" y="54.375" width="12" height="31.625"/>
-  <object id="18" name="exit_foret_D_or_R" x="379.5" y="69.5">
+  <object id="17" name="enter_foret_A1" x="403.125" y="54.375" width="12" height="31.625"/>
+  <object id="18" name="exit_foret" x="379.5" y="69.5">
    <point/>
   </object>
  </objectgroup>
