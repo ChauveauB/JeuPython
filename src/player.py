@@ -78,7 +78,6 @@ class Player(Entity):
         self.player_answers = {"oui" : 0, "non" : 1}
         self.player_choice = {"attack": 0, "items": 1, "leak": 2}
         self.fighting = False
-        self.names = self.player_choice
 
 
 
