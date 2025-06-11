@@ -3,4 +3,4 @@ x_perso:20.75
 y_perso:181.875
 speed_perso:1
 health_perso:15.0
-world_perso:foret_D_or_L
+world_perso:Salle11
