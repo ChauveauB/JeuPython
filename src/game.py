@@ -193,4 +193,3 @@ class Game:
             clock.tick(60)
 
         pygame.quit()
-#

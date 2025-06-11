@@ -160,4 +160,3 @@ class MapManager:
         self.get_group().update()
         self.check_collisions()
 
-#
