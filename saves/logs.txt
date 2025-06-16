@@ -72,3 +72,34 @@ Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !
 Lancement du programme du jour 2025-02-16 à 16:34:41
 Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 50.0, 'y_perso': 50.0, 'speed_perso': 2.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
 Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-06-11 à 18:12:48
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 20.75, 'y_perso': 181.875, 'speed_perso': 1.0, 'health_perso': 15.0, 'world_perso': 'Salle11'}
+Lancement du programme du jour 2025-06-11 à 18:13:55
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 20.75, 'y_perso': 181.875, 'speed_perso': 1.0, 'health_perso': 15.0, 'world_perso': 'Salle11'}
+Lancement du programme du jour 2025-06-11 à 18:15:35
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 20.75, 'y_perso': 181.875, 'speed_perso': 1.0, 'health_perso': 15.0, 'world_perso': 'Salle11'}
+Lancement du programme du jour 2025-06-16 à 20:51:25
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 20.75, 'y_perso': 181.875, 'speed_perso': 1.0, 'health_perso': 15.0, 'world_perso': 'Salle11'}
+Tentative de sauvegarde des infos
+Lancement du programme du jour 2025-06-16 à 20:52:24
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 373.58299999999997, 'y_perso': 49.791700000000006, 'speed_perso': 2.0, 'health_perso': 15.0, 'world_perso': 'Couloir'}
+Tentative de sauvegarde des infos
+Lancement du programme du jour 2025-06-16 à 20:53:28
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 139.667, 'y_perso': 174.667, 'speed_perso': 0.0, 'health_perso': 15.0, 'world_perso': 'foret_D2'}
+Lancement du programme du jour 2025-06-16 à 20:55:08
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 139.667, 'y_perso': 174.667, 'speed_perso': 0.0, 'health_perso': 15.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-06-16 à 20:56:24
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': <class 'float'>, 'y_perso': <class 'float'>, 'speed_perso': <class 'float'>, 'health_perso': <class 'float'>, 'world_perso': <class 'str'>}
+Lancement du programme du jour 2025-06-16 à 20:58:14
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': <class 'float'>, 'y_perso': <class 'float'>, 'speed_perso': <class 'float'>, 'health_perso': <class 'float'>, 'world_perso': <class 'str'>}
+Lancement du programme du jour 2025-06-16 à 20:58:59
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': <class 'float'>, 'y_perso': <class 'float'>, 'speed_perso': <class 'float'>, 'health_perso': <class 'float'>, 'world_perso': <class 'str'>}
+Lancement du programme du jour 2025-06-16 à 21:00:53
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 0.0, 'y_perso': 0.0, 'speed_perso': 3.0, 'health_perso': 15.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-06-16 à 21:01:42
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 0.0, 'y_perso': -15.0, 'speed_perso': 3.0, 'health_perso': 15.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-06-16 à 21:02:28
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 0.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-06-16 à 21:05:06
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 0.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Tentative de sauvegarde des infos

@@ -1,6 +1,6 @@
 ___SAUVEGARDE DU PROJET PYTHON___
-x_perso:20.75
-y_perso:181.875
-speed_perso:1
-health_perso:15.0
-world_perso:Salle11
+x_perso:333.0
+y_perso:50.0
+speed_perso:3.0
+health_perso:100.0
+world_perso:Couloir

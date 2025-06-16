@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="230" tilewidth="1" tileheight="1" infinite="0" nextlayerid="3" nextobjectid="8">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="300" height="230" tilewidth="1" tileheight="1" infinite="0" nextlayerid="3" nextobjectid="8">
  <tileset firstgid="1" source="foret_U_R.tsx"/>
  <layer id="1" name="Calque de Tuiles 1" width="300" height="230">
   <data encoding="csv">
@@ -240,7 +240,7 @@
   <object id="2" name="dead_end" x="12.5" y="106" width="16.5" height="53"/>
   <object id="4" name="exit_foret_E10" x="282.5" y="104" width="15.5" height="42"/>
   <object id="5" name="enter_foret_B11" x="138" y="52.5" width="42" height="34.5"/>
-  <object id="6" name="spaw_foret_B11" x="156.5" y="103.5">
+  <object id="6" name="spawn_foret_B11" x="156.5" y="103.5">
    <point/>
   </object>
   <object id="7" name="spawn_foret_A1" x="265.5" y="128.5">

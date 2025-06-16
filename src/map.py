@@ -177,10 +177,7 @@ class MapManager:
                         self.player.health -= 10
                     #else:
                         # si le joueur n'a plus de vie
-                    if self.current_map == "Couloir":
-                        self.player.speed = self.player.speed_base - 1
-                    else:
-                        self.player.speed -= 1
+
 
         # verifier les collisions
         for sprite in self.get_group().sprites():

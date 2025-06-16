@@ -55,8 +55,8 @@ class Game:
         self.syst_combat = Combat()
         self.death = Death_menu(self.player)
 
-        if self.player.health <= 0:
-            self.game_over()
+        #if self.player.stats["health"] <= 0:
+        #    self.game_over()
 
     def handle_input(self):                         # déplacement du joueur avec les flèches du clavier
         pressed = pygame.key.get_pressed()
