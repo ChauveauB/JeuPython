@@ -41,7 +41,7 @@ class MapManager:
         self.register_map('Salle10', portals=[
             Portal(from_world='Salle10', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle10')      # Pour sortir de la carte Salle10
         ], npcs=[
-            NPC("paul", 4,1, dialog=["Bonne aventure", "Tu voudrais te soigner ?", "/menu_dialogue/", "*choix", "a bientot"]),      # PNJ de cette carte
+            NPC("paul", 4,1, dialog=["Bonne aventure", "/menu_dialogue/", "*choix", "a bientot"]),      # PNJ de cette carte
         ]),
         self.register_map('Salle11', portals=[
             Portal(from_world='Salle11', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle11')      # Pour sortir de la carte Salle11
@@ -50,7 +50,9 @@ class MapManager:
         ]),
         self.register_map('Salle12', portals=[
             Portal(from_world='Salle12', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle12')      # Pour sortir de la carte Salle12
-        ])
+        ], npcs=[
+            NPC("cable hdmi", 2, 1, dialog=["Vous venez de trouver le cable HDMI", "Vous prenez le cable"]),      # PNJ de cette carte
+        ]),
         self.register_map('foret_A1', portals=[
             Portal(from_world='foret_A1', origin_point='exit_foret', target_world='Couloir',teleport_point='exit_foret'),
             Portal(from_world='foret_A1', origin_point='enter_foret_E10', target_world='foret_E10',teleport_point='spawn_foret_A1'),

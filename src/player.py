@@ -76,8 +76,9 @@ class Player(Entity):
         self.speed_base = 3
         self.health_base = 100
         self.player_answers = {"oui" : 0, "non" : 1}
-        self.player_choice = {"attack": 0, "items": 1, "leak": 2}
+        self.player_choice = {"Quête": 0, "Au revoir": 1}
         self.fighting = False
+        self.cable_hdmi = False
 
 
 
@@ -94,19 +95,19 @@ class Player(Entity):
         super().__init__("player", x, y, speed, health)
 
     def react_player(self, answer, npc, dialoguer):
-        if npc.name == "paul":
+        if npc.name == "cable hdmi":
+            self.cable_hdmi = True
+            print("a")
+
+        elif npc.name == "paul":
             if answer == 0:
-                if self.stats['health'] < 200:
-                    if self.stats['health'] + 50 >= 200:
-                        dialoguer.choice = "Ok, je vais te soigner !"
-                        self.stats['health'] = 200
-                    else:
-                        dialoguer.choice = "Ok, je vais te soigner !"
-                        self.stats['health'] += 50
+                if not self.cable_hdmi:
+                    dialoguer.choice = "J'aimerais te confier une quête. Trouve moi un cable HDMI."
                 else:
-                    dialoguer.choice = "Je ne peux pas te soigner, ta vie est pleine"
-            elif answer == 1:
-                dialoguer.choice = f"Ok mais ta vie est de {self.stats['health']} !"
+                    dialoguer.choice = "Merci beaucoup"
+            else:
+                dialoguer.choice = "Au revoir"
+
 
         elif npc.name == "robin":
             if answer == 0:
