@@ -75,11 +75,10 @@ class Player(Entity):
     def __init__(self):
         self.speed_base = 3
         self.health_base = 100
-        self.player_answers = {"oui" : 0, "non" : 1}
-        self.player_choice = {"Quête": 0, "Au revoir": 1}
+        self.npc_answers = {"cable hdmi": {"Oui": 0, "Non": 1}, "paul": {"Quête": 0, "Au revoir": 1}, "robin": {"Combat": 0, "Fuite": 1}}
+        self.player_choice = {}
         self.fighting = False
         self.cable_hdmi = False
-
 
 
         if Save.Saved:      # Location du joueur en début de partie si on a une sauvegarde
@@ -97,7 +96,9 @@ class Player(Entity):
     def react_player(self, answer, npc, dialoguer):
         if npc.name == "cable hdmi":
             self.cable_hdmi = True
-            print("a")
+            #if self.cable_hdmi:
+            #    npc.position[0] += 1000
+
 
         elif npc.name == "paul":
             if answer == 0:
@@ -121,6 +122,8 @@ class Player(Entity):
                 print(2)
                 dialoguer.choice = "fuite"
 
+
+
 class NPC(Entity):
 
     def __init__(self, name, nb_points, speed, dialog):
@@ -130,9 +133,18 @@ class NPC(Entity):
         self.nb_points = nb_points
         self.points = []
         self.name = name
+        self.player = Player()
 
         self.current_point = 0
 
+
+    def dialogue_answers(self):
+        if self.name == "cable hdmi":
+            self.player.player_choice = self.player.npc_answers["cable hdmi"]
+        elif self.name == "paul":
+            self.player.player_choice = self.player.npc_answers["paul"]
+        elif self.name == "robin":
+            self.player.player_choice = self.player.npc_answers["robin"]
 
     def move(self):
         current_point = self.current_point
