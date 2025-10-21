@@ -6,7 +6,7 @@ class DialogMenu:
     def __init__(self, player, attribute_nr, x, y):
 
         # general setup
-        self.screen = pygame.display.set_mode((1000, 800))
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.player = player
 
 

@@ -3,7 +3,7 @@ from save import Save
 
 class Death_menu:
     def __init__(self, player):
-        self.screen = pygame.display.set_mode((1000, 700))
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.player = player
 
         self.font = pygame.font.Font('../dialog/dialog_font.ttf', 100)

@@ -5,7 +5,7 @@ class Inventory:
     def __init__(self, player):
 
         # general setup
-        self.screen = pygame.display.set_mode((1000, 800))
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.player = player
 
         # initialisation des valeurs

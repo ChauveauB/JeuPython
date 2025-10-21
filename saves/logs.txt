@@ -103,3 +103,42 @@ Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 0.0, 'y_perso': 
 Lancement du programme du jour 2025-06-16 à 21:05:06
 Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 0.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
 Tentative de sauvegarde des infos
+Lancement du programme du jour 2025-10-21 à 12:04:06
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Numero de réponse : 0
+Choix : J'aimerais te confier une quête. Trouve moi un cable HDMI.
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', "J'aimerais te confier une quête. Trouve moi un cable HDMI.", 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Lancement du programme du jour 2025-10-21 à 12:40:30
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-10-21 à 12:49:46
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-10-21 à 12:51:08
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-10-21 à 13:45:12
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-10-21 à 16:21:59
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Numero de réponse : 1
+Choix : Au revoir
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', 'Au revoir', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de réponse : 0
+Choix : J'aimerais te confier une quête. Trouve moi un cable HDMI.
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', "J'aimerais te confier une quête. Trouve moi un cable HDMI.", 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de réponse : 0
+Choix : J'aimerais te confier une quête. Trouve moi un cable HDMI.
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', "J'aimerais te confier une quête. Trouve moi un cable HDMI.", 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de réponse : 0
+Choix : J'aimerais te confier une quête. Trouve moi un cable HDMI.
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', "J'aimerais te confier une quête. Trouve moi un cable HDMI.", 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de réponse : 1
+Choix : Au revoir
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', 'Au revoir', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
+Lancement du programme du jour 2025-10-21 à 17:02:10
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}

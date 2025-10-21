@@ -11,7 +11,7 @@ class DialogBox:
         self.box = pygame.image.load('../dialog/dialog_box.png')
         self.box = pygame.transform.scale(self.box, (700, 100))
 
-        self.screen = pygame.display.set_mode((1000, 700))
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
         self.player = player
         self.dialog_menu = dialog_menu
