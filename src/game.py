@@ -17,7 +17,7 @@ class Game:
         self.display_surface = pygame.display.get_surface()
 
         # créer la fenetre
-        self.screen = pygame.display.set_mode((1000, 700))  # surface (hauteur, largeur)
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # surface (hauteur, largeur)
         pygame.display.set_caption("Jeu Python")    # titre de la fenêtre
 
         self.running = False
