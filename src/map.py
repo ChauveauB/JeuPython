@@ -79,6 +79,11 @@ class MapManager:
             Portal(from_world='foret_A13', origin_point='enter_foret_B14', target_world='foret_B14',teleport_point='spawn_foret_A13'),
             Portal(from_world='foret_A13', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
         ])
+        self.register_map('foret_A15', portals=[
+            Portal(from_world='foret_A15', origin_point='exit_foret_A15', target_world='foret_B14',teleport_point='spawn_foret_A15'),
+            Portal(from_world='foret_A15', origin_point='enter_foret_E16', target_world='foret_E16',teleport_point='spawn_foret_A15'),
+            Portal(from_world='foret_A15', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
+        ])
         self.register_map('foret_A17', portals=[
             Portal(from_world='foret_A17', origin_point='exit_foret_A17', target_world='foret_E16',teleport_point='spawn_foret_A17'),
             Portal(from_world='foret_A17', origin_point='enter_foret_C20', target_world='foret_C20',teleport_point='spawn_foret_A17'),
