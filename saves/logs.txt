@@ -142,3 +142,75 @@ Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bien
 Les dialogues du perso qui entre en combat sont : ['Nous allons nous combattre !', '/combat/', 'a bientot']
 Lancement du programme du jour 2025-10-21 à 17:02:10
 Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 13:58:22
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Numero de réponse : 0
+Choix : 
+Les dialogues : ['Vous venez de trouver le cable HDMI', '/menu_dialogue/', '']
+Les dialogues du perso : ['Vous venez de trouver le cable HDMI', '/menu_dialogue/', '*choix']
+Numero de réponse : 0
+Choix : 
+Les dialogues : ['Vous venez de trouver le cable HDMI', '/menu_dialogue/', '']
+Les dialogues du perso : ['Vous venez de trouver le cable HDMI', '/menu_dialogue/', '*choix']
+Lancement du programme du jour 2025-12-19 à 14:14:40
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 14:34:12
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 15:00:21
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 15:04:31
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 15:06:14
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 15:23:35
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 15:23:56
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 15:24:18
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 15:27:19
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Numero de réponse : 0
+Choix : J'aimerais te confier une quête. Trouve moi un cable HDMI.
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', "J'aimerais te confier une quête. Trouve moi un cable HDMI.", 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de réponse : 0
+Choix : 
+Les dialogues : ['Vous venez de trouver le cable HDMI', '/menu_dialogue/', '']
+Les dialogues du perso : ['Vous venez de trouver le cable HDMI', '/menu_dialogue/', '*choix']
+Numero de réponse : 0
+Choix : Merci beaucoup
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', 'Merci beaucoup', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Numero de réponse : 0
+Choix : Merci beaucoup
+Les dialogues : ['Bonne aventure', '/menu_dialogue/', 'Merci beaucoup', 'a bientot']
+Les dialogues du perso : ['Bonne aventure', '/menu_dialogue/', '*choix', 'a bientot']
+Lancement du programme du jour 2025-12-19 à 15:49:00
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 15:50:26
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:29:10
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:30:52
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:33:05
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:38:31
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:39:13
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:39:19
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:40:05
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:40:40
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:41:29
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:44:45
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:53:14
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}
+Lancement du programme du jour 2025-12-19 à 16:55:13
+Sauvegarde récuperée avec succès ! Stockage de : {'x_perso': 333.0, 'y_perso': 50.0, 'speed_perso': 3.0, 'health_perso': 100.0, 'world_perso': 'Couloir'}

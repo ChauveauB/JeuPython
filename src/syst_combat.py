@@ -6,12 +6,19 @@ from inventory import Inventory
 from input_player import get_input
 
 class Personnage: # classe de creation des personnages, monstres y compris
-    def __init__(self, player): # initialisation des parametres du monstre
+    def __init__(self, player,): # initialisation des parametres du monstre
         self.inventaire = Inventory(player)
         self.stats_perso = {"PV max": 200, "PV": 200, "Attaque": 5, "Défense": 6, "Mana max": 15, "Mana": 15}
+        self.attack_button = pygame.image.load("../image_combat/attack_button.png")
+        self.screen = pygame.display.set_mode((500, 500), pygame.FULLSCREEN)
 
     def est_vivant(self, cible): #verifie si chaque personnage est vivant
        return cible.stats_perso["PV"] > 0
+
+    def fight_screen (self) : #mise en place de l'affichage du systeme de combat
+        self.attack_button.blit(self.screen, (100, 100))
+        self.magic_button = pygame.image.load("../image_combat/magic_button.png")
+        self.inventory_button = pygame.image.load("../image_combat/inventory_button.png")
 
     def attaquer(self, cible): #calcul des degats
         base_degats = self.stats_perso["Attaque"]
@@ -59,6 +66,7 @@ class combat_logique: #controle du combat en arriere-plan
         pass
 
     def run_combat(self):
+        self.personnage.fight_screen()
         if self.en_cours:
             reponse = get_input("que voulez vous faire (attaque/magie/soin) ?")
             self.lancer_tour(reponse)
