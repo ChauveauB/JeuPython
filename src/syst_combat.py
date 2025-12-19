@@ -8,17 +8,19 @@ from input_player import get_input
 class Personnage: # classe de creation des personnages, monstres y compris
     def __init__(self, player): # initialisation des parametres du monstre
         self.inventaire = Inventory(player)
-        self.stats_perso = {"PV max": 200, "PV": 200, "Attaque": 5, "Défense": 6, "Mana max": 15, "Mana": 15}
+        self.stats_perso = {"PV max": 200, "PV": 10, "Attaque": 5, "Défense": 6, "Mana max": 15, "Mana": 15}        #stats arbitraires
 
-    def est_vivant(self, cible): #verifie si chaque personnage est vivant
+    def est_vivant(self, cible): #verifie si un personnage ciblé est vivant --> Booléen
        return cible.stats_perso["PV"] > 0
 
     def attaquer(self, cible): #calcul des degats
         base_degats = self.stats_perso["Attaque"]
-        degats = max(0, base_degats - cible.stats_perso["PV"] + random.randint(-2, 2))
+        degats = base_degats + randint(-2, 2)
         cible.stats_perso["PV"] -= degats
 
-    def soigner(self):
+        print(f"La cible a {cible.stats_perso["PV"]} PV")
+
+    def soigner(self):  #Soigner le perso s'il possède des potions
         if "potion de vie" in self.inventaire.objets_possede and self.inventaire.objets_possede["potion de vie"] > 0:
             if self.stats_perso["PV"] + 40 >= self.stats_perso["PV max"]:
                 self.stats_perso["PV"] = self.stats_perso["PV max"]
@@ -30,39 +32,56 @@ class Personnage: # classe de creation des personnages, monstres y compris
             print(self.stats_perso["PV"])
             print(self.inventaire.objets_possede["potion de vie"])
 
-    def magie(self, cible):
+    def magie(self, cible):     #Attaque magique
         if self.stats_perso["Mana"] - 3 > 0:
+            self.stats_perso["Mana"] -= 3
             self.attaquer(cible)
 
 class combat_logique: #controle du combat en arriere-plan
-    def __init__(self, player, ennemi):
+    def __init__(self, player):
 
         self.personnage = Personnage(player)
 
-        self.player = player
-        self.ennemi = ennemi
-        self.en_cours = True
+        self.player = Personnage(player)
+        self.ennemi = Personnage(player)        # L'ennemi est une instance de la classe personnage ci-dessus
+        self.en_cours = True            #Boucle du combat
         self.gagnant = None
 
-    def lancer_tour (self, action_joueur) : #toutes les actions qui peuvent se derouler pendant le combat
-        if action_joueur == "attaque":
-            self.personnage.attaquer(self.ennemi)
-        elif action_joueur == "magie":
-            self.personnage.magie(self.ennemi)
-        elif action_joueur == "soin":
-            self.personnage.soigner()
-
-        """if not self.personnage.est_vivant(self.ennemi):
+    def lancer_tour (self, action_joueur, cible):      #toutes les actions qui peuvent se derouler pendant le combat
+        if not self.personnage.est_vivant(self.ennemi):
             self.gagnant = self.player
-            self.en_cours = False"""
-    def reaction_joueur(self):
-        pass
+            self.en_cours = False
+        elif not self.personnage.est_vivant(self.player):
+            self.gagnant = self.ennemi
+            self.en_cours = False
+        else:
+            if action_joueur == "attaque":
+                self.personnage.attaquer(cible)
+            elif action_joueur == "magie":
+                self.personnage.magie(cible)
+            elif action_joueur == "soin":
+                self.personnage.soigner()
 
-    def run_combat(self):
-        if self.en_cours:
-            reponse = get_input("que voulez vous faire (attaque/magie/soin) ?")
-            self.lancer_tour(reponse)
 
+
+    def run_combat(self):       #Boucle du combat
+        while self.en_cours:
+            #Tour player
+            if self.personnage.est_vivant(self.player):
+                action = get_input("que voulez vous faire (attaque/magie/soin) ?")     #Similaire à la méthode input, avec une interface pygame
+                print("Tour joueur")
+                print(action)
+                self.lancer_tour(action, self.ennemi)
+
+            #Tour ennemi
+            if self.personnage.est_vivant(self.ennemi):
+                action = choice(["attaque", "magie"])
+                print("Tour ennemi")
+                print(action)
+                self.lancer_tour(action, self.player)
+
+            if not self.personnage.est_vivant(self.player) or not self.personnage.est_vivant(self.ennemi):
+                self.en_cours = False
 
 
 class Combat: #interface accesible par le joueur lors du combat
@@ -77,6 +96,7 @@ class Combat: #interface accesible par le joueur lors du combat
         self.magic_button_rect = self.magic_button.get_rect()
         self.magic_button_rect.x = math.ceil(self.screen.get_width() / 3.33)
         self.magic_button_rect.y = math.ceil(self.screen.get_height() / 2)
+
         self.running = False
 
     def beginning(self):

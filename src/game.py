@@ -44,13 +44,13 @@ class Game:
 
         # générer un joueur
         self.player = Player()
-        self.map_manager = MapManager(self.screen, self.player)
+        #self.map_manager = MapManager(self.screen, self.player)
         self.dialog_menu = DialogMenu(self.player, len(self.player.player_choice), -5500, 350)
         self.dialog_box = DialogBox(self.player, self.dialog_menu)
 
         # inventaire
         self.inventory = Inventory(self.player)
-        self.syst_combat = combat_logique(self.player, None)
+        self.syst_combat = combat_logique(self.player)
         self.death = Death_menu(self.player)
 
         #if self.player.stats["health"] <= 0:
