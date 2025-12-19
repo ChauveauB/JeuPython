@@ -50,7 +50,7 @@ class Game:
 
         # inventaire
         self.inventory = Inventory(self.player)
-        self.syst_combat = combat_logique(self.player, None)
+        self.syst_combat = combat_logique(self.player)
         self.death = Death_menu(self.player)
 
         #if self.player.stats["health"] <= 0:
