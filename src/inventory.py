@@ -1,5 +1,4 @@
 import pygame
-from player import Player
 
 class Inventory:
     def __init__(self, player):
@@ -24,6 +23,8 @@ class Inventory:
         self.selection_index = 0
         self.selection_time = None
         self.can_move = True
+
+        self.objets_possede = {"potion de vie": 100}
 
 
     def input(self):        # Se "déplacer" dans l'inventaire

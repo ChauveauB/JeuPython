@@ -1,5 +1,4 @@
 import pygame
-from player import Player, NPC
 
 
 class DialogMenu:

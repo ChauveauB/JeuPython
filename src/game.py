@@ -7,7 +7,7 @@ from death_menu import Death_menu
 from dialogue import DialogBox
 from dialog_menu import DialogMenu
 from save import Save
-from syst_combat import Combat
+from syst_combat import combat_logique
 from random import *
 
 class Game:
@@ -17,7 +17,7 @@ class Game:
         self.display_surface = pygame.display.get_surface()
 
         # créer la fenetre
-        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # surface (hauteur, largeur)
+        self.screen = pygame.display.set_mode((500, 500), pygame.FULLSCREEN)  # surface (hauteur, largeur)
         pygame.display.set_caption("Jeu Python")    # titre de la fenêtre
 
         self.running = False
@@ -42,8 +42,6 @@ class Game:
         self.reset_button_rect = self.reset_button.get_rect()
 
 
-        self.combat = Combat()
-
         # générer un joueur
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
@@ -52,7 +50,7 @@ class Game:
 
         # inventaire
         self.inventory = Inventory(self.player)
-        self.syst_combat = Combat()
+        self.syst_combat = combat_logique(self.player, None)
         self.death = Death_menu(self.player)
 
         #if self.player.stats["health"] <= 0:
@@ -133,6 +131,8 @@ class Game:
 
             pygame.display.flip()
 
+            self.syst_combat.run_combat()
+
 
             if self.game_paused and not self.dialog_menu.choising:      # afficher l'inventaire
                 self.inventory.display()
@@ -144,8 +144,6 @@ class Game:
                 if not self.dialog_menu.choising:
                     self.map_manager.check_npc_collisions(self.dialog_box)
                 self.handle_input()
-            elif self.syst_combat.running:
-                self.syst_combat.display()
 
             else:
                 self.player.save_location()
