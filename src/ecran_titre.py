@@ -83,11 +83,18 @@ while running:
             pygame.time.delay(200)
             if btn.action == "new":
                 print("Nouvelle partie")
+                with open("../saves/logs.txt", "w") as logs:
+                    logs.write(">>>>> LOGS DU JEU PYTHON <<<<<\n")
+                with open("../saves/save_Python.txt", "w") as logs:
+                    logs.write("___SAUVEGARDE DU PROJET PYTHON___")
                 pygame.quit()
                 subprocess.run(["python", "main.py"])
                 sys.exit()
             elif btn.action == "load":
                 print("Charger Partie")
+                pygame.quit()
+                subprocess.run(["python", "main.py"])
+                sys.exit()
             elif btn.action == "options":
                 print("Options")
             elif btn.action == "quit":
