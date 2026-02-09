@@ -17,7 +17,6 @@ class Personnage: # classe de creation des personnages, monstres y compris
         base_degats = self.stats_perso["Attaque"]
         degats = base_degats + randint(-2, 2)
         cible.stats_perso["PV"] -= degats
-
         print(f"La cible a {cible.stats_perso["PV"]} PV")
 
     def soigner(self):  #Soigner le perso s'il possède des potions
