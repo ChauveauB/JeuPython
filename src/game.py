@@ -24,24 +24,6 @@ class Game:
         self.game_paused = False
         self.game_end = False
 
-        # importer et charger les images de l'écran titre
-        self.background = pygame.image.load("../others/red_background.jpg")
-
-        self.banner = pygame.image.load("../others/banner.png")
-        self.banner = pygame.transform.scale(self.banner, (500, 500))
-        self.banner_rect = self.banner.get_rect()
-        self.banner_rect.x = math.ceil(self.screen.get_width() / 4)     # l'utilisation du module math permet d'éviter un chiffre a virgule et d'arrondir à l'entier suivant
-
-        self.play_button = pygame.image.load("../others/button.png")
-        self.play_button = pygame.transform.scale(self.play_button, (400, 150))
-        self.play_button_rect = self.play_button.get_rect()
-        self.play_button_rect.x = math.ceil(self.screen.get_width() / 3.33)
-        self.play_button_rect.y = math.ceil(self.screen.get_height() / 2)
-
-        self.reset_button = pygame.image.load("../others/comet.png")
-        self.reset_button_rect = self.reset_button.get_rect()
-
-
         # générer un joueur
         self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
@@ -137,23 +119,10 @@ class Game:
                         self.map_manager.check_npc_collisions(self.dialog_box)
 
                     #sauvegarde
-                    if event.key == pygame.K_x and not self.game_end:
+                    if event.key == pygame.K_s and not self.game_end:
                         Save.write_logs("Tentative de sauvegarde des infos")
                         self.saver()
-                    
-                    #Ajuster la taille en jeu (ptêtre trouver de meilleures touches)
-                    if event.key == pygame.K_z:
-                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w, pygame.display.Info().current_h + 35))
 
-                    if event.key == pygame.K_s and pygame.display.Info().current_h >= 535:
-                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w, pygame.display.Info().current_h - 35))
-
-                    if event.key == pygame.K_q:
-                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w + 50, pygame.display.Info().current_h))
-
-                    if event.key == pygame.K_d and pygame.display.Info().current_w >= 850:                   
-                        self.screen = pygame.display.set_mode((pygame.display.Info().current_w - 50, pygame.display.Info().current_h))
-                        
                 if self.player.stats['health'] <= 0:        # fermeture du jeu quand le joueur n'a plus de vie
                     self.game_end = True
 
