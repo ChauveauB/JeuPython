@@ -14,6 +14,9 @@ class combatscreen :
         self.player_lifebar_img = pygame.image.load('../image_combat/vie_player.png')
         self.ennemy_lifebar_img = pygame.image.load('../image_combat/vie_ennemi.png')
 
+        self.blob_img = pygame.image.load("../image_ennemi/Blob_peinture1.png")
+        on_screen_blob_size = (self.blob_img.get_width() * 5, self.blob_img.get_height() * 5)
+        self.blob_img = pygame.transform.scale(self.blob_img, on_screen_blob_size)
 
         #on s'occupe de l'affichage du personnage
         self.animate_sprite = AnimateSprite("player")
@@ -40,6 +43,7 @@ class combatscreen :
         self.ennemy_lifebar_pos = (800, 50)
 
         self.player_pos = (200, 300)
+        self.blob_pos = (900, 200)
 
 
     def draw_fight_screen (self) :
@@ -55,6 +59,7 @@ class combatscreen :
         self.screen.blit(self.ennemy_lifebar_img, self.ennemy_lifebar_pos)
 
         self.screen.blit(self.player_img, self.player_pos)
+        self.screen.blit(self.blob_img, self.blob_pos)
 
 #ce qui suit n'est la que pour tester, il faudra le supprimer pour l'inclure correctement dans le jeu
 pygame.init()
