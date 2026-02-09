@@ -44,7 +44,7 @@ class Game:
 
         # générer un joueur
         self.player = Player()
-        #self.map_manager = MapManager(self.screen, self.player)
+        self.map_manager = MapManager(self.screen, self.player)
         self.dialog_menu = DialogMenu(self.player, len(self.player.player_choice), -5500, 350)
         self.dialog_box = DialogBox(self.player, self.dialog_menu)
 
@@ -95,44 +95,14 @@ class Game:
             for key in Save.dict_values.keys():
                 save_fic.write(f"{key}:{Save.dict_values[key]}\n")
 
-
-    def run(self):
-        # boucle du jeu
-
-        if self.running:
-            self.running_game()
-        else:
-            while not self.running:
-                self.screen.blit(self.background, (0, 0))
-                self.screen.blit(self.play_button, self.play_button_rect)
-                self.screen.blit(self.banner, self.banner_rect)
-                self.screen.blit(self.reset_button, self.reset_button_rect)
-
-                pygame.display.flip()
-
-                for event in pygame.event.get():
-                    if event.type == pygame.MOUSEBUTTONDOWN:
-                        # vérification si la souris est en colision avec le bouton jouer
-                        if self.play_button_rect.collidepoint(event.pos):   # event.pos = position de l'évènement citer dans la condition au-dessus
-                            # lancer le jeu
-                            self.running = True
-                            self.running_game()
-                        elif self.reset_button_rect.collidepoint(event.pos):
-                            with open("../saves/logs.txt", "w") as logs:
-                                logs.write(">>>>> LOGS DU JEU PYTHON <<<<<\n")
-
-                            self.running = True
-                            self.running_game()
-
     def running_game(self):
         clock = pygame.time.Clock()
-
+        self.running = True
         while self.running:
 
             pygame.display.flip()
 
-            self.syst_combat.run_combat()
-
+            #self.syst_combat.run_combat()
 
             if self.game_paused and not self.dialog_menu.choising:      # afficher l'inventaire
                 self.inventory.display()
@@ -160,7 +130,7 @@ class Game:
                 # création d'un menu/inventaire
 
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_m:     # inventaire
+                    if event.key == pygame.K_i:     # inventaire
                         self.toggle_menu()
 
                     if event.key == pygame.K_SPACE:     # dialogue avec un PNJ

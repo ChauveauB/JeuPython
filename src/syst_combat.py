@@ -96,7 +96,6 @@ class Combat: #interface accesible par le joueur lors du combat
         self.magic_button_rect = self.magic_button.get_rect()
         self.magic_button_rect.x = math.ceil(self.screen.get_width() / 3.33)
         self.magic_button_rect.y = math.ceil(self.screen.get_height() / 2)
-
         self.running = False
 
     def beginning(self):
