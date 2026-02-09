@@ -74,4 +74,3 @@ while True: # Boucle infinie simple
 
     ui.draw_fight_screen()
     pygame.display.flip()
-
