@@ -16,7 +16,7 @@ class Personnage: # classe de creation des personnages, monstres y compris
     def attaquer(self, cible): #calcul des degats
         base_degats = self.stats_perso["Attaque"]
         degats = base_degats + randint(-2, 2)
-        cible.stats_perso["PV"] -= degats
+        cible.stats_base["PV"] -= degats
         print(f"La cible a {cible.stats_perso["PV"]} PV")
 
     def soigner(self):  #Soigner le perso s'il possède des potions
@@ -45,6 +45,7 @@ class combat_logique: #controle du combat en arriere-plan
         self.ennemi = Personnage(player)        # L'ennemi est une instance de la classe personnage ci-dessus
         self.en_cours = True            #Boucle du combat
         self.gagnant = None
+
 
     def lancer_tour (self, action_joueur, cible):      #toutes les actions qui peuvent se derouler pendant le combat
         if not self.personnage.est_vivant(self.ennemi):

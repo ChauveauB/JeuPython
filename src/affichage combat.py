@@ -1,4 +1,4 @@
-from syst_combat import combat_logique
+from syst_combat import Personnage
 from animation import AnimateSprite
 from player import *
 import pygame
@@ -23,7 +23,7 @@ class CombatScreen :
         self.ennemy_lifebar_img = pygame.image.load('../image_combat/vie_ennemi.png')
 
         # Joueur
-        self.animate_sprite = AnimateSprite("player")
+        player = self.animate_sprite = AnimateSprite("player")
         self.player_img = self.animate_sprite.get_image(0, 64)
         on_screen_player = (self.player_img.get_width() * 5, self.player_img.get_height() * 5)
         self.player_img = pygame.transform.scale(self.player_img, on_screen_player)
@@ -63,16 +63,14 @@ class CombatScreen :
         self.player_lifebar_pos = (self.player_pos[0] - self.player_pos[0] // 2, 50)
         self.ennemy_lifebar_pos = (self.ennemi_pos[0] - 90, 50)
 
-        #on definit les hitbox des bouttons pour permettre le clic
-        self.atk_rect = self.atk_button_img.get_rect(topleft = self.atk_button_pos)
-        self.mgc_rect = self.mgc_button_img.get_rect(topleft = self.mgc_button_pos)
-        self.inv_rect = self.inv_button_img.get_rect(topleft = self.inv_button_pos)
-
-
     def draw_fight_screen (self) :
         #on rempli le fond pour cacher la carte
         self.screen.fill((50, 50, 50))
 
+        # on definit les hitbox des bouttons pour permettre le clic
+        self.atk_rect = self.atk_button_img.get_rect(topleft=self.atk_button_pos)
+        self.mgc_rect = self.mgc_button_img.get_rect(topleft=self.mgc_button_pos)
+        self.inv_rect = self.inv_button_img.get_rect(topleft=self.inv_button_pos)
 
         #on dessine les elements de l'ecran
         self.screen.blit(self.atk_button_img, self.atk_button_pos)
@@ -97,20 +95,28 @@ class CombatScreen :
 
 
 
-#ce qui suit n'est la que pour tester, il faudra le supprimer pour l'inclure correctement dans le jeu
+#la boucle while qui suit n'est la que pour tester, il faudra le supprimer pour l'inclure correctement dans le jeu
 pygame.init()
 screen = pygame.display.set_mode((1920, 1080), pygame.FULLSCREEN) # Crée la fenêtre
 ui = CombatScreen(screen)
+#combat = combat_logique()
+player = Player()
+personnage = Personnage(player)
+name_ennemi = ui.ennemi
+ennemi = Ennemy(name_ennemi, screen)
 
 while True: # Boucle infinie simple
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-
+        #cette boucle sera normalement a garder ou deplacer lors de l'inclusion du combat au reste du jeu
         if event.type == pygame.MOUSEBUTTONDOWN :
-            if event.button == 1 and combatscreen.atk_rect.collidepoint(event.pos) :
-                combat_logique.lancer_tour('attaque', )
+            if event.button == 1 :
+                if ui.atk_rect.collidepoint(event.pos) :
+                    print("ca marche de ce coté")
+                    personnage.attaquer(ennemi)
+
 
 
 
