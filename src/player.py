@@ -36,8 +36,8 @@ class Entity(AnimateSprite):
     # affichage d'une barre de vie
     def update_health_bar(self, surface):
         # draw the bar
-        pygame.draw.rect(surface, (55, 55, 55), [10, 10, self.max_health, 10])
-        pygame.draw.rect(surface, (255, 0, 0), [10, 10, self.stats['health'], 10])
+        pygame.draw.rect(surface, (55, 55, 55), [100, 100, self.max_health, 10])
+        pygame.draw.rect(surface, (255, 0, 0), [100, 100, self.stats['health'], 10])
 
     def get_value_by_index(self, index):
         return list(self.stats.values())[index]
