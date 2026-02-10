@@ -103,8 +103,6 @@ pygame.init()
 screen = pygame.display.set_mode((1920, 1080), pygame.FULLSCREEN) # Crée la fenêtre
 ui = CombatScreen(screen)
 
-name_ennemi = ui.ennemi
-ennemi = Ennemy(name_ennemi, screen)
 
 while True: # Boucle infinie simple
     for event in pygame.event.get():
