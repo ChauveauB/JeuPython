@@ -62,9 +62,10 @@ class Player(Entity):
             "PV": 90,
             "Attaque": 5,
             "Défense": 6,
-            "Mana max": 15,
-            "Mana": 15,
-            "Speed" : 3
+            "Mana max": 60,
+            "Mana": 60,
+            "Speed" : 3,
+            "Mana Réduction" : 4,      #Le mana est réduit de 4 car il n'a que 15 Mana normalement
         }
         self.npc_answers = {"cable hdmi": {"Oui": 0, "Non": 1}, "paul": {"Quête": 0, "Au revoir": 1}, "robin": {"Combat": 0, "Fuite": 1}}
         self.player_choice = {}
@@ -87,8 +88,12 @@ class Player(Entity):
     # affichage d'une barre de vie
     def update_health_bar(self, surface):
         # draw the bar
-        pygame.draw.rect(surface, (55, 55, 55), [150, 91, self.stats['PV max'], 10])
+        pygame.draw.rect(surface, (55, 55, 55), [150, 91, self.stats['PV max'], 11])
         pygame.draw.rect(surface, (175, 53, 41), [150, 91, self.stats['PV'], 10])
+
+    def update_mana_bar(self, surface):
+        pygame.draw.rect(surface, (55, 55, 55), [150, 102, self.stats['Mana max'], 11])
+        pygame.draw.rect(surface, (32, 76, 145), [150, 102, self.stats['Mana'], 10])
 
     def get_value_by_index(self, index):
         return list(self.stats.values())[index]
@@ -188,9 +193,9 @@ class Ennemy:
         self.name = name
         self.screen = screen
         self.stats_base = {
-            "Blob1": {"PV max": 100, "PV": 90, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
-            "Blob2": {"PV max": 100, "PV": 90, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
-            "Araignée": {"PV max": 100, "PV": 90, "Attaque": 6, "Défense": 6, "Dégâts": 0.75}  #Prends *0.75 dégâts car il n'a réellement que 150 PV
+            "Blob1": {"PV max": 100, "PV": 80, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
+            "Blob2": {"PV max": 100, "PV": 80, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
+            "Araignée": {"PV max": 100, "PV": 92.5, "Attaque": 6, "Défense": 6, "Dégâts": 0.75}  #Prends *0.75 dégâts car il n'a réellement que 150 PV
         }
 
     def update_health_bar(self, surface):

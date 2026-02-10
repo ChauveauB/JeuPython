@@ -79,6 +79,7 @@ class CombatScreen :
 
         self.screen.blit(self.player_lifebar_img, self.player_lifebar_pos)
         self.player.update_health_bar(self.screen)
+        self.player.update_mana_bar(self.screen)
         self.screen.blit(self.ennemy_lifebar_img, self.ennemy_lifebar_pos)
         self.monstre.update_health_bar(self.screen)
 
@@ -104,6 +105,7 @@ player = Player()
 personnage = Personnage(player)
 name_ennemi = ui.ennemi
 ennemi = Ennemy(name_ennemi, screen)
+
 
 while True: # Boucle infinie simple
     for event in pygame.event.get():
