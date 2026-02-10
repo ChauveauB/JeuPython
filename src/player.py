@@ -7,7 +7,7 @@ from syst_combat import Combat
 
 class Entity(AnimateSprite):
 
-    def __init__(self, name, x, y, speed, health=3):
+    def __init__(self, name, x, y, speed):
         super().__init__(name)
 
         self.image = self.get_image(0, 0)
@@ -18,29 +18,9 @@ class Entity(AnimateSprite):
         self.feet = pygame.Rect(0, 0, self.rect.width * 0.5, 12)
         self.old_position = self.position.copy()
 
-        # stats
-        self.stats = {"health": health,
-                      "attack": 10,
-                      "defense": 10,
-                      "speed": speed
-                      }
-        self.health = self.stats["health"]
-        self.max_health = 200
-        self.speed = self.stats["speed"]
+        self.speed = speed
+
         self.can_move = True
-
-        self.ennemies = randint(1, 3)
-        self.combat = Combat()
-
-
-    # affichage d'une barre de vie
-    def update_health_bar(self, surface):
-        # draw the bar
-        pygame.draw.rect(surface, (55, 55, 55), [100, 100, self.max_health, 10])
-        pygame.draw.rect(surface, (255, 0, 0), [100, 100, self.stats['health'], 10])
-
-    def get_value_by_index(self, index):
-        return list(self.stats.values())[index]
 
     def save_location(self):        # Pour y revenir quand on entre en collision avec un objet/mur
         self.old_position = self.position.copy()
@@ -77,8 +57,15 @@ class Entity(AnimateSprite):
 
 class Player(Entity):
     def __init__(self):
-        self.speed_base = 3
-        self.health_base = 100
+        self.stats = {
+            "PV max": 100,
+            "PV": 90,
+            "Attaque": 5,
+            "Défense": 6,
+            "Mana max": 15,
+            "Mana": 15,
+            "Speed" : 3
+        }
         self.npc_answers = {"cable hdmi": {"Oui": 0, "Non": 1}, "paul": {"Quête": 0, "Au revoir": 1}, "robin": {"Combat": 0, "Fuite": 1}}
         self.player_choice = {}
         self.fighting = False
@@ -93,9 +80,18 @@ class Player(Entity):
         else:
             x = 0
             y = 0
-            speed = self.speed_base
-            health = self.health_base
-        super().__init__("player", x, y, speed, health)
+            speed = self.stats["Speed"]
+            health = self.stats["PV"]
+        super().__init__("player", x, y, speed)
+
+    # affichage d'une barre de vie
+    def update_health_bar(self, surface):
+        # draw the bar
+        pygame.draw.rect(surface, (55, 55, 55), [150, 91, self.stats['PV max'], 10])
+        pygame.draw.rect(surface, (175, 53, 41), [150, 91, self.stats['PV'], 10])
+
+    def get_value_by_index(self, index):
+        return list(self.stats.values())[index]
 
     def react_player(self, answer, npc, dialoguer):
         if npc.name == "cable hdmi":
@@ -186,3 +182,23 @@ class NPC(Entity):
             point = tmx_data.get_object_by_name(f"{self.name}_path{num}")
             rect = pygame.Rect(point.x, point.y, point.width, point.height)
             self.points.append(rect)
+
+class Ennemy:
+    def __init__(self, name, screen):
+        self.name = name
+        self.screen = screen
+        self.stats_base = {
+            "Blob1": {"PV max": 100, "PV": 90, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
+            "Blob2": {"PV max": 100, "PV": 90, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
+            "Araignée": {"PV max": 100, "PV": 90, "Attaque": 6, "Défense": 6, "Dégâts": 0.75}  #Prends *0.75 dégâts car il n'a réellement que 150 PV
+        }
+
+    def update_health_bar(self, surface):
+        # draw the bar
+        PV_max = pygame.Rect(0, 0, self.stats_base[self.name]['PV max'], 10)
+        PV_max.topright = (self.screen.get_width() - 230, 91)
+        pygame.draw.rect(surface, (55, 55, 55), PV_max)
+
+        PV = pygame.Rect(0, 0, self.stats_base[self.name]['PV'], 10)
+        PV.topright = (self.screen.get_width() - 230, 91)
+        pygame.draw.rect(surface, (174, 58, 46), PV)

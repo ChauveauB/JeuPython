@@ -10,6 +10,8 @@ class CombatScreen :
         self.screen = screen
         self.player = Player()
         self.ennemi = random.choice(["Blob1", "Blob2","Araignée"])
+        self.monstre = Ennemy(self.ennemi, self.screen)
+
         #on definit les sprites de chaque element de l'ecran de combat
         #Actions
         self.atk_button_img = pygame.image.load('../image_combat/attack_button.png')
@@ -52,13 +54,14 @@ class CombatScreen :
         self.mgc_button_pos = (1050, 600)
 
 
-        #on definit les positions des barres de vie
-        self.player_lifebar_pos = (100, 50)
-        self.ennemy_lifebar_pos = (800, 50)
+
 
         self.player_pos = (200, 300)
         self.ennemi_pos = (self.player_pos[0] + 700, self.player_pos[1])
 
+        # on definit les positions des barres de vie
+        self.player_lifebar_pos = (self.player_pos[0] - self.player_pos[0] // 2, 50)
+        self.ennemy_lifebar_pos = (self.ennemi_pos[0] - 90, 50)
 
         #on definit les hitbox des bouttons pour permettre le clic
         self.atk_rect = self.atk_button_img.get_rect(topleft = self.atk_button_pos)
@@ -79,6 +82,7 @@ class CombatScreen :
         self.screen.blit(self.player_lifebar_img, self.player_lifebar_pos)
         self.player.update_health_bar(self.screen)
         self.screen.blit(self.ennemy_lifebar_img, self.ennemy_lifebar_pos)
+        self.monstre.update_health_bar(self.screen)
 
         #Joueur
         self.screen.blit(self.player_img, self.player_pos)
