@@ -1,4 +1,4 @@
-from syst_combat import Personnage
+from syst_combat import combat_logique
 from animation import AnimateSprite
 import pygame
 
@@ -46,6 +46,12 @@ class combatscreen :
         self.blob_pos = (900, 200)
 
 
+        #on definit les hitbox des bouttons pour permettre le clic
+        self.atk_rect = self.atk_button_img.get_rect(topleft = self.atk_button_pos)
+        self.mgc_rect = self.mgc_button_img.get_rect(topleft = self.mgc_button_pos)
+        self.inv_rect = self.inv_button_img.get_rect(topleft = self.inv_button_pos)
+
+
     def draw_fight_screen (self) :
         #on rempli le fond pour cacher la carte
         self.screen.fill((50, 50, 50))
@@ -71,6 +77,12 @@ while True: # Boucle infinie simple
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+
+        if event.type == pygame.MOUSEBUTTONDOWN :
+            if event.button == 1 and combatscreen.atk_rect.collidepoint(event.pos) :
+                combat_logique.lancer_tour('attaque', )
+
+
 
     ui.draw_fight_screen()
     pygame.display.flip()
