@@ -41,10 +41,7 @@ class AnimateSprite(pygame.sprite.Sprite):
         images = []
 
         for i in range(0, 8):
-            if taille == 32:
-                x = i*32
-            else:
-                x = i * 64
+            x = i * taille
             image = self.get_image(x, y, taille)
             images.append(image)
 

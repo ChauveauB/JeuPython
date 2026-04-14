@@ -54,7 +54,9 @@ class MapManager:
         ],npcs=[
             NPC("cable hdmi", 2, 1, dialog=["Vous venez de trouver le cable HDMI", "/menu_dialogue/", "*choix"]),      # PNJ de cette carte
         ]),
-        self.register_map("foret1")
+        self.register_map("foret1", portals=[
+            Portal(from_world="foret1", origin_point='exit_foret1', target_world='Couloir', teleport_point="exit_foret")
+        ])
         """self.register_map('foret_A1', portals=[
             Portal(from_world='foret_A1', origin_point='exit_foret', target_world='Couloir',teleport_point='exit_foret'),
             Portal(from_world='foret_A1', origin_point='enter_foret_E10', target_world='foret_E10',teleport_point='spawn_foret_A1'),
@@ -204,6 +206,7 @@ class MapManager:
         tmx_data = pytmx.util_pygame.load_pygame(f'../map/{name}.tmx')
         map_data = pyscroll.data.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
+        self.current_map = name
         if self.current_map != "foret1":
             map_layer.zoom = 2.5        # Charger la carte et l'afficher sur l'écran avec un zoom spécifique
             self.player.name = "personnage32px"
