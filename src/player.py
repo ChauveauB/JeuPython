@@ -64,7 +64,7 @@ class Player(Entity):
             "Défense": 6,
             "Mana max": 60,
             "Mana": 60,
-            "Speed" : 3,
+            "Speed" : 7,
             "Mana Réduction" : 4,      #Le mana est réduit de 4 car il n'a que 15 Mana normalement
         }
         self.npc_answers = {"cable hdmi": {"Oui": 0, "Non": 1}, "paul": {"Quête": 0, "Au revoir": 1}, "robin": {"Combat": 0, "Fuite": 1}}
@@ -83,7 +83,7 @@ class Player(Entity):
             y = 0
             speed = self.stats["Speed"]
             health = self.stats["PV"]
-        super().__init__("player", x, y, speed)
+        super().__init__("personnage", x, y, speed)
 
     # affichage d'une barre de vie
     def update_health_bar(self, surface):
@@ -139,6 +139,7 @@ class NPC(Entity):
         self.points = []
         self.name = name
         self.player = Player()
+        self.stats = {"speed":2}
 
         self.current_point = 0
 

@@ -36,7 +36,7 @@ class MapManager:
             Portal(from_world='Couloir', origin_point='enter_salle10', target_world='Salle10', teleport_point='spawn_salle10'),
             Portal(from_world='Couloir', origin_point='enter_salle11', target_world='Salle11', teleport_point='spawn_salle11'),
             Portal(from_world='Couloir', origin_point='enter_salle12', target_world='Salle12', teleport_point='spawn_salle12'),
-            Portal(from_world='Couloir', origin_point='enter_foret_A1', target_world='foret_A1', teleport_point='spawn_foret')
+            Portal(from_world='Couloir', origin_point='enter_foret1', target_world='foret1', teleport_point='spawn_foret1')
         ])              # Définitions des différentes transitions entre les cartes
         self.register_map('Salle10', portals=[
             Portal(from_world='Salle10', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle10')      # Pour sortir de la carte Salle10
@@ -53,7 +53,8 @@ class MapManager:
         ], npcs=[
             NPC("cable hdmi", 2, 1, dialog=["Vous venez de trouver le cable HDMI", "/menu_dialogue/", "*choix"]),      # PNJ de cette carte
         ]),
-        self.register_map('foret_A1', portals=[
+        self.register_map("foret1")
+        """self.register_map('foret_A1', portals=[
             Portal(from_world='foret_A1', origin_point='exit_foret', target_world='Couloir',teleport_point='exit_foret'),
             Portal(from_world='foret_A1', origin_point='enter_foret_E10', target_world='foret_E10',teleport_point='spawn_foret_A1'),
             Portal(from_world='foret_A1', origin_point='enter_foret_D2', target_world='foret_D2',teleport_point='spawn_foret_A1'),
@@ -148,7 +149,7 @@ class MapManager:
             Portal(from_world='foret_E18', origin_point='exit_foret_E18', target_world='foret_A17',teleport_point='spawn_foret_E18'),
             Portal(from_world='foret_E18', origin_point='enter_foret_B19', target_world='foret_B19',teleport_point='spawn_foret_E18'),
             Portal(from_world='foret_E18', origin_point='dead_end', target_world='foret_A1',teleport_point='spawn_foret')
-        ])
+        ])"""
 
         # déplacement du joueur à son point de départ (ou aux coordonnées enregistrées par la save), si il y a un fichier de sauvegarde
         if Save.Saved:
@@ -179,11 +180,7 @@ class MapManager:
                     self.current_map = portal.target_world
                     self.teleport_player(copy_portal.teleport_point)
 
-                    # perdre de la vie en passant par ce portail
-                    if self.player.health - 10 > 10:
-                        self.player.health -= 10
-                    #else:
-                        # si le joueur n'a plus de vie
+
 
 
         # verifier les collisions
@@ -206,7 +203,10 @@ class MapManager:
         tmx_data = pytmx.util_pygame.load_pygame(f'../map/{name}.tmx')
         map_data = pyscroll.data.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
-        map_layer.zoom = 2        # Charger la carte et l'afficher sur l'écran avec un zoom spécifique
+        if self.current_map != "foret1":
+            map_layer.zoom = 2.5        # Charger la carte et l'afficher sur l'écran avec un zoom spécifique
+        else:
+            map_layer.zoom = 1.4
         walls = []
 
         for obj in tmx_data.objects:

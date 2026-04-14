@@ -123,7 +123,7 @@ class Game:
                         Save.write_logs("Tentative de sauvegarde des infos")
                         self.saver()
 
-                if self.player.stats['health'] <= 0:        # fermeture du jeu quand le joueur n'a plus de vie
+                if self.player.stats['PV'] <= 0:        # fermeture du jeu quand le joueur n'a plus de vie
                     self.game_end = True
 
             if self.game_end:

@@ -23,7 +23,7 @@ class CombatScreen :
         self.ennemy_lifebar_img = pygame.image.load('../image_combat/vie_ennemi.png')
 
         # Joueur
-        player = self.animate_sprite = AnimateSprite("player")
+        player = self.animate_sprite = AnimateSprite("personnage")
         self.player_img = self.animate_sprite.get_image(0, 64)
         on_screen_player = (self.player_img.get_width() * 5, self.player_img.get_height() * 5)
         self.player_img = pygame.transform.scale(self.player_img, on_screen_player)
