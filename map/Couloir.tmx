@@ -90,13 +90,13 @@
 </data>
  </layer>
  <objectgroup id="3" name="Collisions">
-  <object id="2" name="collision" type="collision" x="0.583333" y="83.8258" width="407.667" height="2"/>
+  <object id="2" name="collision" type="collision" x="32.9167" y="-19.1742" width="407.667" height="2"/>
   <object id="3" name="collision" type="collision" x="407.14" y="54.5871" width="1.63636" height="30.7273"/>
   <object id="4" name="collision" type="collision" x="1.58333" y="0.291667" width="407.5" height="54.375"/>
   <object id="5" name="collision" type="collision" x="-0.0416667" y="54.5417" width="1" height="29.75"/>
  </objectgroup>
  <objectgroup id="2" name="Calque d'Objets 1">
-  <object id="1" name="player" x="386.458" y="69.6667">
+  <object id="1" name="player_spawn" x="298.792" y="61">
    <point/>
   </object>
   <object id="8" name="enter_salle12" x="0.0833333" y="54.2917" width="4.5" height="30.25"/>
@@ -111,7 +111,7 @@
   <object id="13" name="exit_salle12" x="15.0833" y="69.6667">
    <point/>
   </object>
-  <object id="17" name="enter_foret_A1" x="403.125" y="54.375" width="12" height="31.625"/>
+  <object id="17" name="enter_foret1" x="403.125" y="54.375" width="12" height="31.625"/>
   <object id="18" name="exit_foret" x="379.5" y="69.5">
    <point/>
   </object>
