@@ -18,9 +18,19 @@ class CombatScreen :
         self.inv_button_img = pygame.image.load('../image_combat/inventory_button.png')
         self.mgc_button_img = pygame.image.load('../image_combat/magic_button.png')
 
+        #on definit les positions de chaque bouton d'action
+        self.atk_button_pos = (850, 600)
+        self.inv_button_pos = (100, 600)
+        self.mgc_button_pos = (1050, 600)
+
         #Barres de vie
         self.player_lifebar_img = pygame.image.load('../image_combat/vie_player.png')
         self.ennemy_lifebar_img = pygame.image.load('../image_combat/vie_ennemi.png')
+
+        #on definit la taille des barres de vie pour qu'elles ne soient pas trop grosses
+        on_screen_lifebar_size = (int(self.player_lifebar_img.get_width() * 0.4), int(self.player_lifebar_img.get_height()*0.4))
+        self.player_lifebar_img = pygame.transform.scale(self.player_lifebar_img, on_screen_lifebar_size)
+        self.ennemy_lifebar_img = pygame.transform.scale(self.ennemy_lifebar_img, on_screen_lifebar_size)
 
         # Joueur
         player = self.animate_sprite = AnimateSprite("player")
@@ -41,20 +51,6 @@ class CombatScreen :
         self.araignee_img = pygame.image.load("../image_ennemi/Araignée.png")
         on_screen_araignee_size = on_screen_player
         self.araignee_img = pygame.transform.scale(self.araignee_img, on_screen_araignee_size)
-
-        #on definit la taille des barres de vie pour qu'elles ne soient pas trop grosses
-        on_screen_lifebar_size = (int(self.player_lifebar_img.get_width() * 0.4), int(self.player_lifebar_img.get_height()*0.4))
-        self.player_lifebar_img = pygame.transform.scale(self.player_lifebar_img, on_screen_lifebar_size)
-        self.ennemy_lifebar_img = pygame.transform.scale(self.ennemy_lifebar_img, on_screen_lifebar_size)
-
-
-        #on definit les positions de chaque boutton d'action
-        self.atk_button_pos = (850, 600)
-        self.inv_button_pos = (100, 600)
-        self.mgc_button_pos = (1050, 600)
-
-
-
 
         self.player_pos = (200, 300)
         self.ennemi_pos = (self.player_pos[0] + 700, self.player_pos[1])
