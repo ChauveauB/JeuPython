@@ -1,6 +1,5 @@
 import pygame
 from animation import AnimateSprite
-from map import MapManager
 from save import Save
 from random import randint
 from syst_combat import Combat
@@ -8,10 +7,10 @@ from syst_combat import Combat
 
 class Entity(AnimateSprite):   # Création de la classe générale d'un individu
 
-    def __init__(self, name, x, y, speed):
+    def __init__(self, name, x, y, speed, taille):
         super().__init__(name)
 
-        self.image = self.get_image(0, 0)
+        self.image = self.get_image(0, 0, taille)
         self.image.set_colorkey([0, 0, 0])
         self.rect = self.image.get_rect()
         self.position = [x, y]
@@ -28,22 +27,22 @@ class Entity(AnimateSprite):   # Création de la classe générale d'un individu
 
     def move_right(self):
         if self.can_move:
-            self.change_animation("right")
+            self.change_animation("images32","right")
             self.position[0] += self.speed
 
     def move_left(self):
         if self.can_move:
-            self.change_animation("left")
+            self.change_animation("images32", "left")
             self.position[0] -= self.speed
 
     def move_up(self):
         if self.can_move:
-            self.change_animation("up")
+            self.change_animation("images32", "up")
             self.position[1] -= self.speed
 
     def move_down(self):
         if self.can_move:
-            self.change_animation("down")
+            self.change_animation("images32", "down")
             self.position[1] += self.speed
 
     def update(self):
@@ -70,6 +69,8 @@ class Player(Entity):
         }
         self.npc_answers = {"cable hdmi": {"Oui": 0, "Non": 1}, "paul": {"Quête": 0, "Au revoir": 1}, "robin": {"Combat": 0, "Fuite": 1}}
         self.player_choice = {}
+        self.name = "personnage32px"
+        self.taille = 32
         self.fighting = False
         self.cable_hdmi = False
 
@@ -84,7 +85,7 @@ class Player(Entity):
             y = 0
             speed = self.stats["Speed"]
             health = self.stats["PV"]
-        super().__init__("personnage", x, y, speed)
+        super().__init__(self.name, x, y, speed, self.taille)
 
     # affichage d'une barre de vie
     def update_health_bar(self, surface):
@@ -133,7 +134,7 @@ class Player(Entity):
 class NPC(Entity):
 
     def __init__(self, name, nb_points, speed, dialog):
-        super().__init__(name, 0, 0, speed)
+        super().__init__(name, 0, 0, speed, 32)
         # récupère la vitesse grace a la class entity
         self.dialog = dialog
         self.nb_points = nb_points

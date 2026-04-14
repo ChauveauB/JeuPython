@@ -45,12 +45,13 @@ class MapManager:
         ]),
         self.register_map('Salle11', portals=[
             Portal(from_world='Salle11', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle11')      # Pour sortir de la carte Salle11
-        ], npcs=[
+        ],npcs=[
             NPC("robin", 2, 1, dialog=["Nous allons nous combattre !", "/combat/", "a bientot"]),      # PNJ de cette carte
         ]),
+
         self.register_map('Salle12', portals=[
             Portal(from_world='Salle12', origin_point='exit_salle', target_world='Couloir', teleport_point='exit_salle12')      # Pour sortir de la carte Salle12
-        ], npcs=[
+        ],npcs=[
             NPC("cable hdmi", 2, 1, dialog=["Vous venez de trouver le cable HDMI", "/menu_dialogue/", "*choix"]),      # PNJ de cette carte
         ]),
         self.register_map("foret1")
@@ -205,8 +206,12 @@ class MapManager:
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
         if self.current_map != "foret1":
             map_layer.zoom = 2.5        # Charger la carte et l'afficher sur l'écran avec un zoom spécifique
+            self.player.name = "personnage32px"
+            self.player.taille = 32
         else:
             map_layer.zoom = 1.4
+            self.player.name = "personnage64px"
+            self.player.taille = 64
         walls = []
 
         for obj in tmx_data.objects:
