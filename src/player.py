@@ -7,11 +7,15 @@ from syst_combat import Combat
 
 class Entity(AnimateSprite):   # Création de la classe générale d'un individu
 
-    def __init__(self, name, x, y, speed, taille):
+    def __init__(self, name, x, y, speed, taille_px):
         super().__init__(name)
 
-        self.image = self.get_image(0, 0, taille)
+        self.image = self.get_image(0, 0, taille_px)
         self.image.set_colorkey([0, 0, 0])
+        if taille_px == 32:                     # On détermine quels paramètres d'image charger
+            self.image_taille = "images32"
+        elif taille_px == 64:
+            self.image_taille = "images64"
         self.rect = self.image.get_rect()
         self.position = [x, y]
 
@@ -27,22 +31,22 @@ class Entity(AnimateSprite):   # Création de la classe générale d'un individu
 
     def move_right(self):
         if self.can_move:
-            self.change_animation("images32","right")
+            self.change_animation(self.image_taille,"right")
             self.position[0] += self.speed
 
     def move_left(self):
         if self.can_move:
-            self.change_animation("images32", "left")
+            self.change_animation(self.image_taille, "left")
             self.position[0] -= self.speed
 
     def move_up(self):
         if self.can_move:
-            self.change_animation("images32", "up")
+            self.change_animation(self.image_taille, "up")
             self.position[1] -= self.speed
 
     def move_down(self):
         if self.can_move:
-            self.change_animation("images32", "down")
+            self.change_animation(self.image_taille, "down")
             self.position[1] += self.speed
 
     def update(self):
@@ -69,8 +73,8 @@ class Player(Entity):
         }
         self.npc_answers = {"cable hdmi": {"Oui": 0, "Non": 1}, "paul": {"Quête": 0, "Au revoir": 1}, "robin": {"Combat": 0, "Fuite": 1}}
         self.player_choice = {}
-        self.name = "personnage32px"
-        self.taille = 32
+        self.name = "personnage64px"
+        self.taille = 64
         self.fighting = False
         self.cable_hdmi = False
 
@@ -86,6 +90,7 @@ class Player(Entity):
             speed = self.stats["Speed"]
             health = self.stats["PV"]
         self.health = health
+        print(self.name)
         super().__init__(self.name, x, y, speed, self.taille)
 
     # affichage d'une barre de vie

@@ -207,14 +207,11 @@ class MapManager:
         map_data = pyscroll.data.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
         self.current_map = name
-        if self.current_map != "foret1":
-            map_layer.zoom = 2.5        # Charger la carte et l'afficher sur l'écran avec un zoom spécifique
-            self.player.name = "personnage32px"
-            self.player.taille = 32
-        else:
+        if self.current_map == "foret1":
             map_layer.zoom = 1.4
-            self.player.name = "personnage64px"
-            self.player.taille = 64
+        else:
+            map_layer.zoom = 2.5  # Charger la carte et l'afficher sur l'écran avec un zoom spécifique
+
         walls = []
 
         for obj in tmx_data.objects:
@@ -231,6 +228,14 @@ class MapManager:
 
         # créer un objet map
         self.maps[name] = Map(name, walls, group, tmx_data, portals, npcs)
+
+    def update_taille(self):
+        if "foret" in self.current_map:
+            self.player.name = "personnage64px"
+            self.player.taille = 64
+        else:
+            self.player.name = "personnage32px"
+            self.player.taille = 32
 
     def get_map(self):          # On "prend"  la carte actuelle
         return self.maps[self.current_map]
@@ -262,4 +267,5 @@ class MapManager:
     def update(self):
         self.get_group().update()
         self.check_collisions()
+        self.update_taille()
 
