@@ -1,6 +1,5 @@
 import pygame
 
-
 class AnimateSprite(pygame.sprite.Sprite):
 
     def __init__(self, name):
@@ -25,8 +24,7 @@ class AnimateSprite(pygame.sprite.Sprite):
 
     def change_animation(self, taille, name):
         """ taille --> str : images32 ou images64
-            name --> str : personnage32px ou personnage64px
-        """
+            name --> str : personnage32px ou personnage64px"""
 
         self.image = self.images[taille][name][self.animation_index]
         self.image.set_colorkey((0, 0, 0))

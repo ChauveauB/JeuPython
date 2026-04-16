@@ -1,8 +1,6 @@
 import pygame
 from animation import AnimateSprite
 from save import Save
-from random import randint
-from syst_combat import Combat
 
 
 class Entity(AnimateSprite):   # Création de la classe générale d'un individu

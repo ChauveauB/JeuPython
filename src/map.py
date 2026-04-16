@@ -183,9 +183,6 @@ class MapManager:
                     self.current_map = portal.target_world
                     self.teleport_player(copy_portal.teleport_point)
 
-
-
-
         # verifier les collisions
         for sprite in self.get_group().sprites():
             if type(sprite) is NPC:
