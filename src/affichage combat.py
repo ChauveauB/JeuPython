@@ -11,6 +11,7 @@ class CombatScreen :
         self.player = Player()
         self.ennemi = random.choice(["Blob1", "Blob2","Araignée"])
         self.monstre = Ennemy(self.ennemi, self.screen)
+        self.personnage = Personnage(self.player, self.monstre, self.screen, self.ennemi)
 
         #on definit les sprites de chaque element de l'ecran de combat
         #Actions
@@ -74,10 +75,10 @@ class CombatScreen :
         self.screen.blit(self.mgc_button_img, self.mgc_button_pos)
 
         self.screen.blit(self.player_lifebar_img, self.player_lifebar_pos)
-        self.player.update_health_bar(self.screen)
-        self.player.update_mana_bar(self.screen)
+        self.personnage.update_health_bar(self.screen, "player", self.ennemi)
+        self.personnage.update_mana_bar(self.screen)
         self.screen.blit(self.ennemy_lifebar_img, self.ennemy_lifebar_pos)
-        self.monstre.update_health_bar(self.screen)
+        self.personnage.update_health_bar(self.screen, "ennemi", self.ennemi)
 
         #Joueur
         self.screen.blit(self.player_img, self.player_pos)
@@ -98,10 +99,9 @@ screen = pygame.display.set_mode((1920, 1080), pygame.FULLSCREEN) # Crée la fen
 ui = CombatScreen(screen)
 #combat = combat_logique()
 player = Player()
-personnage = Personnage(player)
 name_ennemi = ui.ennemi
 ennemi = Ennemy(name_ennemi, screen)
-
+personnage = Personnage(player, ennemi, screen, name_ennemi)
 
 while True: # Boucle infinie simple
     for event in pygame.event.get():
@@ -112,8 +112,7 @@ while True: # Boucle infinie simple
         if event.type == pygame.MOUSEBUTTONDOWN :
             if event.button == 1 :
                 if ui.atk_rect.collidepoint(event.pos) :
-                    print("ca marche de ce coté")
-                    personnage.attaquer(ennemi)
+                    personnage.attaquer("ennemi", name_ennemi)
 
 
 

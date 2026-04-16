@@ -1,6 +1,7 @@
 import pygame
 from animation import AnimateSprite
 from save import Save
+from syst_combat import *
 
 
 class Entity(AnimateSprite):   # Création de la classe générale d'un individu
@@ -92,14 +93,7 @@ class Player(Entity):
         super().__init__(self.name, x, y, speed, self.taille)
 
     # affichage d'une barre de vie
-    def update_health_bar(self, surface):
-        # draw the bar
-        pygame.draw.rect(surface, (55, 55, 55), [150, 91, self.stats['PV max'], 11])
-        pygame.draw.rect(surface, (175, 53, 41), [150, 91, self.stats['PV'], 10])
 
-    def update_mana_bar(self, surface):
-        pygame.draw.rect(surface, (55, 55, 55), [150, 102, self.stats['Mana max'], 11])
-        pygame.draw.rect(surface, (32, 76, 145), [150, 102, self.stats['Mana'], 10])
 
     def get_value_by_index(self, index):
         return list(self.stats.values())[index]
@@ -200,17 +194,17 @@ class Ennemy:
         self.name = name
         self.screen = screen
         self.stats_base = {
-            "Blob1": {"PV max": 100, "PV": 80, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
-            "Blob2": {"PV max": 100, "PV": 80, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
-            "Araignée": {"PV max": 100, "PV": 92.5, "Attaque": 6, "Défense": 6, "Dégâts": 0.75}  #Prends *0.75 dégâts car il n'a réellement que 150 PV
+            "Blob1": {"PV max": 100, "PV": 100, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
+            "Blob2": {"PV max": 100, "PV": 100, "Attaque": 3, "Défense": 3, "Dégâts": 2},         #Prends *2 dégâts car il n'a réellement que 50 PV
+            "Araignée": {"PV max": 100, "PV": 100, "Attaque": 6, "Défense": 6, "Dégâts": 0.75}  #Prends *0.75 dégâts car il n'a réellement que 150 PV
         }
 
     def update_health_bar(self, surface):
         # draw the bar
-        PV_max = pygame.Rect(0, 0, self.stats_base[self.name]['PV max'], 10)
+        PV_max = pygame.Rect(0, 0, self.stats_base[self.name]['PV max']*3, 10)
         PV_max.topright = (self.screen.get_width() - 230, 91)
         pygame.draw.rect(surface, (55, 55, 55), PV_max)
 
-        PV = pygame.Rect(0, 0, self.stats_base[self.name]['PV'], 10)
+        PV = pygame.Rect(0, 0, self.stats_base[self.name]['PV']*3, 10)
         PV.topright = (self.screen.get_width() - 230, 91)
         pygame.draw.rect(surface, (174, 58, 46), PV)

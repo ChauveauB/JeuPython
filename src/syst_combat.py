@@ -6,35 +6,79 @@ from inventory import Inventory
 from input_player import get_input
 
 class Personnage: # classe de creation des personnages, monstres y compris
-    def __init__(self, player): # initialisation des parametres du monstre
+    def __init__(self, player, ennemi, screen, name): # initialisation des parametres du monstre
         self.inventaire = Inventory(player)
-        self.stats_perso = {"PV max": 200, "PV": 10, "Attaque": 5, "Défense": 6, "Mana max": 15, "Mana": 15}        #stats arbitraires
+        self.player = player
+        self.ennemi = ennemi
+        self.screen = screen
+        self.stats_base = {"player": self.player.stats, "ennemi": self.ennemi.stats_base}        #stats arbitraires
+        self.player_PV_max = self.stats_base["player"]["PV max"]
+        self.player_PV = self.stats_base["player"]["PV"]
+        self.ennemi_PV_max = self.stats_base["ennemi"][name]["PV max"]
+        self.ennemi_PV = self.stats_base["ennemi"][name]["PV"]
 
-    def est_vivant(self, cible): #verifie si un personnage ciblé est vivant --> Booléen
-       return cible.stats_perso["PV"] > 0
 
-    def attaquer(self, cible): #calcul des degats
-        base_degats = self.stats_perso["Attaque"]
-        degats = base_degats + randint(-2, 2)
-        cible.stats_base["PV"] -= degats
-        print(f"La cible a {cible.stats_perso["PV"]} PV")
+
+    def est_vivant(self, cible, name): #verifie si un personnage ciblé est vivant --> Booléen
+        if cible == "ennemi":
+            return self.ennemi_PV > 0
+        else:
+            return self.player_PV > 0
+
+    def attaquer(self, cible, name): #calcul des degats
+        if cible == "ennemi":
+            base_degats = self.stats_base["player"]["Attaque"]
+            degats = base_degats + randint(-2, 2)
+            self.ennemi_PV -= degats
+            print(f"L'{cible} a {self.ennemi_PV} PV restant")
+            self.update_health_bar(self.screen, cible, self.ennemi_PV)
+        else:
+            base_degats = self.stats_base["ennemi"][name]["Attaque"]
+            degats = base_degats + randint(-2, 2)
+            self.player_PV -= degats
+            self.update_health_bar(self.screen, cible, self.player_PV)
+            print(f"Le {cible} a {self.player_PV} PV restant")
 
     def soigner(self):  #Soigner le perso s'il possède des potions
+        cible = "player"
         if "potion de vie" in self.inventaire.objets_possede and self.inventaire.objets_possede["potion de vie"] > 0:
-            if self.stats_perso["PV"] + 40 >= self.stats_perso["PV max"]:
-                self.stats_perso["PV"] = self.stats_perso["PV max"]
+            if self.player_PV + 40 >= self.player_PV_max:
+                self.player_PV = self.player_PV_max
             else:
-                self.stats_perso["PV"] += 40
+                self.player_PV += 40
 
             self.inventaire.objets_possede["potion de vie"] -= 1
+            self.update_health_bar(self.screen, cible, self.player_PV)
 
-            print(self.stats_perso["PV"])
+            print(self.player_PV)
             print(self.inventaire.objets_possede["potion de vie"])
 
-    def magie(self, cible):     #Attaque magique
-        if self.stats_perso["Mana"] - 3 > 0:
-            self.stats_perso["Mana"] -= 3
-            self.attaquer(cible)
+    def magie(self, cible, name):     #Attaque magique
+        if self.stats_base["player"]["Mana"] - 3 > 0:
+            self.stats_base["player"]["Mana"] -= 3
+            self.update_mana_bar(self.screen)
+            self.attaquer(cible, name)
+
+    def update_health_bar(self, surface, cible, PV):
+        # draw the bar
+        if cible == "ennemi":
+            PV_max = pygame.Rect(0, 0, self.ennemi_PV_max * 3, 10)
+            PV_max.topright = (self.screen.get_width() - 230, 91)
+            pygame.draw.rect(surface, (55, 55, 55), PV_max)
+
+            PV_ennemi = pygame.Rect(0, 0, (PV) * 3, 10)
+            PV_ennemi.topright = (self.screen.get_width() - 230, 91)
+            pygame.draw.rect(surface, (174, 58, 46), PV_ennemi)
+            """
+            pygame.draw.rect(surface, (55, 55, 55), [150, 91, self.stats_base[cible][name]['PV max']*3, 11])
+            pygame.draw.rect(surface, (175, 53, 41), [150, 91, self.stats_base[cible][name]['PV']*3, 10])"""
+        else:
+            pygame.draw.rect(surface, (55, 55, 55), [150, 91, self.player_PV_max * 3, 11])
+            pygame.draw.rect(surface, (175, 53, 41), [150, 91, PV * 3, 10])
+
+    def update_mana_bar(self, surface):
+        pygame.draw.rect(surface, (55, 55, 55), [150, 102, self.stats_base["player"]['Mana max']*3, 11])
+        pygame.draw.rect(surface, (32, 76, 145), [150, 102, self.stats_base["player"]['Mana']*3, 10])
 
 class combat_logique: #controle du combat en arriere-plan
     def __init__(self, player):
